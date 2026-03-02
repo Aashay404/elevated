@@ -1,0 +1,294 @@
+<style>
+    /* MOBILE OVERLAY NAV */
+  .mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 998;
+  }
+
+  .mobile-nav-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    padding: 16px 0 24px;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .mobile-nav-overlay.open { display: block; }
+  .mobile-nav-overlay.open .mobile-nav-panel { transform: translateY(0); opacity: 1; }
+
+  .mobile-nav-panel ul { list-style: none; }
+
+  .mobile-nav-panel > ul > li { border-bottom: 1px solid #f3f4f6; }
+
+  .mobile-nav-panel .nav-link, .mobile-top-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 24px;
+    color: #1F1F25;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .mobile-nav-panel .nav-link:hover, .mobile-top-link:hover { color: #e74c3c; background: #fef9f9; }
+
+  .arrow {
+    width: 18px;
+    height: 18px;
+    border-right: 2px solid #9ca3af;
+    border-bottom: 2px solid #9ca3af;
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  .mobile-dropdown.open .arrow { transform: rotate(-135deg); }
+
+  .mobile-submenu {
+    display: none;
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .mobile-dropdown.open .mobile-submenu { display: block; }
+
+  .mobile-submenu li a {
+    display: block;
+    padding: 11px 36px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .mobile-submenu li:last-child a { border-bottom: none; }
+  .mobile-submenu li a:hover { color: #e74c3c; background: #fef2f2; }
+
+  .mobile-cta {
+    padding: 20px 24px 4px;
+  }
+
+  .mobile-cta a {
+    display: block;
+    text-align: center;
+    background: #e74c3c;
+    color: #fff;
+    padding: 13px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  /* RESPONSIVE BREAKPOINTS */
+  @media (max-width: 992px) {
+    .main-nav-one { display: none; }
+    .header-right-area-one .buttons-area { display: none; }
+    .menu-btn { display: block; }
+  }
+
+  @media (max-width: 480px) {
+    .logo-area img { width: 100px; height: 50px; }
+  }
+
+</style>
+
+
+
+<header class="header-one header--sticky">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-one-wrapper">
+                        <div class="left-side-header">
+                            <a href="index.html" class="logo-area">
+                                <img src="assets/images/logo/01 EM.png"  style="width: 120px; height: 60px;" alt="logo">
+                            </a>
+                        </div>
+
+                        <div class="main-nav-one">
+                            <nav>
+                                <ul>
+                                    <li class="#" style="position: static;">
+                                        <a class="nav-link" href="index.html">Home</a>
+
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="#">About Us</a>
+                                        <ul class="submenu">
+                                            <li><a href="about.html">Our Story</a></li>
+                                            <li><a href="team.html">Team</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="#">Services</a>
+                                        <ul class="submenu">
+                                             <li><a href="earlylearning.html">After School Activities</a></li>
+                    <li><a href="adhdsupport.html">ADHD Support</a></li>
+                    <li><a href="pep.html">Performance Enhancing Program</a></li>
+                    <li><a href="braingym.html">Brain Gym</a></li>
+                    <li><a href="mobiledetox.html">Mobile Detox</a></li>
+                    <li><a href="stresscounselling.html">Stress Anxiety Counselling</a></li>
+                    <li><a href="niosprogram.html">NIOS Program</a></li>
+                    <li><a href="remedialteaching.html">Remedial Teaching</a></li>
+
+                    <li><a href="iqtesting.html">IQ Testing</a></li>
+                    <li><a href="ldtesting.html">LD Testing</a></li>
+                    <li><a href="angermanagement.html">Anger Management</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="#">Media</a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            
+                                            <li><a href="testimonial.html">Testimonials</a></li>
+
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="#">Enquiry</a>
+                                        <ul class="submenu">
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                           <li><a href="admissionProcess.html">Admission Process</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="header-right-area-one">
+                            <div class="buttons-area">
+                                <a href="contact.html" class="rts-btn btn-primary border-radius">Admission Now</a>
+                            </div>
+                            <div class="menu-btn" id="menu-btn">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                    <rect width="20" height="2" fill="#1F1F25"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav-overlay" id="mobile-nav">
+  <div class="mobile-nav-panel">
+    <ul>
+      <li>
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+
+      <li class="mobile-dropdown">
+        <button class="mobile-top-link" onclick="toggleMobile(this)">
+          About Us <span class="arrow"></span>
+        </button>
+        <ul class="mobile-submenu">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="team.html">Team</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-dropdown">
+        <button class="mobile-top-link" onclick="toggleMobile(this)">
+          Services <span class="arrow"></span>
+        </button>
+        <ul class="mobile-submenu">
+          <li><a href="earlylearning.html">After School Activities</a></li>
+          <li><a href="adhdsupport.html">ADHD Support</a></li>
+          <li><a href="pep.html">Performance Enhancing Program</a></li>
+          <li><a href="braingym.html">Brain Gym</a></li>
+          <li><a href="mobiledetox.html">Mobile Detox</a></li>
+          <li><a href="stresscounselling.html">Stress Anxiety Counselling</a></li>
+          <li><a href="niosprogram.html">NIOS Program</a></li>
+          <li><a href="remedialteaching.html">Remedial Teaching</a></li>
+          <li><a href="iqtesting.html">IQ Testing</a></li>
+          <li><a href="ldtesting.html">LD Testing</a></li>
+          <li><a href="angermanagement.html">Anger Management</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-dropdown">
+        <button class="mobile-top-link" onclick="toggleMobile(this)">
+          Media <span class="arrow"></span>
+        </button>
+        <ul class="mobile-submenu">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="testimonial.html">Testimonials</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-dropdown">
+        <button class="mobile-top-link" onclick="toggleMobile(this)">
+          Enquiry <span class="arrow"></span>
+        </button>
+        <ul class="mobile-submenu">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="admissionProcess.html">Admission Process</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="mobile-cta">
+      <a href="contact.html">Admission Now</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+
+  // Close when clicking overlay background
+  mobileNav.addEventListener('click', (e) => {
+    if (e.target === mobileNav) {
+      menuBtn.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  function toggleMobile(btn) {
+    const li = btn.closest('.mobile-dropdown');
+    // Close others
+    document.querySelectorAll('.mobile-dropdown.open').forEach(el => {
+      if (el !== li) el.classList.remove('open');
+    });
+    li.classList.toggle('open');
+  }
+</script>
+
+    </header>

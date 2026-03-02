@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyKids Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --iso-purple: #005E7F;
+          --iso-yellow: #FFD335;
+          --iso-black: #1F1F25;
+          --iso-border-black: #000000;
+          --iso-white: #ffffff;
+          --iso-gray-light: #e5e5e5;
+        }
+
+        #iso-header-wrapper {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.5;
+            width: 100%;
+        }
+
+        #iso-header-wrapper * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        #iso-header-wrapper ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #iso-header-wrapper a {
+            text-decoration: none;
+            border-radius: 50px;
+        }
+
+        /* --- LAYOUT UTILS --- */
+        .iso-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .iso-flex-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* --- TOP BAR (PURPLE) --- */
+        .iso-top-bar {
+            background-color: var(--iso-purple);
+            color: var(--iso-white);
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        /* FIXED: Top bar inner uses flex-between properly */
+        .iso-top-bar .iso-flex-between {
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .iso-contact-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .iso-contact-link {
+            color: var(--iso-white);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .iso-contact-link svg {
+            width: 15px;
+            height: 15px;
+            fill: var(--iso-white);
+            flex-shrink: 0;
+        }
+
+        .iso-social-group {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .iso-social-group a {
+            color: var(--iso-white);
+            font-size: 14px;
+            transition: opacity 0.3s;
+            line-height: 1;
+        }
+
+        .iso-social-group a:hover {
+            opacity: 0.75;
+        }
+
+        /* --- MAIN HEADER (WHITE) --- */
+        .iso-main-header {
+            background-color: var(--iso-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            padding: 15px 0;
+            position: relative;
+            z-index: 999;
+        }
+
+        /* Logo */
+        .iso-logo img {
+            height: 70px;
+            width: 120px;
+        }
+
+        /* Desktop Menu */
+        .iso-desktop-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .iso-nav-item {
+            position: relative;
+        }
+
+        .iso-nav-link {
+            color: var(--iso-black);
+            font-weight: 500;
+            font-size: 15px;
+            padding: 10px 0;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .iso-nav-link:hover {
+            color: var(--iso-purple);
+        }
+
+        /* Chevron Icon */
+        .iso-has-dropdown > .iso-nav-link::after {
+            content: "▼";
+            font-size: 9px;
+            margin-left: 5px;
+            color: #999;
+            vertical-align: middle;
+        }
+
+        /* --- VERTICAL DROPDOWN --- */
+        .iso-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 230px;
+            background: var(--iso-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border-top: 3px solid var(--iso-purple);
+        }
+
+        .iso-has-dropdown:hover .iso-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .iso-dropdown li a {
+            display: block;
+            padding: 9px 22px;
+            color: var(--iso-black);
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .iso-dropdown li a:hover {
+            background-color: #f5f5f5;
+            color: var(--iso-purple);
+            padding-left: 28px;
+        }
+
+        /* --- BUTTON --- */
+        .iso-btn-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .iso-primary-btn {
+            background-color: var(--iso-yellow);
+            color: var(--iso-black);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 11px 26px;
+            border: 2px solid var(--iso-border-black);
+            border-radius: 0;
+            transition: all 0.3s;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .iso-primary-btn:hover {
+            background-color: var(--iso-black);
+            color: var(--iso-white);
+            border-color: var(--iso-black);
+        }
+
+        /* --- MOBILE TOGGLE --- */
+        .iso-mobile-toggle {
+            display: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .iso-mobile-toggle svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--iso-black);
+        }
+
+        /* --- MOBILE OVERLAY --- */
+        .iso-mobile-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+        .iso-mobile-overlay.active { opacity: 1; visibility: visible; }
+
+        /* --- MOBILE SIDEBAR --- */
+        .iso-mobile-sidebar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 300px;
+            height: 100vh;
+            background: var(--iso-white);
+            z-index: 2001;
+            transform: translateX(-100%);
+            transition: 0.3s ease;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .iso-mobile-sidebar.active { transform: translateX(0); }
+
+        .iso-sidebar-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--iso-gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--iso-white);
+        }
+
+        .iso-sidebar-header .iso-logo img {
+            height: 40px;
+        }
+
+        .iso-close-btn {
+            font-size: 26px;
+            cursor: pointer;
+            color: var(--iso-black);
+            line-height: 1;
+        }
+
+        /* --- MOBILE NAV --- */
+        .iso-mobile-nav {
+            padding: 10px 0;
+            flex: 1;
+        }
+
+        .iso-mobile-nav > li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* Mobile top-level link */
+        .iso-mobile-nav > li > .iso-nav-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px 20px;
+            width: 100%;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--iso-black);
+        }
+
+        .iso-mobile-nav > li > .iso-nav-link::after {
+            content: none; /* remove pseudo chevron */
+        }
+
+        /* Mobile accordion arrow */
+        .iso-mob-arrow {
+            font-size: 10px;
+            color: #888;
+            transition: transform 0.3s;
+        }
+
+        .iso-mobile-nav > li.open > .iso-nav-link .iso-mob-arrow {
+            transform: rotate(180deg);
+            color: var(--iso-purple);
+        }
+
+        /* FIXED: Mobile dropdown — fully matching desktop items */
+        .iso-mobile-nav .iso-mobile-dropdown {
+            display: none;
+            background: #fafafa;
+            border-top: 2px solid var(--iso-purple);
+        }
+
+        .iso-mobile-nav > li.open .iso-mobile-dropdown {
+            display: block;
+        }
+
+        .iso-mobile-nav .iso-mobile-dropdown li a {
+            display: block;
+            padding: 10px 20px 10px 32px;
+            font-size: 14px;
+            color: #444;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s;
+        }
+
+        .iso-mobile-nav .iso-mobile-dropdown li:last-child a {
+            border-bottom: none;
+        }
+
+        .iso-mobile-nav .iso-mobile-dropdown li a:hover {
+            color: var(--iso-purple);
+            background: #f0eeff;
+            padding-left: 38px;
+        }
+
+        /* Sidebar CTA button */
+        .iso-sidebar-cta {
+            padding: 20px;
+            border-top: 1px solid var(--iso-gray-light);
+        }
+
+        .iso-sidebar-cta .iso-primary-btn {
+            width: 100%;
+            text-align: center;
+            display: block;
+            border-radius: 50px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .iso-desktop-menu { display: none; }
+            .iso-btn-wrapper .iso-primary-btn { display: none; }
+            .iso-mobile-toggle { display: block; }
+        }
+
+        @media (max-width: 600px) {
+            .iso-top-bar .iso-flex-between {
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="iso-header-wrapper">
+
+    <div class="iso-mobile-overlay" id="isoOverlay"></div>
+
+    <!-- MOBILE SIDEBAR -->
+    <div class="iso-mobile-sidebar" id="isoSidebar">
+        <div class="iso-sidebar-header">
+            <a href="#" class="iso-logo"><img src="assets/images/logo/01 EM.png" alt="ElevatedMinds"></a>
+            <div class="iso-close-btn" id="isoCloseBtn">&times;</div>
+        </div>
+
+        <ul class="iso-mobile-nav" id="isoMobileNav">
+
+            <li>
+                <a href="index.html" class="iso-nav-link">Home</a>
+            </li>
+
+            <li class="iso-has-dropdown">
+                <a href="#" class="iso-nav-link">
+                    About Us <span class="iso-mob-arrow">▼</span>
+                </a>
+                <ul class="iso-mobile-dropdown">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </li>
+
+            <li class="iso-has-dropdown">
+                <a href="#" class="iso-nav-link">
+                    Services <span class="iso-mob-arrow">▼</span>
+                </a>
+                <ul class="iso-mobile-dropdown">
+                    <li><a href="earlylearning.html">After School Activities</a></li>
+                    <li><a href="adhdsupport.html">ADHD Support</a></li>
+                    <li><a href="pep.html">Performance Enhancing Program</a></li>
+                    <li><a href="braingym.html">Brain Gym</a></li>
+                    <li><a href="mobiledetox.html">Mobile Detox</a></li>
+                    <li><a href="stresscounselling.html">Stress Anxiety Counselling</a></li>
+                    <li><a href="niosprogram.html">NIOS Program</a></li>
+                    <li><a href="remedialteaching.html">Remedial Teaching</a></li>
+                    <li><a href="iqtesting.html">IQ Testing</a></li>
+                    <li><a href="ldtesting.html">LD Testing</a></li>
+                    <li><a href="angermanagement.html">Anger Management</a></li>
+                </ul>
+            </li>
+
+            <li class="iso-has-dropdown">
+                <a href="#" class="iso-nav-link">
+                    Media <span class="iso-mob-arrow">▼</span>
+                </a>
+                <ul class="iso-mobile-dropdown">
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </li>
+
+            <li class="iso-has-dropdown">
+                <a href="contact.html" class="iso-nav-link">
+                    Contact <span class="iso-mob-arrow">▼</span>
+                </a>
+                <ul class="iso-mobile-dropdown">
+                    <li><a href="admissionProcess.html">Admission Process</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+        <div class="iso-sidebar-cta">
+            <a href="admissionProcess.html" class="iso-primary-btn">Admission Process</a>
+        </div>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="iso-top-bar">
+        <div class="iso-container">
+            <div class="iso-flex-between">
+                <div class="iso-contact-group">
+                    <a href="mailto:info@elevatedminds.com" class="iso-contact-link">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        info@elevatedminds.com
+                    </a>
+                </div>
+                <div class="iso-social-group">
+                    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/yourchannel" target="_blank" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="iso-main-header">
+        <div class="iso-container">
+            <div class="iso-flex-between">
+
+                <a href="index.html" class="iso-logo">
+                    <img src="assets/images/logo/01 EM.png" alt="ElevatedMinds Logo">
+                </a>
+
+                <ul class="iso-desktop-menu">
+                    <li class="iso-nav-item">
+                        <a href="index.html" class="iso-nav-link">Home</a>
+                    </li>
+                    <li class="iso-nav-item iso-has-dropdown">
+                        <a href="#" class="iso-nav-link">About Us</a>
+                        <ul class="iso-dropdown">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="team.html">Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="iso-nav-item iso-has-dropdown">
+                        <a href="#" class="iso-nav-link">Services</a>
+                        <ul class="iso-dropdown">
+                            <li><a href="earlylearning.html">After School Activities</a></li>
+                            <li><a href="adhdsupport.html">ADHD Support</a></li>
+                            <li><a href="pep.html">Performance Enhancing Program</a></li>
+                            <li><a href="braingym.html">Brain Gym</a></li>
+                            <li><a href="mobiledetox.html">Mobile Detox</a></li>
+                            <li><a href="stresscounselling.html">Stress Anxiety Counselling</a></li>
+                            <li><a href="niosprogram.html">NIOS Program</a></li>
+                            <li><a href="remedialteaching.html">Remedial Teaching</a></li>
+                            <li><a href="iqtesting.html">IQ Testing</a></li>
+                            <li><a href="ldtesting.html">LD Testing</a></li>
+                            <li><a href="angermanagement.html">Anger Management</a></li>
+                        </ul>
+                    </li>
+                    <li class="iso-nav-item iso-has-dropdown">
+                        <a href="#" class="iso-nav-link">Media</a>
+                        <ul class="iso-dropdown">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="testimonial.html">Testimonials</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="iso-nav-item iso-has-dropdown">
+                        <a href="contact.html" class="iso-nav-link">Contact</a>
+                        <ul class="iso-dropdown">
+                            <li><a href="admissionProcess.html">Admission Process</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="iso-btn-wrapper">
+                    <a href="admissionProcess.html" class="iso-primary-btn">Admission Process</a>
+                    <div class="iso-mobile-toggle" id="isoToggle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.getElementById('isoToggle');
+        const closeBtn = document.getElementById('isoCloseBtn');
+        const sidebar = document.getElementById('isoSidebar');
+        const overlay = document.getElementById('isoOverlay');
+
+        function openMenu() {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        // Accordion for mobile dropdowns
+        const dropdownParents = document.querySelectorAll('#isoMobileNav > li.iso-has-dropdown');
+        dropdownParents.forEach(item => {
+            const link = item.querySelector(':scope > .iso-nav-link');
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                // Only prevent default if href is "#" (no real navigation)
+                if (!href || href === '#') e.preventDefault();
+
+                const isOpen = item.classList.contains('open');
+
+                // Close all others
+                dropdownParents.forEach(i => i.classList.remove('open'));
+
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

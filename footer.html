@@ -1,0 +1,216 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+        /* Floating WhatsApp Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #FFF;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Footer WhatsApp Button Hover Effect */
+        .whatsapp-footer-btn:hover {
+            background: #128C7E !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Mobile Responsive */
+        @media only screen and (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 28px;
+            }
+        }
+
+        /* Hide floating button when scrolled to footer to avoid overlap */
+        .whatsapp-float.hide-on-footer {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+<!-- footer call to action area start -->
+    <div class="rts-footer-area section-bg">
+        <div class="container">
+            
+            <div class="row ptb--65">
+                <div class="col-lg-12">
+                    <!-- footer main wrapper -->
+                    <div class="footer-one-main-wrapper">
+                        <!-- single sized  footer  -->
+                        <div class="footer-single-wized left-logo">
+                            <div class="head">
+                                <a href="index.html">
+                                    <img src="assets/images/logo/01 EM.png" style="width: 180px; height: 110px;" alt="logo" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <p class="dsic">
+                                    "A compassionate space where every child's unique potential is nurtured — because education isn't just about what they know, it's about who they become."
+
+
+                                </p>
+                                
+                                <!-- <ul class="wrapper-list">
+                                    <li><i class="fa fa-map-marker"></i>Yarra Park, Melbourne, Australia </li>
+                                    <li><i class="fa fa-phone"></i><a href="tel:+4733378901">+(61) 485-826-710</a></li>
+                                </ul> -->
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-single-wized">
+                            <div class="head">
+                                <h6 class="title">About Us</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="team.html">Team</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="testimonial.html">Testimonials</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-single-wized">
+                            <div class="head">
+                                <h6 class="title">Services</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="earlylearning.html">After School Activities</a></li>
+                                    <li><a href="adhdsupport.html">ADHD Support</a></li>
+                                    <li><a href="ldtesting.html">LD Testing</a></li>
+                                    <li><a href="iqtesting.html">IQ Testing</a></li>
+
+                                    <li><a href="braingym.html"> BrainGym</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-single-wized input-area">
+                            <div class="head">
+                                <h6 class="title">Contact Us</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="wrapper-list">
+                                    <li><i class="fa fa-map-marker"></i> Janardhan Bunglow No 50, Sidhivinayak Colony, Indira Nagar, Nashik</li>
+                                    <li><i class="fa fa-phone"></i> <a href="tel:+919172965369">+91 9172965369</a></li>
+                                   
+                                    <li><i class="fa fa-envelope"></i> <a href="mailto:info@elevatedminds.com">info@elevatedminds.com</a></li>
+                                </ul>
+                                <div class="head" style="margin-top: 20px;">
+                                    <h6 class="title" style="font-size: 20px; margin-bottom: 15px; color:black ;">Follow Us</h6>
+                                    <div class="social-links" style="display: flex; gap: 15px;">
+                                        <a href="https://www.facebook.com/share/1DUu8RuHHP/" target="_blank" class="social-icon" style="color: #3b5998; font-size: 28px; transition: all 0.3s ease;">
+                                            <i class="fa fa-facebook-square"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA==" target="_blank" class="social-icon" style="color: #e4405f; font-size: 28px; transition: all 0.3s ease;">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                        <a href="https://www.youtube.com/yourchannel" target="_blank" class="social-icon" style="color: #ff0000; font-size: 28px; transition: all 0.3s ease;">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" class="social-icon" style="color: #0077b5; font-size: 28px; transition: all 0.3s ease;">
+                                            <i class="fa fa-linkedin-square"></i>
+                                        </a>
+                                        <a href="https://twitter.com/yourpage" target="_blank" class="social-icon" style="color: #1da1f2; font-size: 28px; transition: all 0.3s ease;">
+                                            <i class="fa fa-twitter-square"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                    </div>
+                    <!-- footer main wrapper end -->
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area-one-border">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-area-one">
+                            <p>Copyright © 2025 All Rights Reserved by Elevated Minds ||Created by InsiteArc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <a href="https://wa.me/919172965369?text=Hello%20Elevated%20Minds,%20I%20would%20like%20to%20know%20more%20about%20your%20services." 
+       target="_blank" 
+       class="whatsapp-float"
+       id="whatsapp-float">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    
+
+    <script>
+        // Optional: Hide floating WhatsApp button when user scrolls to footer
+        window.addEventListener('scroll', function() {
+            var whatsappFloat = document.getElementById('whatsapp-float');
+            var footer = document.querySelector('.rts-footer-area');
+            
+            if (footer) {
+                var footerTop = footer.getBoundingClientRect().top;
+                var windowHeight = window.innerHeight;
+                
+                // Hide floating button when footer is visible
+                if (footerTop < windowHeight) {
+                    whatsappFloat.classList.add('hide-on-footer');
+                } else {
+                    whatsappFloat.classList.remove('hide-on-footer');
+                }
+            }
+        });
+    </script>
+
+
+    <!-- footer call to action area end -->
+    <!-- footer call to action area end -->

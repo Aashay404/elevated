@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevated Minds - Inclusive Education & Therapy</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+
+        /* ═══════════════════════════════════════
+           STICKY SOCIAL SIDEBAR — LEFT EDGE
+           Matches reference: flat colored blocks,
+           icon only, stacked vertically
+           ═══════════════════════════════════════ */
+
+        .sticky-social-bar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0 8px 8px 0;
+            overflow: hidden;
+            box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+            animation: socialSlideIn 0.7s cubic-bezier(0.4,0,0.2,1) 1s both;
+        }
+
+        @keyframes socialSlideIn {
+            from { transform: translateY(-50%) translateX(-100%); opacity: 0; }
+            to   { transform: translateY(-50%) translateX(0);     opacity: 1; }
+        }
+
+        .sticky-social-bar a {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0;
+            width: 42px;
+            height: 42px;
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+            overflow: hidden;
+            transition: width 0.32s cubic-bezier(0.4,0,0.2,1);
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .sticky-social-bar a:hover {
+            width: 140px;
+        }
+
+        .sticky-social-bar a i {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .sticky-social-bar a:hover i {
+            transform: scale(1.1);
+        }
+
+        .sticky-social-bar a .ss-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: opacity 0.22s ease 0.08s, transform 0.22s ease 0.08s;
+            padding-right: 14px;
+        }
+
+        .sticky-social-bar a:hover .ss-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Individual platform colors */
+        .sticky-social-bar .ss-facebook  { background: #1877F2; }
+        .sticky-social-bar .ss-instagram { background: #E1306C; }
+        .sticky-social-bar .ss-youtube   { background: #FF0000; }
+        .sticky-social-bar .ss-whatsapp  { background: #25D366; }
+        .sticky-social-bar .ss-linkedin  { background: #0A66C2; }
+
+        /* Subtle darken on hover */
+        .sticky-social-bar .ss-facebook:hover  { background: #1565d8; }
+        .sticky-social-bar .ss-instagram:hover { background: #c62a5c; }
+        .sticky-social-bar .ss-youtube:hover   { background: #cc0000; }
+        .sticky-social-bar .ss-whatsapp:hover  { background: #1cb955; }
+        .sticky-social-bar .ss-linkedin:hover  { background: #084e9e; }
+
+        /* Hide on very small screens */
+        @media (max-width: 480px) {
+            .sticky-social-bar { display: none; }
+        }
+
+        /* ═══════════════════════════════════════
+           ELEVATED ABOUT SECTION — CUSTOM STYLES
+           ═══════════════════════════════════════ */
+
+        .rts-about-area-new {
+            position: relative;
+            padding: 120px 0 100px;
+            background: #F9F8FF;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .rts-about-area-new::before {
+            content: '';
+            position: absolute;
+            top: -100px; left: -150px;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(124,92,191,0.07) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .rts-about-area-new::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; right: -100px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(46,204,113,0.07) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .about-dot-1 {
+            position: absolute;
+            top: 30px; right: 80px;
+            width: 140px; height: 140px;
+            background-image: radial-gradient(circle, rgba(124,92,191,0.2) 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+            pointer-events: none;
+            animation: aboutFloatDot 6s ease-in-out infinite;
+        }
+        .about-dot-2 {
+            position: absolute;
+            bottom: 60px; left: 50px;
+            width: 100px; height: 100px;
+            background-image: radial-gradient(circle, rgba(46,204,113,0.25) 1.5px, transparent 1.5px);
+            background-size: 14px 14px;
+            pointer-events: none;
+            animation: aboutFloatDot 8s ease-in-out infinite reverse;
+        }
+        @keyframes aboutFloatDot {
+            0%,100% { transform: translateY(0); }
+            50%      { transform: translateY(-14px); }
+        }
+
+        .about-new-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-img-cluster {
+            position: relative;
+            height: 580px;
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .about-img-cluster.visible { opacity: 1; transform: translateX(0); }
+
+        .img-main-wrap {
+            position: absolute;
+            top: 0; left: 0;
+            width: 72%; height: 100%;
+            border-radius: 28px 28px 80px 28px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(26,26,46,0.18);
+            z-index: 2;
+        }
+        .img-main-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 32px 32px 84px 32px;
+            background: linear-gradient(135deg, #2ECC71 0%, #9B79DE 100%);
+            z-index: -1;
+        }
+        .img-main-wrap img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.7s ease;
+            display: block;
+        }
+        .img-main-wrap:hover img { transform: scale(1.04); }
+
+        .img-sec-wrap {
+            position: absolute;
+            bottom: 30px; right: 0;
+            width: 46%; height: 52%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(26,26,46,0.2);
+            z-index: 3;
+            border: 4px solid #fff;
+            animation: aboutFloatImg 5s ease-in-out infinite;
+        }
+        .img-sec-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        @keyframes aboutFloatImg {
+            0%,100% { transform: translateY(0); }
+            50%      { transform: translateY(-10px); }
+        }
+
+        .about-exp-badge {
+            position: absolute;
+            top: 28px; right: 10px;
+            background: #1A1A2E;
+            color: #fff;
+            border-radius: 20px;
+            padding: 16px 22px;
+            z-index: 4;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(26,26,46,0.3);
+            animation: aboutFloatBadge 4s ease-in-out infinite;
+        }
+        .about-exp-badge .badge-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4rem; font-weight: 900;
+            color: #F6C90E; line-height: 1;
+        }
+        .about-exp-badge .badge-lbl {
+            font-size: 0.65rem; font-weight: 600;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: rgba(255,255,255,0.7); margin-top: 4px;
+        }
+        @keyframes aboutFloatBadge {
+            0%,100% { transform: translateY(0) rotate(-2deg); }
+            50%      { transform: translateY(-8px) rotate(2deg); }
+        }
+
+        .about-students-pill {
+            position: absolute;
+            bottom: 0; left: 0;
+            background: #fff;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex; align-items: center; gap: 12px;
+            z-index: 4;
+            box-shadow: 0 10px 30px rgba(26,26,46,0.12);
+            animation: aboutFloatPill 6s ease-in-out infinite 1s;
+        }
+        .about-students-pill .pill-avatars { display: flex; }
+        .about-students-pill .pill-avatars span {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: 700;
+            margin-left: -8px;
+        }
+        .about-students-pill .pill-avatars span:first-child { margin-left: 0; background: #FFB347; color: #fff; }
+        .about-students-pill .pill-avatars span:nth-child(2) { background: #2ECC71; color: #fff; }
+        .about-students-pill .pill-avatars span:nth-child(3) { background: #7C5CBF; color: #fff; }
+        .about-students-pill .pill-avatars span:nth-child(4) { background: #E74C3C; color: #fff; }
+        .about-students-pill .pill-info .pill-count { font-size: 0.85rem; font-weight: 700; color: #1A1A2E; line-height: 1.1; }
+        .about-students-pill .pill-info .pill-sub  { font-size: 0.65rem; color: #8888AA; font-weight: 500; }
+        @keyframes aboutFloatPill {
+            0%,100% { transform: translateY(0); }
+            50%      { transform: translateY(-6px); }
+        }
+
+        .about-circle-deco {
+            position: absolute;
+            top: 50%; left: 65%;
+            transform: translate(-50%,-50%);
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2ECC71, #1aab5a);
+            z-index: 1; opacity: 0.12;
+        }
+
+        .about-new-content { padding-left: 10px; }
+
+        .about-pre-title {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.8rem; font-weight: 600;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: #7C5CBF; margin-bottom: 18px;
+        }
+        .about-pre-title .pre-dot {
+            width: 6px; height: 6px;
+            background: #2ECC71; border-radius: 50%; display: inline-block;
+        }
+
+        .about-new-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem; font-weight: 900;
+            color: #1A1A2E; line-height: 1.15;
+            margin-bottom: 24px;
+        }
+        .about-new-title .title-highlight {
+            color: #1aab5a; position: relative;
+        }
+        .about-new-title .title-highlight::after {
+            content: '';
+            position: absolute; left: 0; bottom: 2px;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, #2ECC71, transparent);
+            border-radius: 2px;
+        }
+
+        .about-new-desc {
+            font-size: 1.5rem; line-height: 1.8;
+            color: #8888AA; margin-bottom: 14px;
+        }
+
+        .about-stats-row {
+            display: flex; gap: 20px;
+            margin: 32px 0;
+        }
+        .about-stat-item {
+            text-align: center; padding: 20px 18px;
+            background: #fff; border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(26,26,46,0.07);
+            flex: 1; position: relative; overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .about-stat-item:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(26,26,46,0.12); }
+        .about-stat-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+        .about-stat-item:nth-child(1)::before { background: #2ECC71; }
+        .about-stat-item:nth-child(2)::before { background: #7C5CBF; }
+        .about-stat-item:nth-child(3)::before { background: #F6C90E; }
+        .about-stat-item .stat-num { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 900; color: #1A1A2E; line-height: 1; }
+        .about-stat-item .stat-num span { color: #2ECC71; }
+        .about-stat-item .stat-lbl { font-size: 1rem; font-weight: 600; color: #8888AA; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 5px; }
+
+        .about-feature-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+
+        .about-feature-card {
+            display: flex; align-items: flex-start; gap: 18px;
+            padding: 20px 22px; border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+        .about-feature-card:hover { transform: translateX(6px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .about-feature-card.card-green  { background: linear-gradient(135deg, #2ECC71 0%, #1aab5a 100%); color: #fff; }
+        .about-feature-card.card-purple { background: linear-gradient(135deg, #7C5CBF 0%, #9B79DE 100%); color: #fff; }
+
+        .about-feature-card .fc-icon {
+            width: 46px; height: 46px;
+            background: rgba(255,255,255,0.2); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; font-size: 1.3rem;
+        }
+        .about-feature-card .fc-body { flex: 1; }
+        .about-feature-card .fc-title { font-family: 'Montserrat', sans-serif; font-size: 1.9rem; font-weight: 700; margin-bottom: 4px; }
+        .about-feature-card .fc-desc  { font-size: 1rem; opacity: 0.88; line-height: 1.5; }
+        .about-feature-card .fc-tags  { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+        .about-feature-card .fc-tag   {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 3px 10px; border-radius: 20px;
+            font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em;
+        }
+
+        .about-cta-row { display: flex; align-items: center; gap: 20px; }
+
+        .about-btn-primary {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: linear-gradient(135deg, #7C5CBF, #9B79DE);
+            color: #fff; text-decoration: none;
+            padding: 14px 30px; border-radius: 50px;
+            font-size: 1.1rem; font-weight: 600; letter-spacing: 0.02em;
+            box-shadow: 0 8px 25px rgba(124,92,191,0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; overflow: hidden;
+        }
+        .about-btn-primary::before {
+            content: '';
+            position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .about-btn-primary:hover::before { left: 100%; }
+        .about-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 35px rgba(124,92,191,0.4); }
+        .about-btn-primary .btn-arrow {
+            width: 28px; height: 28px;
+            background: rgba(255,255,255,0.2); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .about-btn-primary:hover .btn-arrow { transform: translateX(3px); }
+
+        .about-trustline { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #8888AA; font-weight: 500; }
+        .about-trustline .trust-check {
+            width: 22px; height: 22px;
+            background: #2ECC71; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 0.65rem;
+        }
+
+        .about-reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .about-reveal.visible { opacity: 1; transform: translateY(0); }
+        .about-d1 { transition-delay: 0.1s; }
+        .about-d2 { transition-delay: 0.2s; }
+        .about-d3 { transition-delay: 0.3s; }
+        .about-d4 { transition-delay: 0.4s; }
+        .about-d5 { transition-delay: 0.5s; }
+
+        @media (max-width: 991px) {
+            .about-new-grid { grid-template-columns: 1fr; gap: 60px; }
+            .about-img-cluster { height: 420px; max-width: 480px; margin: 0 auto; }
+            .about-new-title { font-size: 2.3rem; }
+        }
+        @media (max-width: 576px) {
+            .rts-about-area-new { padding: 70px 0; }
+            .about-img-cluster { height: 320px; }
+            .about-stats-row { flex-wrap: wrap; }
+            .about-stat-item { min-width: calc(50% - 10px); }
+            .about-new-title { font-size: 1.9rem; }
+            .about-cta-row { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════ STICKY SOCIAL BAR ══════════════ -->
+    <div class="sticky-social-bar">
+        <a href="https://www.facebook.com/profile.php?id=100088273930432&rdid=CBiA43OK9USengCe&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DUu8RuHHP%2F#" class="ss-facebook" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+            <span class="ss-label">Facebook</span>
+        </a>
+        <a href="#" class="ss-linkedin" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span class="ss-label">LinkedIn</span>
+        </a>
+        <a href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D" class="ss-instagram" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+            <span class="ss-label">Instagram</span>
+        </a>
+        <a href="mailto:info@elevatedminds.in" class="ss-youtube" target="_blank" aria-label="Email" style="background:#EA4335;">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="ss-label">Email Us</span>
+        </a>
+        <a href="https://wa.me/919172965369?text=Hello%20Elevated%20Minds,%20I%20would%20like%20to%20know%20more%20about%20your%20services." class="ss-whatsapp" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="ss-label">WhatsApp</span>
+        </a>
+    </div>
+
+    <div id="headerone"></div>
+
+    <!-- ══════════════ BANNER ══════════════ -->
+    <section class="banner-area-one rts-shape-move">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-xl-1 order-lg-1 order-sm-2 order-2">
+                    <div class="banner-content-one">
+                        <div class="inner">
+                            <h1 class="title-banner">
+                                More Than Education, <br> <span>It's Acceptance</span>
+                                <img src="assets/images/banner/title-shape-1.svg" alt="banner">
+                            </h1>
+                            <p class="disc">We believe every child deserves to be understood, accepted, and celebrated. Your child's growth starts with understanding.</p>
+                            <div class="banner-btn">
+                                <a href="contact.html" class="rts-btn btn-primary border-radius">Book a Free Consultation</a>
+                                <div class="video-btn-area">
+                                    <div class="vedio-icone">
+                                        <a class="video-play-button play-video popup-video" href="https://www.youtube.com/watch?v=ezbJwaLmOeM">
+                                            <span class="icon"><img src="assets/images/banner/play.svg" alt=""></span>
+                                        </a>
+                                        <div class="video-overlay">
+                                            <a class="video-overlay-close">×</a>
+                                        </div>
+                                    </div>
+                                    <p class="intro">Watch Our Story</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-change order-lg-2 order-sm-1 order-1">
+                    <div class="banner-right-img">
+                        <img src="assets/images/banner/index3.png" width="672" height="420" alt="banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="banner-bg-shape-2" src="assets/images/banner/banner-bg-1" alt="">
+        <div class="shape-image">
+            <div class="shape one"   data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/01.svg" alt="shape_image"></div>
+            <div class="shape two"   data-speed="0.04"><img src="assets/images/banner/shape/02.svg" alt="shape_image"></div>
+            <div class="shape three" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/03.svg" alt="shape_image"></div>
+            <div class="shape four"  data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/04.svg" alt="shape_image"></div>
+            <div class="shape five"  data-speed="0.04"><img src="assets/images/banner/shape/05.svg" alt="shape_image"></div>
+            <div class="shape six"   data-speed="0.04"><img src="assets/images/banner/shape/06.svg" alt="shape_image"></div>
+            <div class="shape seven" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/07.svg" alt="shape_image"></div>
+        </div>
+        <div class="banner-bg-grid-shape"></div>
+    </section>
+
+    <!-- ══════════════ ABOUT SECTION (NEW) ══════════════ -->
+    <section class="rts-about-area-new">
+        <div class="about-dot-1"></div>
+        <div class="about-dot-2"></div>
+
+        <div class="container">
+            <div class="about-new-grid">
+
+                <!-- LEFT: Image Cluster -->
+                <div class="about-img-cluster" id="aboutImgCluster">
+                    <div class="img-main-wrap">
+                        <img src="assets/images/banner/index2.jpg" alt="Teacher helping child learn">
+                    </div>
+                    <div class="img-sec-wrap">
+                        <img src="assets/images/banner/index3.png" alt="Children learning together">
+                    </div>
+                    <div class="about-exp-badge">
+                        <div class="badge-num">8+</div>
+                        <div class="badge-lbl">Years of<br>Excellence</div>
+                    </div>
+                    <div class="about-students-pill">
+                        <div class="pill-avatars">
+                            <span>A</span><span>R</span><span>S</span><span>+</span>
+                        </div>
+                        <div class="pill-info">
+                            <div class="pill-count">500+ Students</div>
+                            <div class="pill-sub">Helped &amp; Thriving</div>
+                        </div>
+                    </div>
+                    <div class="about-circle-deco"></div>
+                </div>
+
+                <!-- RIGHT: Content -->
+                <div class="about-new-content">
+
+                    <div class="about-pre-title about-reveal about-d1">
+                        <span class="pre-dot"></span>
+                        About Elevated Minds
+                    </div>
+
+                    <h2 class="about-new-title about-reveal about-d2">
+                        Learning, <span class="title-highlight">Healing</span>,<br>
+                        and Growing Together.
+                    </h2>
+
+                    <p class="about-new-desc about-reveal about-d3">
+                        At Elevated Minds, we dream of a world where classrooms don't judge—they embrace.
+                        We provide a community where "special" and "neurotypical" children grow together, not apart.
+                    </p>
+
+                    <p class="about-new-desc about-reveal about-d4">
+                        Our progress isn't just measured in grades, but in confidence, comfort, and independence —
+                        nurturing each child's unique potential with compassion and expertise.
+                    </p>
+
+                    <div class="about-stats-row about-reveal about-d3">
+                        <div class="about-stat-item">
+                            <div class="stat-num">500<span>+</span></div>
+                            <div class="stat-lbl">Children Helped</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="stat-num">15<span>+</span></div>
+                            <div class="stat-lbl">Expert Therapists</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="stat-num">98<span>%</span></div>
+                            <div class="stat-lbl">Parent Satisfaction</div>
+                        </div>
+                    </div>
+
+                    <div class="about-feature-cards">
+                        <div class="about-feature-card card-green about-reveal about-d4">
+                            <div class="fc-icon">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                            </div>
+                            <div class="fc-body">
+                                <div class="fc-title">Inclusive Community</div>
+                                <div class="fc-desc">A safe, nurturing space where all children grow side by side, celebrating every milestone.</div>
+                                <div class="fc-tags">
+                                    <span class="fc-tag">Confidence Building</span>
+                                    <span class="fc-tag">Life Skills</span>
+                                    <span class="fc-tag">Social Growth</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-feature-card card-purple about-reveal about-d5">
+                            <div class="fc-icon">
+                                <i class="fa fa-brain" aria-hidden="true"></i>
+                            </div>
+                            <div class="fc-body">
+                                <div class="fc-title">Holistic Approach</div>
+                                <div class="fc-desc">Education seamlessly blended with therapy, counseling and practical life skills for whole-child development.</div>
+                                <div class="fc-tags">
+                                    <span class="fc-tag">Therapy</span>
+                                    <span class="fc-tag">Counseling</span>
+                                    <span class="fc-tag">ADHD Support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-cta-row about-reveal about-d5">
+                        <a href="about.html" class="about-btn-primary">
+                            Discover Our Story
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <div class="about-trustline">
+                            <span class="trust-check">✓</span>
+                            Free initial consultation available
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ SPECIAL OFFERS ══════════════ -->
+    <section class="rts-class-area">
+        <div class="container">
+            <div class="section-title-area text-center">
+                <p class="pre-title justify-content-center"><img src="assets/images/banner/title-img.svg" alt="">Special Offers</p>
+                <h2 class="section-title">Your Child's Growth Starts Here</h2>
+                <p class="desc">We are committed to helping you understand your child better. <br> Take advantage of our limited-time complimentary services.</p>
+            </div>
+            <div class="section-inner">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="class-wrapper">
+                            <div class="wrapper-inner">
+                                <div class="icon"><img src="assets/images/icon/03.svg" alt=""></div>
+                                <a href="iqtesting.html"><h4 class="title">IQ Test</h4></a>
+                                <p class="period">Assessment</p>
+                                <p class="desc">Understand your child's cognitive strengths and potential with our complimentary IQ assessment.</p>
+                                <div class="shape-icon"><img src="assets/images/banner/blink.svg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="class-wrapper two">
+                            <div class="wrapper-inner">
+                                <div class="icon"><img src="assets/images/icon/04.svg" alt=""></div>
+                                <a href="ldtesting.html"><h4 class="title">LD Test</h4></a>
+                                <p class="period">Learning Disability</p>
+                                <p class="desc">Identify learning barriers early. We provide professional testing for Learning Disabilities.</p>
+                                <div class="shape-icon"><img src="assets/images/banner/blink.svg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="class-wrapper three">
+                            <div class="wrapper-inner">
+                                <div class="icon"><img src="assets/images/icon/05.svg" alt=""></div>
+                                <a href="admissionProcess.html"><h4 class="title">Free Consultation</h4></a>
+                                <p class="period">Expert Guidance</p>
+                                <p class="desc">Speak with our experts to discuss behavioral changes, ADHD support, or emotional well-being.</p>
+                                <div class="shape-icon"><img src="assets/images/banner/blink.svg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="class-wrapper four">
+                            <div class="wrapper-inner">
+                                <div class="icon"><img src="assets/images/icon/06.svg" alt=""></div>
+                                <a href="contact.html"><h4 class="title">Visit Us</h4></a>
+                                <p class="period">Nashik</p>
+                                <p class="desc">Janardhan, Bunglow No 50, Sidhivinayak Colony, Indira Nagar, Nashik.</p>
+                                <div class="shape-icon"><img src="assets/images/banner/blink.svg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ CORE FEATURES ══════════════ -->
+    <section class="rts-course-area rts-shape-move section-bg">
+        <div class="container">
+            <div class="section-title-area text-center">
+                <p class="pre-title justify-content-center"><img src="assets/images/banner/title-img.svg" alt="">Our Approach</p>
+                <h2 class="section-title">Core Features &amp; Values</h2>
+                <p class="desc">We value courage and kindness over report cards. <br> Discover how we make a difference.</p>
+            </div>
+            <div class="slider-inner">
+                <div class="swiper mySwiper-category-1 swiper-data" data-swiper='{
+                    "spaceBetween":30,"slidesPerView":3,"loop":true,"speed":1500,
+                    "pagination":{"el":".swiper-paginations","clickable":"true"},
+                    "autoplay":{"delay":"4000"},
+                    "breakpoints":{"0":{"slidesPerView":1,"spaceBetween":30},"320":{"slidesPerView":1,"spaceBetween":30},"480":{"slidesPerView":1,"spaceBetween":30},"768":{"slidesPerView":2,"spaceBetween":30},"840":{"slidesPerView":2,"spaceBetween":30},"1140":{"slidesPerView":3,"spaceBetween":30}}
+                }'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="course-wrapper">
+                                <div class="wrapper-inner">
+                                    <div class="image"><img src="assets/images/banner/realprogress.jpg" alt=""></div>
+                                    <div class="content">
+                                        <a href="#"><h4 class="title">Real Progress</h4></a>
+                                        <p class="desc">We measure progress in confidence, comfort, and independence, not just grades.</p>
+                                        <ul class="feature-wrapper">
+                                            <li class="wrapper-list">Confidence Building</li>
+                                            <li class="wrapper-list">Life Skills</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="course-wrapper two">
+                                <div class="wrapper-inner">
+                                    <div class="image"><img src="assets/images/banner/therapy.jpg" alt=""></div>
+                                    <div class="content">
+                                        <a href="#"><h4 class="title">Therapy &amp; Counseling</h4></a>
+                                        <p class="desc">Addressing stress, anxiety, anger, and behavioral changes with professional care.</p>
+                                        <ul class="feature-wrapper">
+                                            <li class="wrapper-list">Mobile Detox</li>
+                                            <li class="wrapper-list">Anger Management</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="course-wrapper three">
+                                <div class="wrapper-inner">
+                                    <div class="image"><img src="assets/images/banner/special.jpg" alt=""></div>
+                                    <div class="content">
+                                        <a href="#"><h4 class="title">Special Support</h4></a>
+                                        <p class="desc">Empowering growth through dedicated support for ADHD, Remedial Teaching, and NIOS preparation.</p>
+                                        <ul class="feature-wrapper">
+                                            <li class="wrapper-list">ADHD Strategies</li>
+                                            <li class="wrapper-list">Remedial Teaching</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-paginations"></div>
+            </div>
+            <img class="banner-bg-shape-3" src="assets/images/banner/banner-bg-2.png" alt="">
+        </div>
+        <div class="shape-image">
+            <div class="shape one" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/11.svg" alt="shape_image"></div>
+            <div class="shape two" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/12.svg" alt="shape_image"></div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <!-- Login Modal -->
+    <div class="modal login-pupup-modal fade" id="exampleModal-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hi, Welcome back!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="login-form">
+                        <input type="text" placeholder="Username or Email Address" required>
+                        <input type="password" placeholder="Password" required>
+                        <div class="d-flex mb--20 align-items-center">
+                            <input type="checkbox" id="examplecheck-modal">
+                            <label for="examplecheck-modal">I agree to the terms of use and privacy policy.</label>
+                        </div>
+                        <button type="submit" class="rts-btn btn-primary">Sign In</button>
+                        <p class="dont-acc mt--20">Don't Have an Account? <a href="registration.html">Sign-up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Bar -->
+    <div id="side-bar" class="side-bar header-two">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <div class="inner-main-wrapper-desk">
+            <div class="inner-content">
+                <h4 class="title">Elevated Minds</h4>
+                <p class="disc">We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly master new technologies.</p>
+                <div class="footer">
+                    <h4 class="title">Got a question?</h4>
+                    <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Home</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="index.html">Home</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="about.html" class="main">About Us</a></li>
+                    <li class="menu-item"><a href="contact.html" class="main">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="buttons-area">
+                <a href="#" class="rts-btn btn-border">Log In</a>
+                <a href="#" class="rts-btn btn-primary">Sign Up</a>
+            </div>
+            <div class="rts-social-style-one pl--20 mt--50">
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="txt-loading">
+                <span data-text-preloader="E" class="letters-loading first">E</span>
+                <span data-text-preloader="L" class="letters-loading first">L</span>
+                <span data-text-preloader="E" class="letters-loading first">E</span>
+                <span data-text-preloader="V" class="letters-loading first">V</span>
+                <span data-text-preloader="A" class="letters-loading first">A</span>
+                <span data-text-preloader="T" class="letters-loading">T</span>
+                <span data-text-preloader="E" class="letters-loading">E</span>
+                <span data-text-preloader="D" class="letters-loading">D</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <div id="anywhere-home" class=""></div>
+
+    <script>
+        // Import header
+        fetch("headerone.html")
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById("headerone").innerHTML = data;
+            const scripts = document.getElementById("headerone").querySelectorAll('script');
+            scripts.forEach(script => {
+              const newScript = document.createElement('script');
+              newScript.textContent = script.textContent;
+              document.body.appendChild(newScript);
+            });
+          });
+
+        // Import footer
+        fetch("footer.html")
+          .then(res => res.text())
+          .then(data => document.getElementById("footer").innerHTML = data);
+
+        // ── About Section Scroll Reveal ──
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.about-reveal, .about-img-cluster').forEach(el => observer.observe(el));
+
+            setTimeout(() => {
+                document.querySelectorAll('.about-reveal, .about-img-cluster').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+                });
+            }, 150);
+        })();
+    </script>
+
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/jquery-ui.js"></script>
+    <script src="assets/js/vendor/metismenu.js"></script>
+    <script src="assets/js/vendor/magnifying-popup.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="assets/js/vendor/waypoint.js"></script>
+    <script src="assets/js/vendor/waw.js"></script>
+    <script src="assets/js/plugins/isotop.js"></script>
+    <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/plugins/resizer-sensor.js"></script>
+    <script src="assets/js/plugins/sticky-sidebar.js"></script>
+    <script src="assets/js/plugins/twinmax.js"></script>
+    <script src="assets/js/vendor/chroma.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/contact.form.js"></script>
+    <script src="assets/js/plugins/calender.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

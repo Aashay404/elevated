@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Elevated Minds</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* ─── Contact Form Wrapper ─── */
+        .contact-form-advanced {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .heading-title {
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           BORDERED BOX — explicit per-type selectors + !important
+           ───────────────────────────────────────────────────────────── */
+        .contact-form-advanced input[type="text"].advanced-input,
+        .contact-form-advanced input[type="tel"].advanced-input,
+        .contact-form-advanced input[type="email"].advanced-input,
+        .contact-form-advanced input[type="number"].advanced-input,
+        .contact-form-advanced input[type="password"].advanced-input,
+        .contact-form-advanced textarea.advanced-input,
+        .contact-form-advanced select.advanced-input {
+            width: 100% !important;
+            height: 55px !important;
+            background: #f9f9f9 !important;
+            background-color: #f9f9f9 !important;
+            border: 1.5px solid #d0d0d0 !important;
+            border-radius: 10px !important;
+            padding: 0 20px !important;
+            margin-bottom: 5px !important;
+            color: #333 !important;
+            font-size: 15px !important;
+            line-height: normal !important;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            outline: none !important;
+            display: block !important;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease !important;
+        }
+
+        /* Focus state */
+        .contact-form-advanced input[type="text"].advanced-input:focus,
+        .contact-form-advanced input[type="tel"].advanced-input:focus,
+        .contact-form-advanced input[type="email"].advanced-input:focus,
+        .contact-form-advanced input[type="number"].advanced-input:focus,
+        .contact-form-advanced textarea.advanced-input:focus,
+        .contact-form-advanced select.advanced-input:focus {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+            border-color: #6a307d !important;
+            box-shadow: 0 4px 15px rgba(106, 48, 125, 0.12) !important;
+        }
+
+        /* Valid state */
+        .contact-form-advanced input.advanced-input.is-valid,
+        .contact-form-advanced textarea.advanced-input.is-valid,
+        .contact-form-advanced select.advanced-input.is-valid {
+            border-color: #28a745 !important;
+            background-color: #f6fff8 !important;
+        }
+
+        /* Invalid state */
+        .contact-form-advanced input.advanced-input.is-invalid,
+        .contact-form-advanced textarea.advanced-input.is-invalid,
+        .contact-form-advanced select.advanced-input.is-invalid {
+            border-color: #dc3545 !important;
+            background-color: #fff8f8 !important;
+        }
+
+        /* Textarea overrides */
+        .contact-form-advanced textarea.advanced-input {
+            height: 150px !important;
+            padding-top: 16px !important;
+            resize: none !important;
+        }
+
+        /* Select dropdown arrow */
+        .contact-form-advanced select.advanced-input {
+            appearance: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%236a307d" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') !important;
+            background-repeat: no-repeat !important;
+            background-position: right 15px center, 0 0 !important;
+            background-size: 20px, cover !important;
+            cursor: pointer !important;
+        }
+
+        /* Placeholder color */
+        .contact-form-advanced .advanced-input::placeholder { color: #999 !important; opacity: 1 !important; }
+        .contact-form-advanced .advanced-input:-ms-input-placeholder { color: #999 !important; }
+        .contact-form-advanced .advanced-input::-ms-input-placeholder { color: #999 !important; }
+
+        /* Validation error messages */
+        .field-error {
+            color: #dc3545;
+            font-size: 12.5px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            display: none;
+            align-items: center;
+            gap: 5px;
+            padding-left: 4px;
+        }
+        .field-error.visible {
+            display: flex;
+        }
+        .field-error::before {
+            content: "⚠";
+            font-size: 13px;
+        }
+
+        /* Field success hint */
+        .field-success {
+            color: #28a745;
+            font-size: 12.5px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            display: none;
+            align-items: center;
+            gap: 5px;
+            padding-left: 4px;
+        }
+        .field-success.visible {
+            display: flex;
+        }
+        .field-success::before {
+            content: "✓";
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* Submit button */
+        .form-btn button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+        }
+        .form-btn button:hover { transform: translateY(-3px); }
+
+        /* single-input spacing */
+        .single-input { margin-bottom: 0; }
+    </style>
+</head>
+
+<body>
+
+    <div id="header"></div>
+    <div class="rts-breadcrumb-area rts-section-gap bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-main-wrapper">
+                        <div class="pagination-wrapper">
+                            <a href="index.html">Home</a>
+                            <i class="fa-solid fa-greater-than"></i>
+                            <a class="active" href="contact.html">Contact Us</a>
+                        </div>
+                        <h2 class="title">Get in Touch</h2>
+                        <p class="desc" style="color: white; max-width: 600px; margin-top: 10px;">Take the first step towards understanding your child better.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="rts-contact-area rts-section-gap inner">
+        <div class="container">
+            <div class="section-title-area text-center">
+                <p class="pre-title justify-content-center"><img src="assets/images/banner/title-img.svg" alt="">Contact Us</p>
+                <h2 class="section-title">We are here to help your child grow</h2>
+            </div>
+            <div class="section-inner">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="get-in-touch">
+                            <ul class="contact-wrapper-list">
+                                <li class="phone bg-two">
+                                    <div class="icon">
+                                        <img src="assets/images/icon/phone.svg" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <h4>Phone</h4>
+                                        <p class="desc"><a href="tel:+919172965369">+91 9172965369</a></p>
+                                    </div>
+                                </li>
+                                <li class="phone bg-four">
+                                    <div class="icon">
+                                        <img src="assets/images/icon/mail.svg" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <h4>Email Address</h4>
+                                        <p class="desc"><a href="/cdn-cgi/l/email-protection#51383f373e11343d3427302534353c383f35227f323e3c"><span class="__cf_email__" data-cfemail="01686f676e41646d6477607564656c686f65722f626e6c">[info@elevatedminds.com]</span></a></p>
+                                    </div>
+                                </li>
+                                <li class="phone bg-one">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-location-dot" style="font-size: 24px; color: #fff;"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Location Address</h4>
+                                        <p class="desc">Janardhan,Bunglow No 50, Sidhivinayak Colony, Indira Nagar, Nashik</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <form id="contactForm" action="#" class="contact-form-advanced" novalidate>
+                            <h3 class="heading-title">Send Us A Message</h3>
+                            <div class="form-inner">
+                                <div class="row">
+                                    <!-- Parent Name -->
+                                    <div class="col-md-6 col-12">
+                                        <div class="single-input">
+                                            <input
+                                                type="text"
+                                                class="advanced-input"
+                                                id="ParentName"
+                                                name="ParentName"
+                                                placeholder="Parent's Name"
+                                                required
+                                                autocomplete="off"
+                                            >
+                                            <span class="field-error" id="ParentName-error">Name must contain letters only (no numbers or special characters).</span>
+                                            <span class="field-success" id="ParentName-success">Looks good!</span>
+                                        </div>
+                                    </div>
+                                    <!-- Child Age -->
+                                    <div class="col-md-6 col-12">
+                                        <div class="single-input">
+                                            <input
+                                                type="text"
+                                                class="advanced-input"
+                                                id="ChildAge"
+                                                name="ChildAge"
+                                                placeholder="Child's Age (e.g. 7)"
+                                                required
+                                                autocomplete="off"
+                                                inputmode="numeric"
+                                            >
+                                            <span class="field-error" id="ChildAge-error">Age must be a whole number between 1 and 18.</span>
+                                            <span class="field-success" id="ChildAge-success">Looks good!</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <!-- Phone Number -->
+                                    <div class="col-md-6 col-12">
+                                        <div class="single-input">
+                                            <input
+                                                type="tel"
+                                                class="advanced-input"
+                                                id="Number"
+                                                name="Number"
+                                                placeholder="10-digit Phone Number"
+                                                required
+                                                maxlength="10"
+                                                autocomplete="off"
+                                                inputmode="numeric"
+                                            >
+                                            <span class="field-error" id="Number-error">Please enter a valid 10-digit mobile number.</span>
+                                            <span class="field-success" id="Number-success">Looks good!</span>
+                                        </div>
+                                    </div>
+                                    <!-- Service -->
+                                    <div class="col-md-6 col-12">
+                                        <div class="single-input" style="margin-bottom: 17px;">
+                                            <select class="advanced-input" name="service" required>
+                                                <option value="" disabled selected>Service Interested In</option>
+                                                <option value="early-learning">After School Activities</option>
+                                                <option value="adhd-support">ADHD Support</option>
+                                                <option value="counseling">Counseling</option>
+                                                <option value="iq-testing">IQ / LD Testing</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="single-input" style="margin-bottom: 20px;">
+                                            <textarea class="advanced-input" name="Message" placeholder="Tell us about your concern..." required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-btn">
+                                            <button type="submit" class="rts-btn btn-primary">Submit Inquiry</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="map-area-inner" style="width: 100%; height: 450px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6786.607290107637!2d73.75747714005531!3d19.97816545892624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb69ab6dbfdd%3A0x5e2b4b89777724!2sSiddhivinayak%20Colony%2C%20Nashik%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1771934796301!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="brand-quote-area" style="background-color: #f5f5f5; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h3 style="color: #6a307d; font-weight: 600;">"Elevated Minds - Because education isn't just about what a child knows, it's about who they become."</h3>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <div class="modal login-pupup-modal fade" id="exampleModal-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hi, Welcome back!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="login-form">
+                        <input type="text" placeholder="Username of Email Address" required>
+                        <input type="password" placeholder="Password" required>
+                        <div class="d-flex mb--20 align-items-center">
+                            <input type="checkbox" id="examplecheck-modal">
+                            <label for="examplecheck-modal">I agree to the terms of use and privacy policy.</label>
+                        </div>
+                        <button type="submit" class="rts-btn btn-primary">Sign In</button>
+                        <p class="dont-acc mt--20">Dont Have an Account? <a href="registration.html">Sign-up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="side-bar" class="side-bar header-two">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <div class="inner-main-wrapper-desk">
+            <div class="inner-content">
+                <h4 class="title">Elevated Minds</h4>
+                <p class="disc">We believe every child deserves to be understood, accepted, and celebrated.</p>
+                <div class="footer">
+                    <h4 class="title">Got a question?</h4>
+                    <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Home</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="index.html">Home</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="about.html" class="main">About Us</a></li>
+                    <li class="menu-item"><a href="contact.html" class="main">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="buttons-area">
+                <a href="#" class="rts-btn btn-border">Log In</a>
+                <a href="#" class="rts-btn btn-primary">Sign Up</a>
+            </div>
+            <div class="rts-social-style-one pl--20 mt--50">
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="txt-loading">
+                <span data-text-preloader="E" class="letters-loading first">E</span>
+                <span data-text-preloader="L" class="letters-loading first">L</span>
+                <span data-text-preloader="E" class="letters-loading first">E</span>
+                <span data-text-preloader="V" class="letters-loading first">V</span>
+                <span data-text-preloader="A" class="letters-loading first">A</span>
+                <span data-text-preloader="T" class="letters-loading">T</span>
+                <span data-text-preloader="E" class="letters-loading">E</span>
+                <span data-text-preloader="D" class="letters-loading">D</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+
+    <div id="anywhere-home" class=""></div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+    <!-- ═══════════════════════════════════════════════════
+         FORM VALIDATION SCRIPT
+    ════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+
+        /* ── Validation Rules ─────────────────────────────── */
+        const rules = {
+            ParentName: {
+                validate: (v) => /^[A-Za-z\s.'-]{2,}$/.test(v.trim()),
+                error: 'Name must contain letters only (no numbers or special characters).',
+                success: 'Looks good!'
+            },
+            ChildAge: {
+                validate: (v) => /^\d+$/.test(v.trim()) && parseInt(v) >= 1 && parseInt(v) <= 18,
+                error: 'Age must be a whole number between 1 and 18.',
+                success: 'Looks good!'
+            },
+            Number: {
+                validate: (v) => /^[6-9]\d{9}$/.test(v.trim()),
+                error: 'Please enter a valid 10-digit Indian mobile number.',
+                success: 'Looks good!'
+            }
+        };
+
+        /* ── Helper: show/hide feedback ───────────────────── */
+        function setFieldState(id, isValid, isDirty) {
+            const input   = document.getElementById(id);
+            const errEl   = document.getElementById(id + '-error');
+            const succEl  = document.getElementById(id + '-success');
+
+            if (!input) return;
+
+            // Reset
+            input.classList.remove('is-valid', 'is-invalid');
+            if (errEl)  errEl.classList.remove('visible');
+            if (succEl) succEl.classList.remove('visible');
+
+            if (!isDirty) return; // don't mark anything until user has touched field
+
+            if (isValid) {
+                input.classList.add('is-valid');
+                if (succEl) succEl.classList.add('visible');
+            } else {
+                input.classList.add('is-invalid');
+                if (errEl) errEl.classList.add('visible');
+            }
+        }
+
+        /* ── Attach live listeners ────────────────────────── */
+        Object.keys(rules).forEach(function (id) {
+            const input = document.getElementById(id);
+            if (!input) return;
+
+            let touched = false;
+
+            // Block invalid keystrokes in real-time
+            input.addEventListener('keypress', function (e) {
+                const char = e.key;
+
+                if (id === 'ParentName') {
+                    // Allow only letters, spaces, dots, hyphens, apostrophes
+                    if (!/[A-Za-z\s.'\-]/.test(char)) {
+                        e.preventDefault();
+                    }
+                }
+
+                if (id === 'ChildAge' || id === 'Number') {
+                    // Allow only digits
+                    if (!/\d/.test(char)) {
+                        e.preventDefault();
+                    }
+                }
+            });
+
+            // Also block paste of invalid content for phone & age
+            input.addEventListener('paste', function (e) {
+                if (id === 'ChildAge' || id === 'Number') {
+                    const pasted = (e.clipboardData || window.clipboardData).getData('text');
+                    if (!/^\d+$/.test(pasted)) {
+                        e.preventDefault();
+                    }
+                }
+                if (id === 'ParentName') {
+                    const pasted = (e.clipboardData || window.clipboardData).getData('text');
+                    if (!/^[A-Za-z\s.'\-]+$/.test(pasted)) {
+                        e.preventDefault();
+                    }
+                }
+            });
+
+            // Validate on input (after first blur or any change)
+            input.addEventListener('input', function () {
+                if (touched) {
+                    const valid = rules[id].validate(this.value);
+                    setFieldState(id, valid, true);
+                }
+                // Enforce max length for phone
+                if (id === 'Number' && this.value.length > 10) {
+                    this.value = this.value.slice(0, 10);
+                }
+            });
+
+            // Mark as touched on first blur
+            input.addEventListener('blur', function () {
+                touched = true;
+                const valid = rules[id].validate(this.value);
+                setFieldState(id, valid, true);
+            });
+        });
+
+        /* ── Form submit validation ───────────────────────── */
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                let formValid = true;
+
+                Object.keys(rules).forEach(function (id) {
+                    const input = document.getElementById(id);
+                    if (!input) return;
+                    const valid = rules[id].validate(input.value);
+                    setFieldState(id, valid, true);
+                    if (!valid) formValid = false;
+                });
+
+                if (!formValid) {
+                    e.preventDefault();
+                    // Scroll to first invalid field
+                    const firstInvalid = form.querySelector('.is-invalid');
+                    if (firstInvalid) {
+                        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstInvalid.focus();
+                    }
+                }
+            });
+        }
+
+    })();
+    </script>
+
+    <script>
+        fetch("header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                const scripts = document.getElementById("header").querySelectorAll('script');
+                scripts.forEach(script => {
+                    const newScript = document.createElement('script');
+                    newScript.textContent = script.textContent;
+                    document.body.appendChild(newScript);
+                });
+            });
+
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/jquery-ui.js"></script>
+    <script src="assets/js/vendor/metismenu.js"></script>
+    <script src="assets/js/vendor/magnifying-popup.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="assets/js/vendor/waypoint.js"></script>
+    <script src="assets/js/vendor/waw.js"></script>
+    <script src="assets/js/plugins/isotop.js"></script>
+    <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/plugins/resizer-sensor.js"></script>
+    <script src="assets/js/plugins/sticky-sidebar.js"></script>
+    <script src="assets/js/plugins/twinmax.js"></script>
+    <script src="assets/js/vendor/chroma.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
