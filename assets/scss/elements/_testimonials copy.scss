@@ -20,7 +20,7 @@
         .right-content{
             .author-area{
                 .title{
-                    color: #110C2D;
+                    color: #333333;
                 }
                 span{
                     color: #737477;
@@ -29,14 +29,13 @@
         }
         .swiper-pagination{
             .swiper-pagination-bullet{
-                background: #110C2D;
+                background: #6FAFA6;
             }
         }
         .swiper-button-next,
         .swiper-button-prev{
             i{
-                color: #110C2D;
-            }
+                color: #333333;
         }
     }
     .shape-image{
@@ -116,7 +115,7 @@
                     margin: 0;
                     i{
                         font-size: 14px;
-                        color: #FFD335;
+                        color: #6FAFA6;
                     }
                 }
             }

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
+        .rts-breadcrumb-area { padding-top: 140px !important; padding-bottom: 50px !important; min-height: auto !important; }
         /* ===== Global Styles ===== */
         :root {
             --primary-purple: #6a307d;
@@ -656,7 +657,7 @@
         // Import header and footer
         document.addEventListener('DOMContentLoaded', function() {
             // Load Header
-            fetch('header.html')
+            fetch('headerone.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header').innerHTML = data;

@@ -109,7 +109,7 @@
     color: var(--color-white);
 }
 .bg-light-1{
-    background: #F9F8FF;
+    background: #FAF9F6;
 }
 .bg-gray{
     background: #EEEEEE;
@@ -119,7 +119,7 @@
     text-align: center;
     .title{
         margin-bottom: 5px;
-        color:  #110C2D;
+        color:  #333333;
         font-size: 40px;
         font-style: normal;
         font-weight: 600;
@@ -141,7 +141,7 @@
 }
 
 .kitchen-home{
-    background: #FFFAEE;
+    background: #DCEFEB;
 }
 // contact form notification
 .success {
@@ -165,7 +165,7 @@
     background: var(--color-bg);
 }
 .section-bg2{
-    background: #FFEFE5;
+    background: #DCEFEB;
 }
 
 .rts-shape-move{
@@ -282,7 +282,54 @@ a{
     -webkit-transform: rotateY(-90deg);
             transform: rotateY(-90deg);
   }
-  .preloader p {
+  /* ═══ GLOBAL SECTION THEME OVERRIDES ═══ */
+section, .section {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+section h1, section h2, section h3, section h4, section h5, section h6,
+.section h1, .section h2, .section h3, .section h4, .section h5, .section h6 {
+    color: var(--color-heading-1);
+}
+
+section p, section a, .section p, .section a {
+    color: var(--color-body);
+}
+
+/* Button Overrides */
+.rts-btn, button[class*="btn"], a[class*="btn"] {
+    background: var(--color-primary) !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.rts-btn:hover, button[class*="btn"]:hover, a[class*="btn"]:hover {
+    background: var(--color-primary-2) !important;
+    color: var(--color-text) !important;
+}
+
+/* Border and Divider Colors */
+hr, .divider {
+    border-color: var(--color-border);
+}
+
+/* Input and Form Elements */
+input[type="text"], input[type="email"], input[type="password"], 
+textarea, select {
+    background: #FAF9F6;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+/* Card and Box Styling */
+.card, [class*="box"] {
+    background: #FAF9F6;
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+
+.preloader p {
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;

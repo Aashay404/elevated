@@ -294,7 +294,7 @@
 .rating-main-wrapper{
     padding: 30px;
     border-radius: 4px;
-    border: 1px solid  #DDD8F9;
+    border: 1px solid  #E5E5E5;
     @media #{$large-mobile} {
         padding: 20px;
     }
@@ -940,7 +940,7 @@
                     width: 70%;
                     border-radius: 6px;
                     .progress-bar{
-                        background: #FFA41C;
+                        background: #6FAFA6;
                     }
                 }
             }
@@ -1011,7 +1011,7 @@
                     align-items: self-start;
                 }
                 &[aria-expanded="true"]{
-                    border-bottom: 1px solid #DDD8F9;
+                    border-bottom: 1px solid #E5E5E5;
                 }
                 &:focus{
                     box-shadow: none;
@@ -1030,7 +1030,7 @@
                 }
                 span{
                     display: block;
-                    color:  #110C2D;
+                    color:  #333333;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 500;
@@ -1188,13 +1188,13 @@
             }
             .stars-area{
                 span{
-                    color: #110C2D;
+                    color: #333333;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 600;
                 }
                 i{
-                    color: #FFA41C;
+                    color: #6FAFA6;
                 }
             }
         }
@@ -1350,7 +1350,7 @@
         .clock-area{
             i,
             span{
-                color: #BC0303;
+                color:  #6FAFA6;
             }
         }
         .rts-btn{
@@ -1459,7 +1459,7 @@
             span{
                 display: block;
                 padding: 10px 16px;
-                border: 1px solid #DDD8F9;
+                border: 1px solid #E5E5E5;
                 color: #110C2D;
                 font-size: 14px;
                 border-radius: 2px;
@@ -1766,7 +1766,7 @@ max-width: 100%;
             text-align: center;
             display: block;
             border-radius: 50%;
-            border: 5px solid #FFEFE5;
+            border: 5px solid #DCEFEB;
             position: absolute;
             bottom: -40px;
             right: 30px;

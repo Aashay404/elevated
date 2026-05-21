@@ -1,197 +1,434 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About ME - Elevated Minds Learning Center</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
-    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Elevated Minds Learning Center</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/logo/01 EM.png"
+    />
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css" />
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        /* Reduces the vertical height of the breadcrumb area below header */
-        .rts-breadcrumb-area {
-            padding-top: 50px !important;    /* Adjusted from likely 100px+ */
-            padding-bottom: 50px !important; /* Adjusted from likely 100px+ */
-            min-height: auto !important;     /* Prevents forcing large height */
-        }
+      body {
+        font-family: "Outfit", sans-serif;
+      }
+      /* Reduces the vertical height of the breadcrumb area below header */
+      .rts-breadcrumb-area {
+        padding-top: 110px !important; /* Adjusted for sticky header */
+        padding-bottom: 50px !important;
+        min-height: auto !important;
+      }
 
-        /* Optional: Reduces the gap for the About section following it */
-        .rts-about-area.rts-section-gap {
-            padding-top: 60px !important;
-        }
+      /* Optional: Reduces the gap for the About section following it */
+      .rts-about-area.rts-section-gap {
+        padding-top: 50px !important;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div id="header"></div>
     <div class="rts-breadcrumb-area rts-section-gap bg_image">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-main-wrapper">
-                        <div class="pagination-wrapper">
-                            <a href="index.html">Home</a>
-                            <i class="fa-solid fa-greater-than"></i>
-                            <a class="active" href="about.html">About Us</a>
-                        </div>
-                        <h2 class="title">About Us</h2>
-                        </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumb-main-wrapper">
+              <div class="pagination-wrapper">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-greater-than"></i>
+                <a class="active" href="about.html">About Us</a>
+              </div>
+              <h2 class="title">About Us</h2>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    
+
     <section class="rts-about-area rts-shape-move rts-section-gap">
-        <div class="container">
-            <div class="section-inner">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-image">
-                            <img src="assets/images/banner/index3.png" alt="">
-                        </div>
+      <div class="container">
+        <div class="section-inner">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="about-image">
+                <div style="position: relative; padding-right: 40px">
+                  <div class="bliss-img-asymmetric" style="height: 550px">
+                    <img
+                      src="assets/images/banner/index3.png"
+                      style="width: 100%; height: 100%; object-fit: cover"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 20px;
+                      right: -10px;
+                      background: #ffffff;
+                      border: 1px solid rgba(0, 0, 0, 0.1);
+                      padding: 25px 30px;
+                      border-radius: 20px;
+                      display: flex;
+                      align-items: center;
+                      gap: 15px;
+                      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                      z-index: 2;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 60px;
+                        height: 60px;
+                        background: #0b2f5c;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 24px;
+                        color: #f9a826;
+                      "
+                    >
+                      <i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="section-title-area">
-                                <p class="pre-title"><img src="assets/images/banner/title-img.svg" alt="">About Us</p>
-                                <h2 class="section-title">Discover Our Mission for Elevated Minds</h2>
-                                <p class="desc">"Elevated Minds" represents a space where every child is encouraged to grow, learn, and express themselves freely. We nurture young minds in a safe, supportive, and inclusive environment, where learning is guided by compassion, understanding, and a child-centric approach.</p>
-                            </div>
-                            <ul class="about-wrapper">
-                                <li class="wrapper-list">
-                                    <div class="list-inner">
-                                        <div class="icon"><img src="assets/images/icon/01.svg" alt=""></div>
-                                        <div class="content">
-                                            <h4 class="title">Our Mission</h4>
-                                            <p class="desc">To enhance knowledge, learning abilities, and scholastic skills of academically challenged students, believing that every child has unique potential that can rise, evolve, and truly elevate.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="wrapper-list">
-                                    <div class="list-inner">
-                                        <div class="icon"><img src="assets/images/icon/02.svg" alt=""></div>
-                                        <div class="content">
-                                            <h4 class="title">What Makes Us Different</h4>
-                                            <p class="desc">We provide a safe, child-centric learning space that focuses on emotional well-being, confidence, and holistic growth — not just academics.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="about-btn-area">
-                                <a href="#services" class="rts-btn btn-primary border-radius">Explore Our Services</a>
-                            </div>
-                        </div>
+                    <div>
+                      <h4
+                        style="
+                          margin: 0;
+                          font-size: 20px;
+                          color: #0b2f5c;
+                          font-weight: 800;
+                        "
+                      >
+                        Elevated Care
+                      </h4>
+                      <span
+                        style="
+                          color: #4b5563;
+                          font-size: 13px;
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                        >Premium Support</span
+                      >
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="col-lg-6">
+              <div class="about-content">
+                <div class="section-title-area">
+                  <p class="pre-title">
+                    <img src="assets/images/banner/title-img.svg" alt="" />About
+                    Us
+                  </p>
+                  <h2 class="section-title">
+                    Discover Our Mission for Elevated Minds
+                  </h2>
+                  <p class="desc">
+                    "Elevated Minds" represents a space where every child is
+                    encouraged to grow, learn, and express themselves freely. We
+                    nurture young minds in a safe, supportive, and inclusive
+                    environment, where learning is guided by compassion,
+                    understanding, and a child-centric approach.
+                  </p>
+                </div>
+                <ul class="about-wrapper">
+                  <li class="wrapper-list">
+                    <div class="list-inner">
+                      <div
+                        class="icon"
+                        style="
+                          background: var(--color-orange);
+                          border-radius: 50%;
+                          width: 45px;
+                          height: 45px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          min-width: 45px;
+                        "
+                      >
+                        <i class="fa-solid fa-check" style="color: #fff"></i>
+                      </div>
+                      <div class="content">
+                        <h4 class="title">Our Mission</h4>
+                        <p class="desc">
+                          To enhance knowledge, learning abilities, and
+                          scholastic skills of academically challenged students,
+                          believing that every child has unique potential that
+                          can rise, evolve, and truly elevate.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="wrapper-list">
+                    <div class="list-inner">
+                      <div
+                        class="icon"
+                        style="
+                          background: #0b2f5c;
+                          border-radius: 50%;
+                          width: 45px;
+                          height: 45px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          min-width: 45px;
+                        "
+                      >
+                        <i class="fa-solid fa-check" style="color: #fff"></i>
+                      </div>
+                      <div class="content">
+                        <h4 class="title">What Makes Us Different</h4>
+                        <p class="desc">
+                          We provide a safe, child-centric learning space that
+                          focuses on emotional well-being, confidence, and
+                          holistic growth — not just academics.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="about-btn-area">
+                  <a
+                    href="about.html#services"
+                    class="rts-btn btn-primary border-radius"
+                    >Explore Our Services</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="shape-image">
-            <div class="shape one" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/08.svg" alt="shape_image"></div>
-            <div class="shape two" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/09.svg" alt="shape_image"></div>
-            <div class="shape three" data-speed="0.04"><img src="assets/images/banner/shape/10.svg" alt="shape_image"></div>
+      </div>
+      <div class="shape-image">
+        <div class="shape one" data-speed="0.04" data-revert="true">
+          <img src="assets/images/banner/shape/08.svg" alt="shape_image" />
         </div>
+        <div class="shape two" data-speed="0.04" data-revert="true">
+          <img src="assets/images/banner/shape/09.svg" alt="shape_image" />
+        </div>
+        <div class="shape three" data-speed="0.04">
+          <img src="assets/images/banner/shape/10.svg" alt="shape_image" />
+        </div>
+      </div>
     </section>
-    
-    <section id="services" class="rts-about-area area-2 rts-shape-move rts-section-gap section-bg2">
-        <div class="container">
-            <div class="section-inner">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 p-0">
-                        <div class="about-content area-2">
-                            <div class="section-title-area">
-                                <p class="pre-title"><img src="assets/images/banner/title-img.svg" alt="">Our Services</p>
-                                <h2 class="section-title">Comprehensive Programs at Elevated Minds</h2>
-                                <p class="desc">We offer a wide range of specialized programs designed to support holistic child development, from early learning to therapeutic interventions and career guidance.</p>
-                            </div>
-                            <div class="about-wrapper-area">
-                                <ul class="about-wrapper">
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        After School Activities
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        PEP Brain Gym
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        ADHD Support
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        Remedial Teaching
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        NIOS Programs
-                                    </li>
-                                </ul>
-                                <ul class="about-wrapper">
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        Stress & Anxiety Counseling
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        Anger Management
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        Mobile Detox Programs
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        Career Counseling
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa-solid fa-check"></i>
-                                        IQ Testing & LD Testing
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="about-btn-area">
-                                <a href="contact.html" class="rts-btn btn-primary">Get Started Today</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-change">
-                        <div class="about-image2">
-                            <img src="assets/images/service/earlyprogram2.png" alt="">
-                            <div class="video-btn-area">
-                                <div class="vedio-icone">
-                                    <a class="video-play-button play-video popup-video" href="https://www.youtube.com/watch?v=ezbJwaLmOeM">
-                                        <span class="icon"><img src="assets/images/icon/round-shape.svg" width="80" alt=""></span>
-                                        <span class="play-icon">
-                                            <img src="assets/images/icon/play.svg" width="32" alt="">
-                                        </span>
-                                    </a>
-                                    <div class="video-overlay">
-                                        <a class="video-overlay-close">×</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+    <section
+      id="services"
+      class="rts-about-area area-2 rts-shape-move rts-section-gap section-bg2"
+    >
+      <div class="container">
+        <div class="section-inner">
+          <div class="row align-items-center">
+            <div class="col-lg-6 p-0">
+              <div class="about-content area-2">
+                <div class="section-title-area">
+                  <p class="pre-title">
+                    <img src="assets/images/banner/title-img.svg" alt="" />Our
+                    Services
+                  </p>
+                  <h2 class="section-title">
+                    Comprehensive Programs at Elevated Minds
+                  </h2>
+                  <p class="desc">
+                    We offer a wide range of specialized programs designed to
+                    support holistic child development, from early learning to
+                    therapeutic interventions and career guidance.
+                  </p>
                 </div>
+                <div class="about-wrapper-area">
+                  <ul class="about-wrapper">
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      Child Counselling
+                    </li>
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      Student Wellness
+                    </li>
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      Parenting Guidance
+                    </li>
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      Behavioural Support
+                    </li>
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      School Counselling
+                    </li>
+                  </ul>
+                  <!--
+                  <ul class="about-wrapper">
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      Stress & Anxiety Counseling
+                    </li>
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      Anger Management
+                    </li>
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      Mobile Detox Programs
+                    </li>
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      Career Counseling
+                    </li>
+                    <li class="item">
+                      <i class="fa-solid fa-check"></i>
+                      IQ Testing & LD Testing
+                    </li>
+                  </ul>
+                  -->
+                </div>
+                <div class="about-btn-area">
+                  <a href="contact.html" class="rts-btn btn-primary"
+                    >Get Started Today</a
+                  >
+                </div>
+              </div>
             </div>
+            <div class="col-lg-6 order-change">
+              <div class="about-image2">
+                <div style="position: relative; padding-left: 40px">
+                  <div
+                    class="bliss-img-asymmetric-reverse"
+                    style="height: 550px"
+                  >
+                    <img
+                      src="assets/images/service/earlyprogram2.png"
+                      style="width: 100%; height: 100%; object-fit: cover"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 20px;
+                      left: -10px;
+                      background: #ffffff;
+                      border: 1px solid rgba(0, 0, 0, 0.1);
+                      padding: 25px 30px;
+                      border-radius: 20px;
+                      display: flex;
+                      align-items: center;
+                      gap: 15px;
+                      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                      z-index: 2;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 60px;
+                        height: 60px;
+                        background: #0b2f5c;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 24px;
+                        color: #f9a826;
+                      "
+                    >
+                      <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                      <h4
+                        style="
+                          margin: 0;
+                          font-size: 20px;
+                          color: #0b2f5c;
+                          font-weight: 800;
+                        "
+                      >
+                        Cognitive Freedom
+                      </h4>
+                      <span
+                        style="
+                          color: #4b5563;
+                          font-size: 13px;
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                        >Sensory Integration</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="video-btn-area">
+                  <div class="vedio-icone">
+                    <a
+                      class="video-play-button play-video popup-video"
+                      href="https://www.youtube.com/watch?v=ezbJwaLmOeM"
+                    >
+                      <span class="icon"
+                        ><img
+                          src="assets/images/icon/round-shape.svg"
+                          width="80"
+                          alt=""
+                      /></span>
+                      <span class="play-icon">
+                        <img
+                          src="assets/images/icon/play.svg"
+                          width="32"
+                          alt=""
+                        />
+                      </span>
+                    </a>
+                    <div class="video-overlay">
+                      <a class="video-overlay-close">×</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="shape-image">
-            <div class="shape one" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/25.svg" alt="shape_image"></div>
-            <div class="shape two" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/26.svg" alt="shape_image"></div>
-            <div class="shape three" data-speed="0.04"><img src="assets/images/banner/shape/27.svg" alt="shape_image"></div>
-            <div class="shape four" data-speed="0.04"><img src="assets/images/banner/shape/28.svg" alt="shape_image"></div>
-            <div class="shape five" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/29.svg" alt="shape_image"></div>
-            <div class="shape six" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/02.svg" alt="shape_image"></div>
+      </div>
+      <div class="shape-image">
+        <div class="shape one" data-speed="0.04" data-revert="true">
+          <img src="assets/images/banner/shape/25.svg" alt="shape_image" />
         </div>
+        <div class="shape two" data-speed="0.04" data-revert="true">
+          <img src="assets/images/banner/shape/26.svg" alt="shape_image" />
+        </div>
+        <div class="shape three" data-speed="0.04">
+          <img src="assets/images/banner/shape/27.svg" alt="shape_image" />
+        </div>
+        <div class="shape four" data-speed="0.04">
+          <img src="assets/images/banner/shape/28.svg" alt="shape_image" />
+        </div>
+        <div class="shape five" data-speed="0.04" data-revert="true">
+          <img src="assets/images/banner/shape/29.svg" alt="shape_image" />
+        </div>
+        <div class="shape six" data-speed="0.04" data-revert="true">
+          <img src="assets/images/banner/shape/02.svg" alt="shape_image" />
+        </div>
+      </div>
     </section>
 
     <!-- Early Learning Highlight Section -->
@@ -214,7 +451,7 @@
                             <ul class="about-wrapper">
                                 <li class="wrapper-list">
                                     <div class="list-inner">
-                                        <div class="icon"><img src="assets/images/icon/01.svg" alt=""></div>
+                                        <div class="icon" style="background: var(--color-orange); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; min-width: 45px;"><i class="fa-solid fa-check" style="color: #fff;"></i></div>
                                         <div class="content">
                                             <h4 class="title">Play-Based Learning</h4>
                                             <p class="desc">Encouraging natural curiosity and creativity through interactive, hands-on activities.</p>
@@ -223,7 +460,7 @@
                                 </li>
                                 <li class="wrapper-list">
                                     <div class="list-inner">
-                                        <div class="icon"><img src="assets/images/icon/02.svg" alt=""></div>
+                                        <div class="icon" style="background: #0B2F5C; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; min-width: 45px;"><i class="fa-solid fa-check" style="color: #fff;"></i></div>
                                         <div class="content">
                                             <h4 class="title">After-School Activities</h4>
                                             <p class="desc">Building confidence, independence, and social skills in a nurturing environment.</p>
@@ -240,103 +477,163 @@
             </div>
         </div>
     </section> -->
-    
 
     <section class="rts-gallery-area rts-section-gap">
-        <div class="container">
-            <div class="section-title-area text-center">
-                <p class="pre-title justify-content-center"><img src="assets/images/banner/title-img.svg" alt="">Gallery</p>
-                <h2 class="section-title">Elevated Minds Showcase</h2>
-                <p class="desc">Witness the joy of learning and growth as children explore, create, and thrive in our nurturing environment</p>
-            </div>
-            <div class="section-inner">
-                <div class="row g-5">
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/12.jpg" alt="gallery-image">
-                            <a href="assets/images/course/12.jpg" class="gallery-image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/13.jpg" alt="gallery-image">
-                            <a href="assets/images/course/13.jpg" class="gallery-image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/14.jpg" alt="gallery-image">
-                            <a href="assets/images/course/14.jpg" class="gallery-image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/15.jpg" alt="gallery-image">
-                            <a href="assets/images/course/15.jpg" class="gallery-image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/16.jpg" alt="gallery-image">
-                            <a href="assets/images/course/16.jpg" class="gallery-image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/17.jpg" alt="gallery-image">
-                            <a href="assets/images/course/17.jpg" class="gallery-image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title-area text-center">
+          <p class="pre-title justify-content-center">
+            <img src="assets/images/banner/title-img.svg" alt="" />Gallery
+          </p>
+          <h2 class="section-title">Elevated Minds Showcase</h2>
+          <p class="desc">
+            Witness the joy of learning and growth as children explore, create,
+            and thrive in our nurturing environment
+          </p>
         </div>
-    </section>
-    
-    <section class="rts-testimonials-area v-2 section-bg2">
-        <div class="container">
-            <div class="section-title-area text-center">
-                <p class="pre-title justify-content-center"><img src="assets/images/banner/title-img.svg" alt="">Testimonials</p>
-                <h2 class="section-title">What Parents Say About Us</h2>
-                <p class="desc">The success and happiness of our students are at the heart of everything we do. Hear from parents who have experienced the Elevated Minds difference.</p>
+        <div class="section-inner">
+          <div class="row g-5">
+            <div class="col-lg-4">
+              <div class="gallery-wrapper">
+                <img src="assets/images/course/12.jpg" alt="gallery-image" />
+                <a href="assets/images/course/12.jpg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span>
+                      <i class="fa-light fa-plus"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
             </div>
-            <div class="slider-inner">
-                <div class="swiper mySwiper-category-1 swiper-data" data-swiper='{
+            <div class="col-lg-4">
+              <div class="gallery-wrapper">
+                <img src="assets/images/course/13.jpg" alt="gallery-image" />
+                <a href="assets/images/course/13.jpg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span>
+                      <i class="fa-light fa-plus"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <!--
+              <div class="about-wrapper-area">
+                <ul class="about-wrapper">
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    After School Activities
+                  </li>
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    PEP Brain Gym
+                  </li>
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    ADHD Support
+                  </li>
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    Remedial Teaching
+                  </li>
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    NIOS Programs
+                  </li>
+                </ul>
+                <ul class="about-wrapper">
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    Stress & Anxiety Counseling
+                  </li>
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    Anger Management
+                  </li>
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    Mobile Detox Programs
+                  </li>
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    Career Counseling
+                  </li>
+                  <li class="item">
+                    <i class="fa-solid fa-check"></i>
+                    IQ Testing & LD Testing
+                  </li>
+                </ul>
+              </div>
+              -->
+            </div>
+            <div class="col-lg-4">
+              <div class="gallery-wrapper">
+                <img src="assets/images/course/14.jpg" alt="gallery-image" />
+                <a href="assets/images/course/14.jpg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span>
+                      <i class="fa-light fa-plus"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="gallery-wrapper">
+                <img src="assets/images/course/15.jpg" alt="gallery-image" />
+                <a href="assets/images/course/15.jpg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span>
+                      <i class="fa-light fa-plus"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="gallery-wrapper">
+                <img src="assets/images/course/16.jpg" alt="gallery-image" />
+                <a href="assets/images/course/16.jpg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span>
+                      <i class="fa-light fa-plus"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="gallery-wrapper">
+                <img src="assets/images/course/17.jpg" alt="gallery-image" />
+                <a href="assets/images/course/17.jpg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span>
+                      <i class="fa-light fa-plus"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-testimonials-area v-2 section-bg2">
+      <div class="container">
+        <div class="section-title-area text-center">
+          <p class="pre-title justify-content-center">
+            <img src="assets/images/banner/title-img.svg" alt="" />Testimonials
+          </p>
+          <h2 class="section-title">What Parents Say About Us</h2>
+          <p class="desc">
+            The success and happiness of our students are at the heart of
+            everything we do. Hear from parents who have experienced the
+            Elevated Minds difference.
+          </p>
+        </div>
+        <div class="slider-inner">
+          <div
+            class="swiper mySwiper-category-1 swiper-data"
+            data-swiper='{
                             "spaceBetween":30,
                             "slidesPerView":3,
                             "loop": true,
@@ -368,290 +665,372 @@
                                 "slidesPerView":1,
                                 "spaceBetween":30}
                             }
-                        }'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonials-wrapper">
-                                <div class="wrapper-inner">
-                                    <div class="content">
-                                        <div class="author-image mb--30">
-                                            <img src="assets/images/about/about-author.png" width="72" alt="">
-                                        </div>
-                                        <h4 class="author">David John</h4>
-                                        <p class="desig">Parent</p>
-                                        <p class="desc">Elevated Minds has been a blessing for our family. The compassionate approach and focus on emotional well-being alongside academics has helped my child thrive in ways we never imagined.</p>
-                                        <ul class="star-rating-area">
-                                            <li><a href="#"><i class="fa-sharp fa-solid fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa-sharp fa-solid fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa-sharp fa-solid fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa-sharp fa-solid fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa-sharp fa-solid fa-star"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="testimonials-shape-image">
-                                        <div class="shape one"><img src="assets/images/banner/shape/13.svg" alt="shape_image"></div>
-                                        <div class="shape two"><img src="assets/images/banner/shape/14.svg" alt="shape_image"></div>
-                                        <div class="shape three"><img src="assets/images/banner/shape/15.svg" alt="shape_image"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                </div>
-                <div class="swiper-btn swiper-button-next3">
-                    <div class="inner">
-                        <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.6918 20C1.80148 20.0006 1.91019 19.9796 2.01173 19.9381C2.11326 19.8967 2.2056 19.8356 2.28347 19.7583L9.0918 12.95C9.47983 12.5629 9.78769 12.1032 9.99774 11.5969C10.2078 11.0907 10.3159 10.5481 10.3159 10C10.3159 9.45194 10.2078 8.90926 9.99774 8.40305C9.78769 7.89685 9.47983 7.43705 9.0918 7.05L2.28347 0.241678C2.20577 0.163979 2.11353 0.102345 2.01201 0.0602948C1.91049 0.0182446 1.80169 -0.00339842 1.6918 -0.00339842C1.58192 -0.00339842 1.47311 0.0182446 1.3716 0.0602948C1.27008 0.102345 1.17784 0.163979 1.10014 0.241678C1.02244 0.319376 0.960803 0.411618 0.918753 0.513136C0.876703 0.614655 0.85506 0.723461 0.85506 0.833344C0.85506 0.943226 0.876703 1.05203 0.918753 1.15355C0.960803 1.25507 1.02244 1.34731 1.10014 1.42501L7.90847 8.23333C8.37664 8.70209 8.6396 9.3375 8.6396 10C8.6396 10.6625 8.37664 11.2979 7.90847 11.7667L1.10014 18.575C1.02203 18.6525 0.960034 18.7446 0.917726 18.8462C0.875419 18.9477 0.853638 19.0566 0.853638 19.1667C0.853638 19.2767 0.875419 19.3856 0.917726 19.4871C0.960034 19.5887 1.02203 19.6809 1.10014 19.7583C1.178 19.8356 1.27035 19.8967 1.37188 19.9381C1.47341 19.9796 1.58213 20.0006 1.6918 20Z" fill="#262626" />
-                        </svg>
+                        }'
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonials-wrapper">
+                  <div class="wrapper-inner">
+                    <div class="content">
+                      <div class="author-image mb--30">
+                        <img
+                          src="assets/images/about/about-author.png"
+                          width="72"
+                          alt=""
+                        />
+                      </div>
+                      <h4 class="author">Anjali Patil</h4>
+                      <p class="desig">Parent</p>
+                      <p class="desc">
+                        Elevated Minds has been a blessing for our family. The
+                        compassionate approach and focus on emotional well-being
+                        alongside academics has helped my child thrive in ways
+                        we never imagined.
+                      </p>
+                      <ul class="star-rating-area">
+                        <li>
+                          <a href="#"
+                            ><i class="fa-sharp fa-solid fa-star"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fa-sharp fa-solid fa-star"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fa-sharp fa-solid fa-star"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fa-sharp fa-solid fa-star"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fa-sharp fa-solid fa-star"></i
+                          ></a>
+                        </li>
+                      </ul>
                     </div>
-                </div>
-                <div class="swiper-btn swiper-button-prev3">
-                    <div class="inner">
-                        <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.30869 20C9.19901 20.0006 9.09029 19.9796 8.98876 19.9381C8.88723 19.8967 8.79488 19.8356 8.71702 19.7583L1.90869 12.95C1.52066 12.5629 1.2128 12.1032 1.00275 11.5969C0.792694 11.0907 0.68457 10.548 0.68457 9.99998C0.68457 9.45192 0.792694 8.90924 1.00275 8.40303C1.2128 7.89683 1.52066 7.43703 1.90869 7.04998L8.71702 0.241658C8.79472 0.163959 8.88696 0.102325 8.98848 0.0602752C9.09 0.018225 9.1988 -0.00341797 9.30869 -0.00341797C9.41857 -0.00341797 9.52737 0.018225 9.62889 0.0602752C9.73041 0.102325 9.82265 0.163959 9.90035 0.241658C9.97805 0.319357 10.0397 0.411599 10.0817 0.513117C10.1238 0.614635 10.1454 0.723442 10.1454 0.833324C10.1454 0.943207 10.1238 1.05201 10.0817 1.15353C10.0397 1.25505 9.97805 1.34729 9.90035 1.42499L3.09202 8.23332C2.62385 8.70207 2.36088 9.33748 2.36088 9.99998C2.36088 10.6625 2.62385 11.2979 3.09202 11.7666L9.90035 18.575C9.97846 18.6524 10.0405 18.7446 10.0828 18.8462C10.1251 18.9477 10.1469 19.0566 10.1469 19.1666C10.1469 19.2766 10.1251 19.3856 10.0828 19.4871C10.0405 19.5887 9.97846 19.6808 9.90035 19.7583C9.82248 19.8356 9.73014 19.8967 9.62861 19.9381C9.52708 19.9796 9.41836 20.0006 9.30869 20Z" fill="white" />
-                        </svg>
+                    <div class="testimonials-shape-image">
+                      <div class="shape one">
+                        <img
+                          src="assets/images/banner/shape/13.svg"
+                          alt="shape_image"
+                        />
+                      </div>
+                      <div class="shape two">
+                        <img
+                          src="assets/images/banner/shape/14.svg"
+                          alt="shape_image"
+                        />
+                      </div>
+                      <div class="shape three">
+                        <img
+                          src="assets/images/banner/shape/15.svg"
+                          alt="shape_image"
+                        />
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="swiper-btn swiper-button-next3">
+            <div class="inner">
+              <svg
+                width="11"
+                height="20"
+                viewBox="0 0 11 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.6918 20C1.80148 20.0006 1.91019 19.9796 2.01173 19.9381C2.11326 19.8967 2.2056 19.8356 2.28347 19.7583L9.0918 12.95C9.47983 12.5629 9.78769 12.1032 9.99774 11.5969C10.2078 11.0907 10.3159 10.5481 10.3159 10C10.3159 9.45194 10.2078 8.90926 9.99774 8.40305C9.78769 7.89685 9.47983 7.43705 9.0918 7.05L2.28347 0.241678C2.20577 0.163979 2.11353 0.102345 2.01201 0.0602948C1.91049 0.0182446 1.80169 -0.00339842 1.6918 -0.00339842C1.58192 -0.00339842 1.47311 0.0182446 1.3716 0.0602948C1.27008 0.102345 1.17784 0.163979 1.10014 0.241678C1.02244 0.319376 0.960803 0.411618 0.918753 0.513136C0.876703 0.614655 0.85506 0.723461 0.85506 0.833344C0.85506 0.943226 0.876703 1.05203 0.918753 1.15355C0.960803 1.25507 1.02244 1.34731 1.10014 1.42501L7.90847 8.23333C8.37664 8.70209 8.6396 9.3375 8.6396 10C8.6396 10.6625 8.37664 11.2979 7.90847 11.7667L1.10014 18.575C1.02203 18.6525 0.960034 18.7446 0.917726 18.8462C0.875419 18.9477 0.853638 19.0566 0.853638 19.1667C0.853638 19.2767 0.875419 19.3856 0.917726 19.4871C0.960034 19.5887 1.02203 19.6809 1.10014 19.7583C1.178 19.8356 1.27035 19.8967 1.37188 19.9381C1.47341 19.9796 1.58213 20.0006 1.6918 20Z"
+                  fill="#262626"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="swiper-btn swiper-button-prev3">
+            <div class="inner">
+              <svg
+                width="11"
+                height="20"
+                viewBox="0 0 11 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.30869 20C9.19901 20.0006 9.09029 19.9796 8.98876 19.9381C8.88723 19.8967 8.79488 19.8356 8.71702 19.7583L1.90869 12.95C1.52066 12.5629 1.2128 12.1032 1.00275 11.5969C0.792694 11.0907 0.68457 10.548 0.68457 9.99998C0.68457 9.45192 0.792694 8.90924 1.00275 8.40303C1.2128 7.89683 1.52066 7.43703 1.90869 7.04998L8.71702 0.241658C8.79472 0.163959 8.88696 0.102325 8.98848 0.0602752C9.09 0.018225 9.1988 -0.00341797 9.30869 -0.00341797C9.41857 -0.00341797 9.52737 0.018225 9.62889 0.0602752C9.73041 0.102325 9.82265 0.163959 9.90035 0.241658C9.97805 0.319357 10.0397 0.411599 10.0817 0.513117C10.1238 0.614635 10.1454 0.723442 10.1454 0.833324C10.1454 0.943207 10.1238 1.05201 10.0817 1.15353C10.0397 1.25505 9.97805 1.34729 9.90035 1.42499L3.09202 8.23332C2.62385 8.70207 2.36088 9.33748 2.36088 9.99998C2.36088 10.6625 2.62385 11.2979 3.09202 11.7666L9.90035 18.575C9.97846 18.6524 10.0405 18.7446 10.0828 18.8462C10.1251 18.9477 10.1469 19.0566 10.1469 19.1666C10.1469 19.2766 10.1251 19.3856 10.0828 19.4871C10.0405 19.5887 9.97846 19.6808 9.90035 19.7583C9.82248 19.8356 9.73014 19.8967 9.62861 19.9381C9.52708 19.9796 9.41836 20.0006 9.30869 20Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    
-    <div class="rts-counter-up-area rts-section-gapBottom">
-        <div class="container">
-            <div class="counter-section-inner rts-shape-move">
-                <div class="counter-inner">
-                    <div class="counter-wrapper">
-                        <h3 class="title"><span class="counter animated fadeInDownBig">5</span>+</h3>
-                        <span class="review">Expert Teachers</span>
-                    </div>
-                    <div class="counter-wrapper">
-                        <h3 class="title"><span class="counter animated fadeInDownBig">10</span>+</h3>
-                        <span class="review">Specialized Programs</span>
-                    </div>
-                    <div class="counter-wrapper">
-                        <h3 class="title"><span class="counter animated fadeInDownBig">100</span>+</h3>
-                        <span class="review">Students Learner</span>
-                    </div>
-                    <div class="counter-wrapper">
-                        <h3 class="title"><span class="counter animated fadeInDownBig">150</span>+</h3>
-                        <span class="review">Students Enrolled</span>
-                    </div>
-                </div>
-                <div class="shape-image">
-                    <div class="shape one" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/19.svg" alt="shape_image"></div>
-                    <div class="shape two" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/20.svg" alt="shape_image"></div>
-                    <div class="shape three" data-speed="0.04"><img src="assets/images/banner/shape/21.svg" alt="shape_image"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-   <div id="footer"></div>
-    <div class="modal login-pupup-modal fade" id="exampleModal-login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hi, Welcome back!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" class="login-form">
-                        <input type="text" placeholder="Username of Email Address" required>
-                        <input type="password" placeholder="Password" required>
-                        <div class="d-flex mb--20 align-items-center">
-                            <input type="checkbox" id="examplecheck-modal">
-                            <label for="examplecheck-modal">I agree to the terms of use and privacy policy.</label>
-                        </div>
-                        <button type="submit" class="rts-btn btn-primary">Sign In</button>
 
-                        <p class="dont-acc mt--20">Dont Have an Account? <a href="registration.html">Sign-up</a> </p>
-                    </form>
-                </div>
+    <div class="rts-counter-up-area rts-section-gapBottom">
+      <div class="container">
+        <div class="counter-section-inner rts-shape-move">
+          <div class="counter-inner">
+            <div class="counter-wrapper">
+              <h3 class="title">
+                <span class="counter animated fadeInDownBig">500</span>+
+              </h3>
+              <span class="review">Happy Families</span>
             </div>
+            <div class="counter-wrapper">
+              <h3 class="title">
+                <span class="counter animated fadeInDownBig">10</span>+
+              </h3>
+              <span class="review">Expert Counsellors</span>
+            </div>
+            <div class="counter-wrapper">
+              <h3 class="title">
+                <span class="counter animated fadeInDownBig">50</span>+
+              </h3>
+              <span class="review">Schools Associated</span>
+            </div>
+            <div class="counter-wrapper">
+              <h3 class="title">
+                <span class="counter animated fadeInDownBig">3000</span>+
+              </h3>
+              <span class="review">Sessions Conducted</span>
+            </div>
+          </div>
+          <div class="shape-image">
+            <div class="shape one" data-speed="0.04" data-revert="true">
+              <img src="assets/images/banner/shape/19.svg" alt="shape_image" />
+            </div>
+            <div class="shape two" data-speed="0.04" data-revert="true">
+              <img src="assets/images/banner/shape/20.svg" alt="shape_image" />
+            </div>
+            <div class="shape three" data-speed="0.04">
+              <img src="assets/images/banner/shape/21.svg" alt="shape_image" />
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+    <div
+      class="modal login-pupup-modal fade"
+      id="exampleModal-login"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Hi, Welcome back!
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="#" class="login-form">
+              <input
+                type="text"
+                placeholder="Username of Email Address"
+                required
+              />
+              <input type="password" placeholder="Password" required />
+              <div class="d-flex mb--20 align-items-center">
+                <input type="checkbox" id="examplecheck-modal" />
+                <label for="examplecheck-modal"
+                  >I agree to the terms of use and privacy policy.</label
+                >
+              </div>
+              <button type="submit" class="rts-btn btn-primary">Sign In</button>
+
+              <p class="dont-acc mt--20">
+                Dont Have an Account? <a href="registration.html">Sign-up</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="side-bar" class="side-bar header-two">
-        <button class="close-icon-menu"><i class="far fa-times"></i></button>
-        <div class="inner-main-wrapper-desk">
-            <div class="inner-content">
-                <h4 class="title">We Build Bright Futures for Every Child</h4>
-                <p class="disc">
-                    We successfully support children of varying abilities, provide personalized learning experiences, and nurture emotional well-being alongside academic growth.
-                </p>
-                <div class="footer">
-                    <h4 class="title">Ready to get started?</h4>
-                    <a href="contact.html" class="rts-btn btn-primary">Contact Us</a>
-                </div>
-            </div>
+      <button class="close-icon-menu"><i class="far fa-times"></i></button>
+      <div class="inner-main-wrapper-desk">
+        <div class="inner-content">
+          <h4 class="title">We Build Bright Futures for Every Child</h4>
+          <p class="disc">
+            We successfully support children of varying abilities, provide
+            personalized learning experiences, and nurture emotional well-being
+            alongside academic growth.
+          </p>
+          <div class="footer">
+            <h4 class="title">Ready to get started?</h4>
+            <a href="contact.html" class="rts-btn btn-primary">Contact Us</a>
+          </div>
         </div>
-        <div class="mobile-menu-main">
-            <nav class="nav-main mainmenu-nav mt--30">
-                <ul class="mainmenu metismenu" id="mobile-menu-active">
-                    <li class="has-droupdown">
-                        <a href="#" class="main">Home</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="index.html">Home 01</a></li>
-                            <li><a class="mobile-menu-link" href="index-two.html">Home 02</a></li>
-                            <li><a class="mobile-menu-link" href="index-three.html">Home 03</a></li>
-                            <li><a class="mobile-menu-link" href="index-four.html">home 04</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-droupdown">
-                        <a href="#" class="main">Pages</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
-                            <li><a class="mobile-menu-link" href="team.html">Team</a></li>
-                            <li><a class="mobile-menu-link" href="team-details.html">Team Details</a></li>
-                            <li><a class="mobile-menu-link" href="event.html">Event</a></li>
-                            <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
-                            <li><a class="mobile-menu-link" href="program-details.html">Program Details</a></li>
-                            <li><a class="mobile-menu-link" href="pricing.html">Pricing</a></li>
-                            <li><a class="mobile-menu-link" href="pricing-two.html">Pricing Two</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-droupdown">
-                        <a href="#" class="main">Class</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="course.html">Courses</a></li>
-                            <li><a class="mobile-menu-link" href="course-details.html">Course Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-droupdown">
-                        <a href="#" class="main">Blog</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
-                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
-                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
-                            <li><a class="mobile-menu-link" href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                            <li><a class="mobile-menu-link" href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="contact.html" class="main">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+      </div>
+      <div class="mobile-menu-main">
+        <nav class="nav-main mainmenu-nav mt--30">
+          <ul class="mainmenu metismenu" id="mobile-menu-active">
+            <li class="menu-item">
+              <a class="mobile-menu-link" href="index.html">Home</a>
+            </li>
+            <li class="menu-item">
+              <a class="mobile-menu-link" href="about.html">About Us</a>
+            </li>
+            <li class="menu-item">
+              <a class="mobile-menu-link" href="course.html">Services</a>
+            </li>
+            <li class="menu-item">
+              <a class="mobile-menu-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="menu-item">
+              <a class="mobile-menu-link" href="testimonial.html"
+                >Testimonials</a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="contact.html" class="main">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
-            <div class="buttons-area">
-                <a href="#" class="rts-btn btn-border">Log In</a>
-                <a href="#" class="rts-btn btn-primary">Sign Up</a>
-            </div>
+        <!--
+        <div class="buttons-area">
+          <a href="#" class="rts-btn btn-border">Log In</a>
+          <a href="#" class="rts-btn btn-primary">Sign Up</a>
+        </div>
+        -->
 
-            <div class="rts-social-style-one pl--20 mt--50">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="rts-social-style-one pl--20 mt--50">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        </div>
+      </div>
+    </div>
     <div id="preloader" class="preloader">
-        <div class="animation-preloader">
-            <div class="txt-loading">
-                <span data-text-preloader="E" class="letters-loading first">
-                        E
-                    </span>
-                <span data-text-preloader="L" class="letters-loading first">
-                        L
-                    </span>
-                <span data-text-preloader="E" class="letters-loading first">
-                        E
-                    </span>
-                <span data-text-preloader="V" class="letters-loading first">
-                        V
-                    </span>
-                <span data-text-preloader="A" class="letters-loading first">
-                        A
-                    </span>
-                <span data-text-preloader="T" class="letters-loading">
-                        T
-                    </span>
-                <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                <span data-text-preloader="D" class="letters-loading">
-                        D
-                    </span>
-            </div>
-            <p class="text-center">Loading</p>
+      <div class="animation-preloader">
+        <div class="txt-loading">
+          <span data-text-preloader="E" class="letters-loading first"> E </span>
+          <span data-text-preloader="L" class="letters-loading first"> L </span>
+          <span data-text-preloader="E" class="letters-loading first"> E </span>
+          <span data-text-preloader="V" class="letters-loading first"> V </span>
+          <span data-text-preloader="A" class="letters-loading first"> A </span>
+          <span data-text-preloader="T" class="letters-loading"> T </span>
+          <span data-text-preloader="E" class="letters-loading"> E </span>
+          <span data-text-preloader="D" class="letters-loading"> D </span>
         </div>
-        <div class="loader">
-            <div class="row">
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-            </div>
+        <p class="text-center">Loading</p>
+      </div>
+      <div class="loader">
+        <div class="row">
+          <div class="col-3 loader-section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-right">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-right">
+            <div class="bg"></div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-        </svg>
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path
+          d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+          style="
+            transition: stroke-dashoffset 10ms linear 0s;
+            stroke-dasharray: 307.919, 307.919;
+            stroke-dashoffset: 307.919;
+          "
+        ></path>
+      </svg>
     </div>
     <div class="search-input-area">
-        <div class="container">
-            <div class="search-input-inner">
-                <div class="input-div">
-                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
-                    <button><i class="far fa-search"></i></button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="search-input-inner">
+          <div class="input-div">
+            <input
+              class="search-input autocomplete"
+              type="text"
+              placeholder="Search by keyword or #"
+            />
+            <button><i class="far fa-search"></i></button>
+          </div>
         </div>
-        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+      </div>
+      <div id="close" class="search-close-icon">
+        <i class="far fa-times"></i>
+      </div>
     </div>
-    <div id="anywhere-home" class="">
-    </div>
-    
-    <script>
-    // Import header
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-        const scripts = document.getElementById("header").querySelectorAll('script');
-        scripts.forEach(script => {
-          const newScript = document.createElement('script');
-          newScript.textContent = script.textContent;
-          document.body.appendChild(newScript);
-        });
-      });
+    <div id="anywhere-home" class=""></div>
 
-    // Import footer
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data);
+    <script>
+      // Import header
+      fetch("headerone.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+          const scripts = document
+            .getElementById("header")
+            .querySelectorAll("script");
+          scripts.forEach((script) => {
+            const newScript = document.createElement("script");
+            newScript.textContent = script.textContent;
+            document.body.appendChild(newScript);
+          });
+        });
+
+      // Import footer
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("footer").innerHTML = data));
     </script>
-    
+
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/vendor/jquery-ui.js"></script>
     <script src="assets/js/vendor/metismenu.js"></script>
@@ -670,7 +1049,5 @@
     <script src="assets/js/plugins/contact.form.js"></script>
     <script src="assets/js/plugins/calender.js"></script>
     <script src="assets/js/main.js"></script>
-
-</body>
-
+  </body>
 </html>

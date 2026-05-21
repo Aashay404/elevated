@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        .rts-breadcrumb-area { padding-top: 50px !important; padding-bottom: 50px !important; min-height: auto !important; }
+        .rts-breadcrumb-area { padding-top: 140px !important; padding-bottom: 50px !important; min-height: auto !important; }
         .rts-about-area.rts-section-gap { padding-top: 60px !important; }
     </style>
 </head>
@@ -30,8 +30,21 @@
     <section class="rts-about-area rts-shape-move rts-section-gap">
         <div class="container"><div class="section-inner"><div class="row align-items-center">
             <div class="col-lg-6"><div class="about-image">
-                <img src="assets/images/service/iqtest.png" alt="IQ Testing">
-            </div></div>
+                            <div style="position: relative; padding-right: 40px;">
+                                <div class="bliss-img-asymmetric" style="height: 550px;">
+                                    <img src="assets/images/service/iqtest.png" style="width: 100%; height: 100%; object-fit: cover;" alt="IQ Testing">
+                                </div>
+                                <div style="position: absolute; bottom: 20px; right: -10px; background: #ffffff; border: 1px solid rgba(0,0,0,0.1); padding: 25px 30px; border-radius: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); z-index: 2;">
+                                    <div style="width: 60px; height: 60px; background: #0B2F5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #F9A826;">
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; font-size: 20px; color: #0B2F5C; font-weight: 800;">Elevated Care</h4>
+                                        <span style="color: #4b5563; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Premium Support</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
             <div class="col-lg-6"><div class="about-content">
                 <div class="section-title-area">
                     <p class="pre-title"><img src="assets/images/banner/title-img.svg" alt="">Cognitive Assessment</p>
@@ -40,14 +53,14 @@
                 </div>
                 <ul class="about-wrapper">
                     <li class="wrapper-list"><div class="list-inner">
-                        <div class="icon"><img src="assets/images/icon/01.svg" alt=""></div>
+                        <div class="icon" style="background: var(--color-orange); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; min-width: 45px;"><i class="fa-solid fa-check" style="color: #fff;"></i></div>
                         <div class="content">
                             <h4 class="title">Standardized Testing</h4>
                             <p class="desc">Using internationally recognized IQ assessment tools and protocols.</p>
                         </div>
                     </div></li>
                     <li class="wrapper-list"><div class="list-inner">
-                        <div class="icon"><img src="assets/images/icon/02.svg" alt=""></div>
+                        <div class="icon" style="background: #0B2F5C; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; min-width: 45px;"><i class="fa-solid fa-check" style="color: #fff;"></i></div>
                         <div class="content">
                             <h4 class="title">Detailed Reports</h4>
                             <p class="desc">Comprehensive analysis with recommendations for educational support.</p>
@@ -83,12 +96,25 @@
                 </div>
             </div></div>
             <div class="col-lg-6 order-change"><div class="about-image2">
-                <img src="assets/images/service/iqtest2.png" alt="IQ Testing">
-            </div></div>
+                            <div style="position: relative; padding-left: 40px;">
+                                <div class="bliss-img-asymmetric-reverse" style="height: 550px;">
+                                    <img src="assets/images/service/iqtest2.png" style="width: 100%; height: 100%; object-fit: cover;" alt="IQ Testing">
+                                </div>
+                                <div style="position: absolute; bottom: 20px; left: -10px; background: #ffffff; border: 1px solid rgba(0,0,0,0.1); padding: 25px 30px; border-radius: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); z-index: 2;">
+                                    <div style="width: 60px; height: 60px; background: #0B2F5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #F9A826;">
+                                        <i class="fa-solid fa-brain"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0; font-size: 20px; color: #0B2F5C; font-weight: 800;">Cognitive Freedom</h4>
+                                        <span style="color: #4b5563; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Sensory Integration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
         </div></div></div>
     </section>
     <div id="footer"></div>
-    <script>fetch("header.html").then(res => res.text()).then(data => {document.getElementById("header").innerHTML = data;});
+    <script>fetch("headerone.html").then(res => res.text()).then(data => {document.getElementById("header").innerHTML = data;});
         fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
     </script>
     

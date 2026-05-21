@@ -85,7 +85,7 @@
                         input{
                             height: 56px;
                             border-radius: 4px;
-                            border: 1px solid  #DDD8F9;
+                            border: 1px solid  #E5E5E5;
                             &:focus{
                                 border: 1px solid var(--color-primary);
                             }
@@ -449,7 +449,7 @@
 }
 
 .copyright-area-one-border{
-    border-top: 1px solid #EAC0D8;
+    border-top: 1px solid #E5E5E5;
 }
 
 .copyright-area-one{
@@ -481,7 +481,7 @@
             margin: 0;
             a{
                 i{
-                    color: #110C2D;
+                    color: #333333;
                     transition: .3s;
                 }
                 &:hover{

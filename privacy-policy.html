@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Elevated Minds</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .policy-area {
+            padding: 80px 0;
+        }
+
+        .policy-card {
+            background: #fff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .policy-card h2 {
+            color: #0d2c54;
+            margin-bottom: 20px;
+        }
+
+        .policy-card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .rts-breadcrumb-area {
+            padding-top: 140px !important;
+            padding-bottom: 50px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="rts-breadcrumb-area rts-section-gap bg_image">
+    <div class="container">
+        <div class="breadcrumb-main-wrapper">
+            <div class="pagination-wrapper">
+                <a href="index2.html">Home</a>
+                <i class="fa-solid fa-greater-than"></i>
+                <a class="active" href="#">Privacy Policy</a>
+            </div>
+
+            <h2 class="title">Privacy Policy</h2>
+        </div>
+    </div>
+</div>
+
+<div class="policy-area">
+    <div class="container">
+        <div class="policy-card">
+
+            <h2>Your Privacy Matters</h2>
+
+            <p>
+                Elevated Minds values your privacy and is committed to protecting your personal information.
+            </p>
+
+            <p>
+                Any information submitted through contact forms, counselling inquiries, or appointments
+                will only be used for communication and service-related purposes.
+            </p>
+
+            <p>
+                We do not sell, trade, or share personal information with third parties without consent.
+            </p>
+
+            <p>
+                We may update this policy from time to time to improve our services and comply with regulations.
+            </p>
+
+            <p>
+                By using this website, you agree to our privacy practices and website policies.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+    fetch("headerone.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        });
+
+    fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+</script>
+
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/plugins/bootstrap.min.js"></script>
+
+</body>
+</html>

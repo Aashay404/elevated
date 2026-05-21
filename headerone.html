@@ -1,43 +1,345 @@
 <style>
-    /* MOBILE OVERLAY NAV */
+  /* ═══════════════════════════════════════
+     GLOBAL THEME VARIABLES & UTILITIES
+     Applied to all pages fetching this header
+     ═══════════════════════════════════════ */
+  :root {
+    --color-red: #f4978e;
+    --color-yellow: #f2cc8f;
+    --color-pink: #f8e5df;
+    --color-blue: #a9d6e5;
+    --color-purple: #6fafa6;
+    --color-orange: #f4978e;
+    --color-green: #6fafa6;
+    --color-primary: #6fafa6;
+    --color-primary-2: #a9d6e5;
+    --color-secondary: #f4978e;
+    --color-text: #333333;
+    --color-border: #e5e5e5;
+    --color-bg: #faf9f6;
+  }
+
+  /* Asymmetric Image Styling (Signature Bliss Look) */
+  .bliss-img-asymmetric {
+    border-radius: 40px 200px 40px 40px !important;
+    border: 8px solid #6fafa6 !important;
+    box-shadow: 20px 20px 0 rgba(111, 175, 166, 0.08) !important;
+    transition: all 0.5s ease;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .bliss-img-asymmetric-reverse {
+    border-radius: 200px 40px 40px 40px !important;
+    border: 8px solid #a9d6e5 !important;
+    box-shadow: -20px 20px 0 rgba(169, 214, 229, 0.08) !important;
+    transition: all 0.5s ease;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .bliss-img-asymmetric:hover,
+  .bliss-img-asymmetric-reverse:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Global Typography Overrides */
+  body,
+  p,
+  a,
+  span,
+  li,
+  div {
+    font-family: "Outfit", sans-serif !important;
+  }
+
+  .section-title {
+    color: #6fafa6 !important;
+    font-weight: 800 !important;
+    font-family: "Outfit", sans-serif !important;
+  }
+
+  .pre-title {
+    color: #f4978e !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .desc {
+    color: #333333 !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Fix for colored service boxes text visibility & theme alignment */
+  .wrapper-list .list-inner .content .title,
+  .wrapper-list .list-inner .content .desc {
+    color: #ffffff !important;
+  }
+
+  .wrapper-list .list-inner {
+    background: #0b2f5c !important; /* Replaced default green with Premium Navy Blue */
+  }
+
+  .wrapper-list:last-child .list-inner {
+    background: var(
+      --color-blue
+    ) !important; /* Kept secondary box as Light Blue */
+  }
+
+  /* CTA Button Styling */
+  .rts-btn.btn-primary {
+    background: var(--color-orange) !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+    padding: 15px 35px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 10px 20px rgba(255, 142, 33, 0.3) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .rts-btn.btn-primary:hover {
+    background: var(--color-red) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 77, 61, 0.4) !important;
+  }
+
+  /* UNIFIED CLEAN HEADER DESIGN */
+  .bliss-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+    min-height: 92px;
+    position: relative;
+    overflow: visible;
+  }
+
+  .logo-area {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    overflow: visible;
+  }
+
+  .logo-area a {
+    display: inline-block;
+  }
+
+  .logo-area img {
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    top: 0;
+  }
+
+  /* Main Navigation */
+  .bliss-main-nav {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+  }
+
+  .bliss-main-nav > ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bliss-main-nav > ul > li {
+    position: relative;
+  }
+
+  .bliss-main-nav > ul > li.has-dropdown > a::after {
+    content: "\f107";
+    font-family:
+      "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome", sans-serif;
+    font-weight: 900;
+    margin-left: 8px;
+    font-size: 12px;
+    vertical-align: middle;
+  }
+
+  .bliss-main-nav > ul > li > a {
+    display: block;
+    padding: 12px 18px;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: "Outfit", sans-serif;
+    position: relative;
+  }
+
+  .bliss-main-nav,
+  .header-cta-btn,
+  .mobile-menu-trigger {
+    transform: translateY(-5px);
+  }
+
+  .bliss-main-nav > ul > li > a:hover,
+  .bliss-main-nav > ul > li.active > a {
+    color: #6fafa6;
+  }
+
+  .bliss-main-nav > ul > li.active > a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: #6fafa6;
+    border-radius: 2px;
+  }
+
+  .mobile-nav-panel .nav-link.active,
+  .mobile-dropdown.open .mobile-dropdown-toggle,
+  .mobile-dropdown.active .mobile-dropdown-toggle {
+    color: #6fafa6;
+  }
+
+  .mobile-dropdown.active .arrow,
+  .mobile-dropdown.open .arrow {
+    border-color: #6fafa6;
+  }
+
+  .desktop-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 260px;
+    background: #ffffff;
+    border: 1px solid rgba(111, 175, 166, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(11, 47, 92, 0.12);
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 100001;
+  }
+
+  .has-dropdown:hover .desktop-dropdown,
+  .has-dropdown:focus-within .desktop-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .desktop-dropdown a {
+    display: block;
+    padding: 11px 18px;
+    color: #333333;
+    text-decoration: none;
+    font-family: "Outfit", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      padding-left 0.2s ease;
+    white-space: normal;
+  }
+
+  .desktop-dropdown a:hover {
+    background: rgba(111, 175, 166, 0.08);
+    color: #6fafa6;
+    padding-left: 24px;
+  }
+
+  /* CTA Button */
+  .header-cta-btn {
+    flex-shrink: 0;
+    background: #d99b8f;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+  }
+
+  .header-cta-btn:hover {
+    background: #c88077;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(217, 155, 143, 0.3);
+  }
+
+  /* MOBILE OVERLAY NAV */
   .mobile-nav-overlay {
     display: none;
     position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 998;
-  }
-
-  .mobile-nav-panel {
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
-    padding: 16px 0 24px;
-    transform: translateY(-10px);
-    opacity: 0;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
   }
 
-  .mobile-nav-overlay.open { display: block; }
-  .mobile-nav-overlay.open .mobile-nav-panel { transform: translateY(0); opacity: 1; }
+  .mobile-nav-panel {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: 0 !important;
+    width: 70vw !important;
+    max-width: 70% !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    background: #fff;
+    overflow-y: auto;
+    padding: 24px 0;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
 
-  .mobile-nav-panel ul { list-style: none; }
+  .mobile-nav-overlay.open {
+    display: block;
+  }
 
-  .mobile-nav-panel > ul > li { border-bottom: 1px solid #f3f4f6; }
+  .mobile-nav-overlay.open .mobile-nav-panel {
+    transform: translateX(0);
+  }
 
-  .mobile-nav-panel .nav-link, .mobile-top-link {
+  .close-mobile {
+    text-align: right;
+    padding: 0 20px 20px;
+    font-size: 24px;
+    color: #333333;
+    cursor: pointer;
+  }
+
+  .mobile-nav-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-dropdown-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 13px 24px;
-    color: #1F1F25;
+    padding: 16px 24px;
+    color: #333333;
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -46,249 +348,434 @@
     border: none;
     width: 100%;
     text-align: left;
+    font-family: "Outfit", sans-serif;
   }
 
-  .mobile-nav-panel .nav-link:hover, .mobile-top-link:hover { color: #e74c3c; background: #fef9f9; }
+  .mobile-nav-panel > ul > li {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .mobile-nav-panel .nav-link,
+  .mobile-top-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: "Outfit", sans-serif;
+  }
+
+  .mobile-nav-panel .nav-link:hover,
+  .mobile-top-link:hover {
+    color: #6fafa6;
+  }
 
   .arrow {
-    width: 18px;
-    height: 18px;
-    border-right: 2px solid #9ca3af;
-    border-bottom: 2px solid #9ca3af;
+    width: 14px;
+    height: 14px;
+    border-right: 2px solid #333333;
+    border-bottom: 2px solid #333333;
     transform: rotate(45deg);
     transition: transform 0.2s;
-    flex-shrink: 0;
-    margin-left: 8px;
   }
 
-  .mobile-dropdown.open .arrow { transform: rotate(-135deg); }
+  .mobile-dropdown.open .arrow {
+    transform: rotate(-135deg);
+  }
 
   .mobile-submenu {
     display: none;
-    background: #fafafa;
-    border-top: 1px solid #f0f0f0;
+    background: #f5fffe;
   }
 
-  .mobile-dropdown.open .mobile-submenu { display: block; }
+  .mobile-dropdown-toggle .arrow {
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+
+  .mobile-dropdown.open .mobile-submenu {
+    display: block;
+  }
 
   .mobile-submenu li a {
     display: block;
-    padding: 11px 36px;
-    color: #4b5563;
+    padding: 12px 24px 12px 40px;
+    color: #333333;
     text-decoration: none;
-    font-size: 14px;
-    border-bottom: 1px solid #f3f4f6;
+    font-family: "Outfit", sans-serif;
+    font-size: 13px;
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: 500;
   }
 
-  .mobile-submenu li:last-child a { border-bottom: none; }
-  .mobile-submenu li a:hover { color: #e74c3c; background: #fef2f2; }
+  .mobile-submenu li a:hover {
+    color: #6fafa6;
+  }
+
+  .mobile-submenu li a.active {
+    color: #6fafa6;
+  }
 
   .mobile-cta {
-    padding: 20px 24px 4px;
+    padding: 24px;
   }
 
   .mobile-cta a {
     display: block;
     text-align: center;
-    background: #e74c3c;
-    color: #fff;
-    padding: 13px;
-    border-radius: 50px;
+    background: #d99b8f;
+    color: #ffffff;
+    padding: 14px;
+    border-radius: 25px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 15px;
   }
 
   /* RESPONSIVE BREAKPOINTS */
+  .mobile-menu-trigger {
+    display: none;
+    background: transparent;
+    padding: 10px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .mobile-menu-trigger svg {
+    stroke: #333333;
+    stroke-width: 2;
+  }
+
   @media (max-width: 992px) {
-    .main-nav-one { display: none; }
-    .header-right-area-one .buttons-area { display: none; }
-    .menu-btn { display: block; }
+    .bliss-header-container {
+      gap: 15px;
+      padding: 0;
+      min-height: 76px;
+    }
+
+    .logo-area img {
+      height: 60px;
+      top: 0;
+    }
+
+    .logo-area {
+      height: 60px;
+    }
+
+    .bliss-main-nav {
+      display: none !important;
+    }
+
+    .header-cta-btn {
+      font-size: 12px;
+      padding: 10px 20px;
+      transform: none;
+    }
+
+    .mobile-menu-trigger {
+      display: block;
+      transform: none;
+    }
+
+    .bliss-main-nav {
+      transform: none;
+    }
   }
 
-  @media (max-width: 480px) {
-    .logo-area img { width: 100px; height: 50px; }
+  @media (max-width: 576px) {
+    .logo-area img {
+      height: 45px;
+      top: 0;
+    }
+
+    .logo-area {
+      height: 45px;
+    }
+
+    .header-cta-btn {
+      font-size: 11px;
+      padding: 8px 16px;
+    }
   }
 
+  .header-one {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0 !important;
+    position: relative !important;
+    z-index: 100000 !important;
+  }
 </style>
+<header
+  class="header-one header--sticky"
+  style="padding: 0; margin: 0; background: #ffffff; box-shadow: none"
+>
+  <div class="container">
+    <div class="bliss-header-container">
+      <!-- Logo -->
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="assets/images/logo/01 EM.png" alt="Elevated Minds Logo" />
+        </a>
+      </div>
 
-
-
-<header class="header-one header--sticky">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="header-one-wrapper">
-                        <div class="left-side-header">
-                            <a href="index.html" class="logo-area">
-                                <img src="assets/images/logo/01 EM.png"  style="width: 120px; height: 60px;" alt="logo">
-                            </a>
-                        </div>
-
-                        <div class="main-nav-one">
-                            <nav>
-                                <ul>
-                                    <li class="#" style="position: static;">
-                                        <a class="nav-link" href="index.html">Home</a>
-
-                                    </li>
-                                    <li class="has-dropdown">
-                                        <a class="nav-link" href="#">About Us</a>
-                                        <ul class="submenu">
-                                            <li><a href="about.html">Our Story</a></li>
-                                            <li><a href="team.html">Team</a></li>
-                                            
-                                        </ul>
-                                    </li>
-                                    <li class="has-dropdown">
-                                        <a class="nav-link" href="#">Services</a>
-                                        <ul class="submenu">
-                                             <li><a href="earlylearning.html">After School Activities</a></li>
-                    <li><a href="adhdsupport.html">ADHD Support</a></li>
-                    <li><a href="pep.html">Performance Enhancing Program</a></li>
-                    <li><a href="braingym.html">Brain Gym</a></li>
-                    <li><a href="mobiledetox.html">Mobile Detox</a></li>
-                    <li><a href="stresscounselling.html">Stress Anxiety Counselling</a></li>
-                    <li><a href="niosprogram.html">NIOS Program</a></li>
-                    <li><a href="remedialteaching.html">Remedial Teaching</a></li>
-
-                    <li><a href="iqtesting.html">IQ Testing</a></li>
-                    <li><a href="ldtesting.html">LD Testing</a></li>
-                    <li><a href="angermanagement.html">Anger Management</a></li>
-                                            
-                                        </ul>
-                                    </li>
-                                    <li class="has-dropdown">
-                                        <a class="nav-link" href="#">Media</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            
-                                            <li><a href="testimonial.html">Testimonials</a></li>
-
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-dropdown">
-                                        <a class="nav-link" href="#">Enquiry</a>
-                                        <ul class="submenu">
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                           <li><a href="admissionProcess.html">Admission Process</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-
-                        <div class="header-right-area-one">
-                            <div class="buttons-area">
-                                <a href="contact.html" class="rts-btn btn-primary border-radius">Admission Now</a>
-                            </div>
-                            <div class="menu-btn" id="menu-btn">
-                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
-                                    <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
-                                    <rect width="20" height="2" fill="#1F1F25"></rect>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Main Navigation -->
+      <nav class="bliss-main-nav">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-dropdown">
+            <a href="course.html">Services</a>
+            <div class="desktop-dropdown" aria-label="Services menu">
+              <a href="earlylearning.html">After School Activities</a>
+              <a href="adhdsupport.html">ADHD Support</a>
+              <a href="pep.html">Performance Enhancing Program</a>
+              <a href="braingym.html">Brain Gym</a>
+              <a href="mobiledetox.html">Mobile Detox</a>
+              <a href="stresscounselling.html">Stress Anxiety Counselling</a>
+              <a href="niosprogram.html">NIOS Program</a>
+              <a href="remedialteaching.html">Remedial Teaching</a>
+              <a href="iqtesting.html">IQ Testing</a>
+              <a href="ldtesting.html">LD Testing</a>
+              <a href="angermanagement.html">Anger Management</a>
             </div>
-        </div>
-
-        <!-- MOBILE NAV OVERLAY -->
-<div class="mobile-nav-overlay" id="mobile-nav">
-  <div class="mobile-nav-panel">
-    <ul>
-      <li>
-        <a class="nav-link" href="index.html">Home</a>
-      </li>
-
-      <li class="mobile-dropdown">
-        <button class="mobile-top-link" onclick="toggleMobile(this)">
-          About Us <span class="arrow"></span>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="about.html">Our Story</a></li>
-          <li><a href="team.html">Team</a></li>
+          </li>
+          <li><a href="admissionProcess.html">Admissions</a></li>
+          <li><a href="about.html">Our Vision</a></li>
+          <li><a href="team.html">Faculty & Therapists</a></li>
+          <li><a href="gallery.html">Resources</a></li>
         </ul>
-      </li>
+      </nav>
 
-      <li class="mobile-dropdown">
-        <button class="mobile-top-link" onclick="toggleMobile(this)">
-          Services <span class="arrow"></span>
+      <!-- CTA Button & Mobile Menu -->
+      <div style="display: flex; align-items: center; gap: 15px">
+        <a href="contact.html" class="header-cta-btn">Book a Session</a>
+
+        <!-- Mobile Menu Trigger -->
+        <button class="mobile-menu-trigger" id="menu-btn">
+          <svg
+            width="24"
+            height="20"
+            viewBox="0 0 24 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect y="17" width="24" height="3" fill="currentColor"></rect>
+            <rect y="8.5" width="24" height="3" fill="currentColor"></rect>
+            <rect y="0" width="24" height="3" fill="currentColor"></rect>
+          </svg>
         </button>
-        <ul class="mobile-submenu">
-          <li><a href="earlylearning.html">After School Activities</a></li>
-          <li><a href="adhdsupport.html">ADHD Support</a></li>
-          <li><a href="pep.html">Performance Enhancing Program</a></li>
-          <li><a href="braingym.html">Brain Gym</a></li>
-          <li><a href="mobiledetox.html">Mobile Detox</a></li>
-          <li><a href="stresscounselling.html">Stress Anxiety Counselling</a></li>
-          <li><a href="niosprogram.html">NIOS Program</a></li>
-          <li><a href="remedialteaching.html">Remedial Teaching</a></li>
-          <li><a href="iqtesting.html">IQ Testing</a></li>
-          <li><a href="ldtesting.html">LD Testing</a></li>
-          <li><a href="angermanagement.html">Anger Management</a></li>
-        </ul>
-      </li>
-
-      <li class="mobile-dropdown">
-        <button class="mobile-top-link" onclick="toggleMobile(this)">
-          Media <span class="arrow"></span>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="testimonial.html">Testimonials</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-        </ul>
-      </li>
-
-      <li class="mobile-dropdown">
-        <button class="mobile-top-link" onclick="toggleMobile(this)">
-          Enquiry <span class="arrow"></span>
-        </button>
-        <ul class="mobile-submenu">
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="admissionProcess.html">Admission Process</a></li>
-        </ul>
-      </li>
-    </ul>
-
-    <div class="mobile-cta">
-      <a href="contact.html">Admission Now</a>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileNav = document.getElementById('mobile-nav');
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="mobile-nav-overlay" id="mobile-nav">
+    <div class="mobile-nav-panel">
+      <div class="close-mobile" id="close-mobile-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <ul>
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle" type="button">
+            <span>Services</span>
+            <span class="arrow"></span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="earlylearning.html">After School Activities</a></li>
+            <li><a href="adhdsupport.html">ADHD Support</a></li>
+            <li><a href="pep.html">Performance Enhancing Program</a></li>
+            <li><a href="braingym.html">Brain Gym</a></li>
+            <li><a href="mobiledetox.html">Mobile Detox</a></li>
+            <li>
+              <a href="stresscounselling.html">Stress Anxiety Counselling</a>
+            </li>
+            <li><a href="niosprogram.html">NIOS Program</a></li>
+            <li><a href="remedialteaching.html">Remedial Teaching</a></li>
+            <li><a href="iqtesting.html">IQ Testing</a></li>
+            <li><a href="ldtesting.html">LD Testing</a></li>
+            <li><a href="angermanagement.html">Anger Management</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="admissionProcess.html">Admissions</a></li>
+        <li><a class="nav-link" href="about.html">Our Vision</a></li>
+        <li><a class="nav-link" href="team.html">Faculty & Therapists</a></li>
+        <li><a class="nav-link" href="gallery.html">Resources</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a href="contact.html">Book a Session</a>
+      </div>
+    </div>
+  </div>
 
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-  });
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileNav = document.getElementById("mobile-nav");
+    const closeBtn = document.getElementById("close-mobile-btn");
 
-  // Close when clicking overlay background
-  mobileNav.addEventListener('click', (e) => {
-    if (e.target === mobileNav) {
-      menuBtn.classList.remove('open');
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  });
-
-  function toggleMobile(btn) {
-    const li = btn.closest('.mobile-dropdown');
-    // Close others
-    document.querySelectorAll('.mobile-dropdown.open').forEach(el => {
-      if (el !== li) el.classList.remove('open');
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.add("open");
+      document.body.style.overflow = "hidden";
     });
-    li.classList.toggle('open');
-  }
-</script>
 
-    </header>
+    closeBtn.addEventListener("click", () => {
+      mobileNav.classList.remove("open");
+      document.body.style.overflow = "";
+    });
+
+    // Close when clicking overlay background
+    mobileNav.addEventListener("click", (e) => {
+      if (e.target === mobileNav) {
+        mobileNav.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll(".mobile-nav-panel .nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("open");
+        document.body.style.overflow = "";
+      });
+    });
+
+    document.querySelectorAll(".mobile-dropdown-toggle").forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const dropdown = toggle.closest(".mobile-dropdown");
+        dropdown.classList.toggle("open");
+      });
+    });
+
+    document.querySelectorAll(".mobile-submenu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("open");
+        document.body.style.overflow = "";
+      });
+    });
+
+    (function setActiveHeaderNav() {
+      const currentPath =
+        window.location.pathname.split("/").pop().toLowerCase() || "index.html";
+      const homePaths = new Set(["", "index.html", "index2.html"]);
+      const servicePaths = new Set([
+        "earlylearning.html",
+        "adhdsupport.html",
+        "pep.html",
+        "braingym.html",
+        "mobiledetox.html",
+        "stresscounselling.html",
+        "niosprogram.html",
+        "remedialteaching.html",
+        "iqtesting.html",
+        "ldtesting.html",
+        "angermanagement.html",
+      ]);
+
+      const desktopItems = document.querySelectorAll(
+        ".bliss-main-nav > ul > li",
+      );
+      const mobileItems = document.querySelectorAll(
+        ".mobile-nav-panel > ul > li",
+      );
+
+      desktopItems.forEach((item) => item.classList.remove("active"));
+      mobileItems.forEach((item) => item.classList.remove("active"));
+
+      function markDesktopByHref(href, parentOnly = false) {
+        desktopItems.forEach((item) => {
+          const link = item.querySelector(":scope > a");
+          if (!link) return;
+          const linkPath = new URL(
+            link.getAttribute("href"),
+            window.location.origin,
+          ).pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+          if (linkPath === href) {
+            item.classList.add("active");
+            if (parentOnly) {
+              const parent = item.closest(".has-dropdown");
+              if (parent) parent.classList.add("active");
+            }
+          }
+        });
+      }
+
+      if (homePaths.has(currentPath)) {
+        markDesktopByHref("index.html");
+        const homeMobile = document.querySelector(
+          '.mobile-nav-panel a[href="index.html"]',
+        );
+        if (homeMobile) homeMobile.classList.add("active");
+        return;
+      }
+
+      desktopItems.forEach((item) => {
+        const topLink = item.querySelector(":scope > a");
+        if (!topLink) return;
+
+        const topHref = new URL(
+          topLink.getAttribute("href"),
+          window.location.origin,
+        ).pathname
+          .split("/")
+          .pop()
+          .toLowerCase();
+
+        if (topHref === currentPath) {
+          item.classList.add("active");
+          return;
+        }
+
+        const dropdownLink = item.querySelector(
+          `.desktop-dropdown a[href="${currentPath}"]`,
+        );
+        if (dropdownLink) {
+          item.classList.add("active");
+        }
+      });
+
+      mobileItems.forEach((item) => {
+        const topLink = item.querySelector(":scope > a.nav-link");
+        const toggle = item.querySelector(
+          ":scope > button.mobile-dropdown-toggle",
+        );
+        if (topLink) {
+          const topHref = new URL(
+            topLink.getAttribute("href"),
+            window.location.origin,
+          ).pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+          if (topHref === currentPath) {
+            topLink.classList.add("active");
+          }
+        }
+
+        if (toggle) {
+          const submenuActive = item.querySelector(
+            `.mobile-submenu a[href="${currentPath}"]`,
+          );
+          if (submenuActive && servicePaths.has(currentPath)) {
+            item.classList.add("active");
+            item.classList.add("open");
+            submenuActive.classList.add("active");
+          }
+        }
+      });
+    })();
+  </script>
+</header>

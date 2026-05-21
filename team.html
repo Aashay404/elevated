@@ -20,6 +20,25 @@
     <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
     <!-- custom style css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        .rts-breadcrumb-area { padding-top: 110px !important; padding-bottom: 50px !important; min-height: auto !important; }
+        .team-wrapper.inner {
+            border-bottom: 5px solid var(--color-orange);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .team-wrapper.inner:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -62,20 +81,44 @@
                 <div class="row g-5">
                     <!-- single swiper style -->
                     <div class="col-lg-4 col-md-6">
-                        <div class="team-wrapper inner">
+                        <div class="team-wrapper inner" style="border-bottom-color: var(--color-orange);">
                             <div class="wrapper-inner">
-                                <div class="image">
-                                    <img src="assets/images/instructor/01.jpg" alt="">
+                                <div class="image" style="padding: 15px;">
+                                    <div class="bliss-img-asymmetric" style="height: 350px; position: relative; overflow: hidden;">
+                                        <img src="assets/images/instructor/01.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                                    </div>
                                     <ul class="social-area">
-                                        <li><a href="#"><img src="assets/images/instructor/social-01.svg" alt=""></a></li>
-                                        <li><a href="#"><img src="assets/images/instructor/social-02.svg" alt=""></a></li>
-                                        <li><a href="#"><img src="assets/images/instructor/social-03.svg" alt=""></a></li>
-                                        <li><a href="#"><img src="assets/images/instructor/social-04.svg" alt=""></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="content">
-                                <h4 class="title"><a href="team-details.html">Eleanor Alice</a></h4>
+                            <div class="content" style="padding: 20px; text-align: center;">
+                                <h4 class="title"><a href="team-details.html" style="color: var(--color-blue); font-weight: 800;">Eleanor Alice</a></h4>
+                                <span class="designation" style="color: var(--color-orange); font-weight: 600;">Head Teacher</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single swiper style -->
+                    <!-- single swiper style -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team-wrapper inner" style="border-bottom-color: var(--color-blue);">
+                            <div class="wrapper-inner">
+                                <div class="image" style="padding: 15px;">
+                                    <div class="bliss-img-asymmetric-reverse" style="height: 350px; position: relative; overflow: hidden;">
+                                        <img src="assets/images/instructor/02.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                                    </div>
+                                    <ul class="social-area">
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content" style="padding: 20px; text-align: center;">
+                                <h4 class="title"><a href="team-details.html" style="color: var(--color-blue); font-weight: 800;">John Doe</a></h4>
+                                <span class="designation" style="color: var(--color-blue); font-weight: 600;">Therapist</span>
                             </div>
                         </div>
                     </div>
@@ -84,28 +127,10 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="team-wrapper inner">
                             <div class="wrapper-inner">
-                                <div class="image">
-                                    <img src="assets/images/instructor/02.jpg" alt="">
-                                    <ul class="social-area">
-                                        <li><a href="#"><img src="assets/images/instructor/social-01.svg" alt=""></a></li>
-                                        <li><a href="#"><img src="assets/images/instructor/social-02.svg" alt=""></a></li>
-                                        <li><a href="#"><img src="assets/images/instructor/social-03.svg" alt=""></a></li>
-                                        <li><a href="#"><img src="assets/images/instructor/social-04.svg" alt=""></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a href="team-details.html">Isabella Jane</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single swiper style -->
-                    <!-- single swiper style -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="team-wrapper inner">
-                            <div class="wrapper-inner">
-                                <div class="image">
-                                    <img src="assets/images/instructor/03.jpg" alt="">
+                                <div class="image" style="padding: 15px;">
+                                    <div class="bliss-img-asymmetric" style="height: 350px; position: relative; overflow: hidden;">
+                                        <img src="assets/images/instructor/03.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                                    </div>
                                     <ul class="social-area">
                                         <li><a href="#"><img src="assets/images/instructor/social-01.svg" alt=""></a></li>
                                         <li><a href="#"><img src="assets/images/instructor/social-02.svg" alt=""></a></li>
@@ -124,8 +149,10 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="team-wrapper inner">
                             <div class="wrapper-inner">
-                                <div class="image">
-                                    <img src="assets/images/instructor/04.jpg" alt="">
+                                <div class="image" style="padding: 15px;">
+                                    <div class="bliss-img-asymmetric-reverse" style="height: 350px; position: relative; overflow: hidden;">
+                                        <img src="assets/images/instructor/04.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                                    </div>
                                     <ul class="social-area">
                                         <li><a href="#"><img src="assets/images/instructor/social-01.svg" alt=""></a></li>
                                         <li><a href="#"><img src="assets/images/instructor/social-02.svg" alt=""></a></li>
@@ -144,8 +171,10 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="team-wrapper inner">
                             <div class="wrapper-inner">
-                                <div class="image">
-                                    <img src="assets/images/instructor/05.jpg" alt="">
+                                <div class="image" style="padding: 15px;">
+                                    <div class="bliss-img-asymmetric" style="height: 350px; position: relative; overflow: hidden;">
+                                        <img src="assets/images/instructor/05.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                                    </div>
                                     <ul class="social-area">
                                         <li><a href="#"><img src="assets/images/instructor/social-01.svg" alt=""></a></li>
                                         <li><a href="#"><img src="assets/images/instructor/social-02.svg" alt=""></a></li>
@@ -164,8 +193,10 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="team-wrapper inner">
                             <div class="wrapper-inner">
-                                <div class="image">
-                                    <img src="assets/images/instructor/06.jpg" alt="">
+                                <div class="image" style="padding: 15px;">
+                                    <div class="bliss-img-asymmetric-reverse" style="height: 350px; position: relative; overflow: hidden;">
+                                        <img src="assets/images/instructor/06.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                                    </div>
                                     <ul class="social-area">
                                         <li><a href="#"><img src="assets/images/instructor/social-01.svg" alt=""></a></li>
                                         <li><a href="#"><img src="assets/images/instructor/social-02.svg" alt=""></a></li>
@@ -211,7 +242,7 @@
                         </div>
                         <button type="submit" class="rts-btn btn-primary">Sign In</button>
 
-                        <p class="dont-acc mt--20">Dont Have an Account? <a href="registration.html">Sign-up</a> </p>
+                        <p class="dont-acc mt--20">Don't have an account? <a href="registration.html">Sign up</a></p>
                     </form>
                 </div>
             </div>
@@ -393,7 +424,7 @@
     </div>
      <script>
     // Import header
-    fetch("header.html")
+    fetch("headerone.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("header").innerHTML = data;

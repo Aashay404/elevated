@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevated Minds - Inclusive Education & Therapy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --teal: #6FAFA6;
+    --sky: #A9D6E5;
+    --coral: #F4978E;
+    --mustard: #F2CC8F;
+    --dark: #333333;
+    --mid: #475569;
+    --light-bg: #FAF9F6;
+    --white: #ffffff;
+    --border: rgba(111,175,166,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; }
+
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── HERO ── */
+
+  .hero {
+    min-height: calc(100vh - 68px);
+    background: linear-gradient(135deg, #f0fafa 0%, #fff8f4 50%, #f5fbff 100%);
+    display: flex; align-items: center;
+    padding: 60px 5% 40px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(169,214,229,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -60px; left: -60px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(242,204,143,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(111,175,166,0.1); border: 1px solid rgba(111,175,166,0.25);
+    color: var(--teal); padding: 6px 16px; border-radius: 50px;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .hero-badge .dot { width: 7px; height: 7px; background: var(--coral); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.4);opacity:0.7;} }
+  .hero h1 { font-size: 3.6rem; font-weight: 900; line-height: 1.18; color: var(--dark); margin-bottom: 20px; }
+  .hero h1 .red { color: var(--coral); }
+  .hero h1 .teal { color: var(--teal); }
+  .hero-desc { color: var(--mid); font-size: 1.08rem; line-height: 1.8; margin-bottom: 28px; max-width: 92%; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-hero-primary {
+    background: var(--coral); color: #fff; padding: 14px 32px; border-radius: 50px;
+    text-decoration: none; font-weight: 800; font-size: 1rem;
+    box-shadow: 0 8px 25px rgba(244,151,142,0.4);
+    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-hero-primary:hover { background: #e8857b; transform: translateY(-2px); }
+  .btn-hero-outline {
+    background: transparent; color: var(--teal); padding: 14px 32px; border-radius: 50px;
+    border: 2px solid var(--teal); text-decoration: none; font-weight: 800; font-size: 1rem;
+    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-hero-outline:hover { background: var(--teal); color: #fff; }
+  .trust-pills { display: flex; gap: 12px; flex-wrap: wrap; }
+  .trust-pill {
+    display: flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid var(--border); border-radius: 50px;
+    padding: 8px 16px; font-size: 0.82rem; font-weight: 600; color: var(--dark);
+    box-shadow: 0 2px 12px rgba(17,24,39,0.05);
+  }
+  .trust-pill i { color: var(--teal); font-size: 0.9rem; }
+
+  /* Hero image side */
+  .hero-img-wrap { position: relative; }
+  .hero-img-main {
+    width: 100%; height: 480px; border-radius: 80px 20px 80px 20px;
+    overflow: hidden; border: 4px solid var(--mustard);
+    box-shadow: 0 30px 80px rgba(17,24,39,0.12);
+  }
+  .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-float-card {
+    position: absolute; bottom: 24px; left: -20px;
+    background: #fff; border-radius: 20px; padding: 18px 22px;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 16px 40px rgba(17,24,39,0.14);
+    border: 1px solid rgba(0,0,0,0.06);
+    animation: floatCard 4s ease-in-out infinite;
+  }
+  @keyframes floatCard { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+  .hero-float-card .card-icon {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--teal); color: var(--coral);
+    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .hero-float-card .card-title { font-size: 1rem; font-weight: 800; color: var(--dark); }
+  .hero-float-card .card-sub { font-size: 0.72rem; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.06em; }
+  .hero-tag {
+    position: absolute; top: 20px; right: -10px;
+    background: var(--coral); color: #fff; border-radius: 16px;
+    padding: 12px 18px; font-size: 0.75rem; font-weight: 700; text-align: center;
+    box-shadow: 0 8px 24px rgba(244,151,142,0.35);
+    animation: floatTag 5s ease-in-out infinite 1s;
+  }
+  @keyframes floatTag { 0%,100%{transform:translateY(0) rotate(2deg);} 50%{transform:translateY(-10px) rotate(-2deg);} }
+  .hero-tag .tag-num { font-size: 1.8rem; font-weight: 900; line-height: 1; }
+
+  /* ── SECTION SHARED ── */
+  .section { padding: 80px 5%; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    display: flex; align-items: center; gap: 8px; justify-content: center;
+    color: var(--coral); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 12px;
+  }
+  .section-label::before, .section-label::after {
+    content: ''; flex: 1; max-width: 40px; height: 2px; background: rgba(244,151,142,0.4); border-radius: 2px;
+  }
+  .section-title { font-size: 2.3rem; font-weight: 800; color: var(--dark); text-align: center; margin-bottom: 12px; line-height: 1.3; }
+  .section-desc { text-align: center; color: var(--mid); font-size: 1rem; line-height: 1.7; max-width: 620px; margin: 0 auto 48px; }
+
+  /* ── SERVICES ── */
+  .services-bg { background: var(--light-bg); }
+  .services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+  @media(max-width:1100px) { .services-grid { grid-template-columns: repeat(3,1fr); } }
+  @media(max-width:700px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+  .svc-card {
+    background: #fff; border-radius: 22px; border: 1px solid var(--border);
+    padding: 26px 20px; text-align: center; text-decoration: none; color: inherit;
+    box-shadow: 0 6px 24px rgba(17,24,39,0.05);
+    transition: all 0.3s; display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  .svc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(17,24,39,0.1); border-color: var(--teal); }
+  .svc-icon {
+    width: 56px; height: 56px; border-radius: 18px;
+    background: rgba(111,175,166,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--teal); font-size: 1.4rem; flex-shrink: 0;
+    transition: all 0.3s;
+  }
+  .svc-card:hover .svc-icon { background: var(--teal); color: #fff; }
+  .svc-card h4 { font-size: 0.95rem; font-weight: 800; color: var(--dark); line-height: 1.3; }
+  .svc-card p { font-size: 0.82rem; color: var(--mid); line-height: 1.55; }
+  .svc-card .learn-more { font-size: 0.82rem; font-weight: 700; color: var(--teal); display: flex; align-items: center; gap: 5px; margin-top: 4px; }
+
+  /* ── WHAT WE PROVIDE ── */
+  .provide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .provide-left h3 { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 18px; line-height: 1.3; }
+  .provide-left p { color: var(--mid); line-height: 1.8; margin-bottom: 30px; }
+  .features-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .feat-box {
+    background: #fff; border-radius: 18px; border: 1px solid var(--border);
+    padding: 20px; display: flex; gap: 14px; align-items: flex-start;
+    box-shadow: 0 4px 18px rgba(17,24,39,0.05); transition: all 0.3s;
+  }
+  .feat-box:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(17,24,39,0.1); }
+  .feat-box .ficon {
+    width: 46px; height: 46px; border-radius: 14px;
+    background: rgba(169,214,229,0.2); color: var(--teal);
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .feat-box p { font-size: 0.9rem; font-weight: 700; color: var(--dark); line-height: 1.5; }
+  .provide-img-wrap { border-radius: 36px; overflow: hidden; box-shadow: 0 36px 80px rgba(17,24,39,0.1); }
+  .provide-img-wrap img { width: 100%; height: 500px; object-fit: cover; display: block; }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-bg { background: var(--light-bg); }
+  .testimonial-wrap {
+    background: #fff; border-radius: 28px; padding: 48px 48px 40px;
+    box-shadow: 0 20px 60px rgba(17,24,39,0.07); border: 1px solid var(--border);
+    max-width: 800px; margin: 0 auto; text-align: center; position: relative;
+  }
+  .testi-quote {
+    position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--coral); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+  }
+  .stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 18px; letter-spacing: 2px; }
+  .testi-text { font-size: 1.12rem; line-height: 1.8; color: var(--dark); font-weight: 500; margin-bottom: 28px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; justify-content: center; gap: 14px; }
+  .testi-avatar {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--sky));
+    display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-size: 1.1rem;
+  }
+  .testi-name { font-weight: 800; color: var(--dark); font-size: 1rem; }
+  .testi-role { color: var(--mid); font-size: 0.85rem; }
+
+  /* ── STATS ── */
+  .stats-section { background: linear-gradient(135deg, var(--teal) 0%, #5b9e95 100%); padding: 60px 5%; }
+  .stats-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .stat-item { text-align: center; }
+  .stat-num { font-size: 2.8rem; font-weight: 900; color: #fff; line-height: 1; }
+  .stat-num span { color: var(--mustard); }
+  .stat-label { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.8); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .stat-divider { width: 1px; background: rgba(255,255,255,0.2); }
+
+  /* ── RESOURCES ── */
+  .resources-grid { display: grid; grid-template-columns: repeat(3,1fr) 280px; gap: 24px; align-items: start; }
+  @media(max-width:1100px) { .resources-grid { grid-template-columns: 1fr 1fr; } }
+  .article-card {
+    border-radius: 22px; overflow: hidden;
+    border: 1px solid var(--border); background: #fff;
+    box-shadow: 0 6px 24px rgba(17,24,39,0.06); transition: all 0.3s;
+    text-decoration: none; color: inherit;
+  }
+  .article-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(17,24,39,0.1); }
+  .article-img { height: 170px; overflow: hidden; }
+  .article-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .article-card:hover .article-img img { transform: scale(1.05); }
+  .article-body { padding: 20px; }
+  .article-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.07em; padding: 4px 10px; border-radius: 50px; margin-bottom: 10px;
+  }
+  .tag-student { background: rgba(111,175,166,0.12); color: var(--teal); }
+  .tag-parent { background: rgba(244,151,142,0.12); color: var(--coral); }
+  .article-body h5 { font-size: 0.95rem; font-weight: 800; color: var(--dark); line-height: 1.4; margin-bottom: 8px; }
+  .article-meta { font-size: 0.78rem; color: var(--mid); }
+  .resource-cta-card {
+    background: var(--coral); border-radius: 22px; padding: 32px 24px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; gap: 16px; box-shadow: 0 12px 40px rgba(244,151,142,0.3);
+  }
+  .resource-cta-card .cta-icon { font-size: 2rem; color: #fff; }
+  .resource-cta-card h4 { font-size: 1.2rem; font-weight: 800; color: #fff; line-height: 1.35; }
+  .resource-cta-card p { font-size: 0.88rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
+  .btn-cta-white {
+    background: #fff; color: var(--coral); padding: 12px 24px;
+    border-radius: 50px; font-weight: 800; font-size: 0.9rem; text-decoration: none;
+    transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+  .view-all-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+  .view-all { color: var(--teal); font-weight: 700; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
+  .view-all:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--dark); color: #fff; padding: 60px 5% 30px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand { }
+  .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .footer-logo .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg,var(--teal),var(--sky)); display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.9rem; }
+  .footer-logo .logo-text { font-weight: 800; font-size: 1rem; color: #fff; }
+  .footer-logo .logo-sub { font-size: 0.65rem; color: var(--teal); }
+  .footer-brand p { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.75; margin-bottom: 20px; }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7);
+    text-decoration: none; transition: all 0.3s;
+  }
+  .footer-social a:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .footer-col h5 { font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 0.07em; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { color: rgba(255,255,255,0.6); font-size: 0.88rem; text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--teal); }
+  .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+  .footer-contact-item i { color: var(--teal); font-size: 0.9rem; margin-top: 2px; flex-shrink: 0; }
+  .footer-contact-item span { color: rgba(255,255,255,0.65); font-size: 0.85rem; line-height: 1.6; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom p { color: rgba(255,255,255,0.45); font-size: 0.82rem; }
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { color: rgba(255,255,255,0.45); font-size: 0.82rem; text-decoration: none; }
+  .footer-bottom-links a:hover { color: var(--teal); }
+
+  /* ── STICKY SOCIAL ── */
+  .sticky-social {
+    position: fixed; left: 0; top: 50%; transform: translateY(-50%);
+    z-index: 9000; display: flex; flex-direction: column;
+    border-radius: 0 8px 8px 0; overflow: hidden;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+  }
+  .sticky-social a {
+    display: flex; align-items: center; width: 42px; height: 42px;
+    color: #fff; text-decoration: none; overflow: hidden;
+    transition: width 0.32s cubic-bezier(0.4,0,0.2,1); white-space: nowrap;
+  }
+  .sticky-social a:hover { width: 140px; }
+  .sticky-social a i { flex-shrink:0; width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:1.2rem; }
+  .sticky-social .ss-label { font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;opacity:0;transform:translateX(-8px);transition:all 0.22s ease 0.08s;padding-right:14px; }
+  .sticky-social a:hover .ss-label { opacity:1;transform:translateX(0); }
+  .ss-fb { background:#1877F2; } .ss-fb:hover { background:#1565d8; }
+  .ss-ig { background:#E1306C; } .ss-ig:hover { background:#c62a5c; }
+  .ss-em { background:#EA4335; } .ss-em:hover { background:#cc2d22; }
+  .ss-wa { background:#25D366; } .ss-wa:hover { background:#1ebc5a; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--sky) 0%, var(--teal) 100%);
+    padding: 60px 5%;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: rgba(255,255,255,0.07); pointer-events: none;
+  }
+  .cta-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; }
+  .cta-left h2 { font-size: 2.4rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
+  .cta-left p { color: rgba(255,255,255,0.85); font-size: 1.05rem; font-weight: 500; }
+  .cta-right { text-align: right; }
+  .cta-right h3 { font-size: 1.7rem; font-weight: 800; color: #fff; margin-bottom: 18px; }
+  .btn-cta-yellow {
+    background: var(--mustard); color: var(--dark);
+    padding: 14px 36px; border-radius: 50px; font-weight: 800;
+    text-decoration: none; font-size: 1rem; transition: all 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  .btn-cta-yellow:hover { transform: translateY(-2px); box-shadow: 0 16px 35px rgba(0,0,0,0.25); }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:991px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-img-wrap { order: -1; }
+    .hero-img-main { height: 320px; }
+    .hero h1 { font-size: 2.5rem; }
+    .provide-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: repeat(2,1fr); }
+    .resources-grid { grid-template-columns: 1fr 1fr; }
+    .cta-inner { flex-direction: column; text-align: center; }
+    .cta-right { text-align: center; }
+    .sticky-social { display: none; }
+  }
+  @media(max-width:600px) {
+    .hero h1 { font-size: 2rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .features-2col { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .resources-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2,1fr); }
+    .hero-tag { display: none; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- STICKY SOCIAL BAR (reinserted) -->
+<div class="sticky-social">
+  <a href="https://www.facebook.com/profile.php?id=100088273930432" class="ss-fb" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i><span class="ss-label">Facebook</span>
+  </a>
+  <a href="https://www.instagram.com/elevated.minds____" class="ss-ig" target="_blank">
+    <i class="fa-brands fa-instagram"></i><span class="ss-label">Instagram</span>
+  </a>
+  <a href="mailto:info@elevatedminds.in" class="ss-em">
+    <i class="fa-solid fa-envelope"></i><span class="ss-label">Email Us</span>
+  </a>
+  <a href="https://wa.me/919172965369" class="ss-wa" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i><span class="ss-label">WhatsApp</span>
+  </a>
+</div>
+
+<div id="header"></div>
+<script>
+  fetch("headerone.html")
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("header").innerHTML = data;
+      const scripts = document
+        .getElementById("header")
+        .querySelectorAll("script");
+      scripts.forEach((script) => {
+        const newScript = document.createElement("script");
+        newScript.textContent = script.textContent;
+        document.body.appendChild(newScript);
+      });
+    })
+    .catch((err) => console.error("Header load failed:", err));
+</script>
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> A Safe Space to Heal, Learn & Grow</div>
+      <h1>Helping Young Minds<br>Feel <span class="red">Heard,</span> <span class="teal">Understood</span><br>&amp; Confident.</h1>
+      <p class="hero-desc">Professional counseling and emotional support for children, adolescents and students to overcome challenges and build a brighter tomorrow.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn-hero-primary"><i class="fa-solid fa-calendar-check"></i> Book a Session</a>
+        <a href="contact.html" class="btn-hero-outline"><i class="fa-solid fa-play"></i> Talk to Us</a>
+      </div>
+      <div class="trust-pills">
+        <div class="trust-pill"><i class="fa-solid fa-child-reaching"></i> Child Centric Approach</div>
+        <div class="trust-pill"><i class="fa-solid fa-lock"></i> Confidential &amp; Safe</div>
+        <div class="trust-pill"><i class="fa-solid fa-user-doctor"></i> Experienced Professionals</div>
+        <div class="trust-pill"><i class="fa-solid fa-heart"></i> Trusted by Parents</div>
+        <div class="trust-pill"><i class="fa-solid fa-star"></i> Supporting Minds, Empowering Futures</div>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="hero-img-main">
+        <img src="assets/images/banner/hero_inclusive_classroom_1777464977479.png" alt="Children learning together" onerror="this.style.background='linear-gradient(135deg,#A9D6E5,#6FAFA6)';this.style.display='block';">
+      </div>
+      <div class="hero-float-card">
+        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div>
+          <div class="card-title">Dynamic Growth</div>
+          <div class="card-sub">Empowering Excellence</div>
+        </div>
+      </div>
+      <div class="hero-tag">
+        <div class="tag-num">500+</div>
+        <div>Happy<br>Families</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR SERVICES -->
+<section class="section services-bg" id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-desc">Compassionate care for every stage of your child's growth, building confidence, learning, and emotional wellness.</p>
+    <div class="services-grid">
+      <a href="adhdsupport.html" class="svc-card fade-in">
+        <div class="svc-icon"><i class="fa-solid fa-brain"></i></div>
+        <h4>Child Counselling</h4>
+        <p>Helping children express, cope and overcome challenges.</p>
+        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="remedialteaching.html" class="svc-card fade-in delay-1">
+        <div class="svc-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h4>Student Wellness</h4>
+        <p>Support for academic stress, peer pressure and life challenges.</p>
+        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="braingym.html" class="svc-card fade-in delay-2">
+        <div class="svc-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h4>Parenting Guidance</h4>
+        <p>Helping parents understand and support their child better.</p>
+        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="angermanagement.html" class="svc-card fade-in delay-3">
+        <div class="svc-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h4>Behavioural Support</h4>
+        <p>Addressing emotions and behavioral challenges with care.</p>
+        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="stresscounselling.html" class="svc-card fade-in delay-4">
+        <div class="svc-icon"><i class="fa-solid fa-school"></i></div>
+        <h4>School Counselling</h4>
+        <p>School-based support programs for students' well-being.</p>
+        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE PROVIDE -->
+<section class="section" style="background:#fff;">
+  <div class="section-inner">
+    <div class="section-label">What We Provide</div>
+    <h2 class="section-title">A Supportive Space Where Young Minds Grow</h2>
+    <p class="section-desc">Our team combines counseling, therapy and educational support so every child can thrive with confidence.</p>
+    <div class="provide-grid" style="margin-top:10px;">
+      <div class="provide-left fade-in">
+        <h3>Experienced professionals guiding every step.</h3>
+        <p>We create safe, nurturing environments with personalized plans and practical support for children, parents and schools.</p>
+        <div class="features-2col">
+          <div class="feat-box">
+            <div class="ficon"><i class="fa-solid fa-user-check"></i></div>
+            <p>Experienced professionals guiding growth and development.</p>
+          </div>
+          <div class="feat-box">
+            <div class="ficon"><i class="fa-solid fa-shield-halved"></i></div>
+            <p>Safe &amp; Confidential Environment for every family.</p>
+          </div>
+          <div class="feat-box">
+            <div class="ficon"><i class="fa-solid fa-clipboard-list"></i></div>
+            <p>Personalized Approach tailored to each child.</p>
+          </div>
+          <div class="feat-box">
+            <div class="ficon"><i class="fa-solid fa-seedling"></i></div>
+            <p>Building Life Skills for confidence, focus and independence.</p>
+          </div>
+        </div>
+      </div>
+      <div class="provide-img-wrap fade-in delay-2">
+        <img src="assets/images/banner/about_therapy_session_1777464994272.png" alt="Therapy session" onerror="this.style.background='linear-gradient(135deg,#6FAFA6,#A9D6E5)';this.style.minHeight='500px';this.style.display='block';">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section testimonial-bg">
+  <div class="section-inner">
+    <div class="section-label">Trusted by Parents</div>
+    <div class="testimonial-wrap fade-in" style="margin-top:36px;">
+      <div class="testi-quote"><i class="fa-solid fa-quote-left"></i></div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Elevated Minds has been a blessing for our family. My child feels more confident and we have seen such positive changes. The team truly understands children and their needs."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-name">Priya Sharma</div>
+          <div class="testi-role">Parent of a 10-year-old</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item fade-in">
+      <div class="stat-num">500<span>+</span></div>
+      <div class="stat-label">Happy Families</div>
+    </div>
+    <div class="stat-item fade-in delay-1">
+      <div class="stat-num">10<span>+</span></div>
+      <div class="stat-label">Expert Counsellors</div>
+    </div>
+    <div class="stat-item fade-in delay-2">
+      <div class="stat-num">50<span>+</span></div>
+      <div class="stat-label">Schools Associated</div>
+    </div>
+    <div class="stat-item fade-in delay-3">
+      <div class="stat-num">3000<span>+</span></div>
+      <div class="stat-label">Sessions Conducted</div>
+    </div>
+  </div>
+</div>
+
+<!-- RESOURCES -->
+<section class="section" style="background:#fff;" id="resources">
+  <div class="section-inner">
+    <div class="view-all-row">
+      <div>
+        <div class="section-label" style="justify-content:flex-start;">Resources For You</div>
+        <h2 class="section-title" style="text-align:left;font-size:1.9rem;margin-bottom:0;">Helpful Articles &amp; Tips</h2>
+      </div>
+      <a href="blog.html" class="view-all">View All Articles <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="resources-grid">
+      <a href="#" class="article-card fade-in">
+        <div class="article-img" style="background:linear-gradient(135deg,#A9D6E5,#6FAFA6);display:flex;align-items:center;justify-content:center;">
+          <i class="fa-solid fa-book-open" style="font-size:3rem;color:#fff;opacity:0.6;"></i>
+        </div>
+        <div class="article-body">
+          <span class="article-tag tag-student">For Students</span>
+          <h5>How to Manage Exam Stress Effectively</h5>
+          <div class="article-meta">May 15, 2024 · 5 min read</div>
+        </div>
+      </a>
+      <a href="#" class="article-card fade-in delay-1">
+        <div class="article-img" style="background:linear-gradient(135deg,#F2CC8F,#F4978E);display:flex;align-items:center;justify-content:center;">
+          <i class="fa-solid fa-heart" style="font-size:3rem;color:#fff;opacity:0.6;"></i>
+        </div>
+        <div class="article-body">
+          <span class="article-tag tag-parent">For Parents</span>
+          <h5>Building Strong Communication with Your Child</h5>
+          <div class="article-meta">May 8, 2024 · 6 min read</div>
+        </div>
+      </a>
+      <a href="#" class="article-card fade-in delay-2">
+        <div class="article-img" style="background:linear-gradient(135deg,#6FAFA6,#A9D6E5);display:flex;align-items:center;justify-content:center;">
+          <i class="fa-solid fa-users" style="font-size:3rem;color:#fff;opacity:0.6;"></i>
+        </div>
+        <div class="article-body">
+          <span class="article-tag tag-student">For Students</span>
+          <h5>Dealing with Peer Pressure in a Positive Way</h5>
+          <div class="article-meta">April 30, 2024 · 4 min read</div>
+        </div>
+      </a>
+      <div class="resource-cta-card fade-in delay-3">
+        <div class="cta-icon"><i class="fa-solid fa-headset"></i></div>
+        <h4>Need Guidance?<br>We're here to help you and your child.</h4>
+        <p>Reach out to our expert counselors for a free initial consultation.</p>
+        <a href="contact.html" class="btn-cta-white">Book a Session</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2>Unlock Potential</h2>
+      <p>Discover comprehensive support for your child's growth and learning journey.</p>
+    </div>
+    <div class="cta-right">
+      <h3>Book a Free Consultation</h3>
+      <a href="contact.html" class="btn-cta-yellow">Get Started Today</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon"><i class="fa-solid fa-brain"></i></div>
+          <div>
+            <div class="logo-text">Elevated Minds</div>
+            <div class="logo-sub">Nurturing Young Minds</div>
+          </div>
+        </div>
+        <p>A safe and supportive space where children are encouraged to read, grow and thrive together. Dedicated to inclusive, compassionate education.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/elevated.minds____"><i class="fa-brands fa-instagram"></i></a>
+          <a href="mailto:info@elevatedminds.in"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Our Services</h5>
+        <ul>
+          <li><a href="adhdsupport.html">Child Counselling</a></li>
+          <li><a href="remedialteaching.html">Student Wellness</a></li>
+          <li><a href="braingym.html">Parenting Guidance</a></li>
+          <li><a href="angermanagement.html">Behavioural Support</a></li>
+          <li><a href="stresscounselling.html">School Counselling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 98654 43210</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>info@elevatedminds.in</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Pimpri-Chinchwad,<br>Pune, Maharashtra</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Be Kind, with Care</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Elevated Minds. All Rights Reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Hamburger
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:#fff;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1);gap:16px;z-index:9998;';
+    }
+  });
+</script>
+</body>
+</html>

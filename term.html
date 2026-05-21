@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Elevated Minds</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .terms-area {
+            padding: 80px 0;
+        }
+
+        .terms-card {
+            background: #fff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .terms-card h2 {
+            color: #0d2c54;
+            margin-bottom: 20px;
+        }
+
+        .terms-card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .rts-breadcrumb-area {
+            padding-top: 140px !important;
+            padding-bottom: 50px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="rts-breadcrumb-area rts-section-gap bg_image">
+    <div class="container">
+        <div class="breadcrumb-main-wrapper">
+            <div class="pagination-wrapper">
+                <a href="index2.html">Home</a>
+                <i class="fa-solid fa-greater-than"></i>
+                <a class="active" href="#">Terms & Conditions</a>
+            </div>
+
+            <h2 class="title">Terms & Conditions</h2>
+        </div>
+    </div>
+</div>
+
+<div class="terms-area">
+    <div class="container">
+        <div class="terms-card">
+
+            <h2>Website Terms</h2>
+
+            <p>
+                By accessing and using the Elevated Minds website, you agree to comply with all applicable terms and conditions.
+            </p>
+
+            <p>
+                The content provided on this website is for informational and educational purposes only.
+            </p>
+
+            <p>
+                Elevated Minds reserves the right to modify website content, services, or policies at any time without prior notice.
+            </p>
+
+            <p>
+                Unauthorized copying, reproduction, or misuse of website content is strictly prohibited.
+            </p>
+
+            <p>
+                Continued use of this website indicates acceptance of these terms and conditions.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+    fetch("headerone.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        });
+
+    fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+</script>
+
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/plugins/bootstrap.min.js"></script>
+
+</body>
+</html>

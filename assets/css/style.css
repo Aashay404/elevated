@@ -52,37 +52,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
-  --color-primary: #FFD335;
-  --color-primary-2: #7763E5;
-  --color-primary-3: #FF6D1C;
-  --color-primary-4: #B54CCA;
-  --color-primary-5: #09A24F;
-  --color-primary-6: #C29663;
-  --color-primary-7: #FF4E41;
-  --color-primary-8: #20AD96;
-  --color-primary-9: #A89222;
-  --color-primary-10: #36348E;
-  --color-secondary: #1F1F25;
-  --color-secondary-2: #110C2D;
-  --color-body: #6C7279;
-  --color-body-2: #F9F8FF;
-  --color-secondary: #1F1F25;
-  --color-bg: #FFD9EF;
-  --color-heading-1: #262626;
+  --color-primary: #6FAFA6;
+  --color-primary-2: #A9D6E5;
+  --color-primary-3: #F4978E;
+  --color-primary-4: #F2CC8F;
+  --color-primary-5: #6FAFA6;
+  --color-primary-6: #A9D6E5;
+  --color-primary-7: #F4978E;
+  --color-primary-8: #6FAFA6;
+  --color-primary-9: #F2CC8F;
+  --color-primary-10: #333333;
+  --color-secondary: #333333;
+  --color-secondary-2: #333333;
+  --color-body: #333333;
+  --color-body-2: #FAF9F6;
+  --color-bg: #DCEFEB;
+  --color-heading-1: #333333;
   --color-white:#fff;
-  --color-success: #3EB75E;
-  --color-danger: #FF0003;
-  --color-warning: #FF8F3C;
-  --color-info: #1BA2DB;
-  --color-facebook: #3B5997;
-  --color-twitter: #1BA1F2;
-  --color-youtube: #ED4141;
-  --color-linkedin: #0077B5;
-  --color-pinterest: #E60022;
-  --color-instagram: #C231A1;
-  --color-vimeo: #00ADEF;
-  --color-twitch: #6441A3;
-  --color-discord: #7289da;
+  --color-success: #6FAFA6;
+  --color-danger: #F4978E;
+  --color-warning: #F2CC8F;
+  --color-info: #A9D6E5;
+  --color-facebook: #6FAFA6;
+  --color-twitter: #A9D6E5;
+  --color-youtube: #F4978E;
+  --color-linkedin: #6FAFA6;
+  --color-pinterest: #F4978E;
+  --color-instagram: #F2CC8F;
+  --color-vimeo: #A9D6E5;
+  --color-twitch: #6FAFA6;
+  --color-discord: #A9D6E5;
   --p-light: 300;
   --p-regular: 400;
   --p-medium: 500;
@@ -98,9 +97,10 @@
   --s-extra-bold: 800;
   --s-black: 900;
   --transition: all 0.3s;
-  --font-primary: "Montesserat", sans-serif;
-  --font-secondary: "Montesserat", sans-serif;
-  --font-3: "Monteserrat", sans-serif;
+  --font-primary: "Outfit", sans-serif;
+  --font-secondary: "Outfit", sans-serif;
+  --font-primary-2: "Outfit", sans-serif;
+  --font-3: "Outfit", sans-serif;
   --font-size-b1: 18px;
   --font-size-b2: 16px;
   --font-size-b3: 12px;
@@ -452,7 +452,7 @@ cite,
 }
 
 var {
-  font-family: "Monteserrat", sans-serif;
+  font-family: var(--font-primary);
 }
 
 /*---------------------------
@@ -9168,7 +9168,7 @@ ins {
 }
 
 pre {
-  font-family: "Monteserrat", sans-serif;
+  font-family: var(--font-primary);
   font-size: var(--font-size-b3);
   margin: 10px 0;
   overflow: auto;
@@ -14605,7 +14605,7 @@ nav ul li a {
   content: "\f078" !important;
   position: absolute !important;
   top: 50%;
-  font-family: "Monteserrat", sans-serif !important;
+  font-family: var(--font-primary) !important;
   right: -3px;
   transform: translateY(-50%);
   transition: 0.3s;
@@ -18107,7 +18107,7 @@ nav ul li a {
   left: 20px;
   color: var(--color-heading-1);
   background: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
   font-size: 16px;
   height: auto;
   width: auto;
@@ -21657,7 +21657,7 @@ nav ul li a {
   top: 40px;
   transform: translate(-50%, 0);
   content: "\f10d";
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
   width: 60px;
   height: 60px;
   line-height: 60px;
@@ -23078,7 +23078,7 @@ edit .quantity-edit button {
 
 .cart-bar .product-detail .product-variation span {
   color: #868686;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
   font-weight: 400;
   font-size: 13px;
   line-height: 15px;
@@ -23088,7 +23088,7 @@ edit .quantity-edit button {
   color: #404040;
   font-weight: 500;
   font-size: 13px;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
 }
 
 .cart-bar .cart-bottom-area {
