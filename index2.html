@@ -624,74 +624,15 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="logo-icon"><i class="fa-solid fa-brain"></i></div>
-          <div>
-            <div class="logo-text">Elevated Minds</div>
-            <div class="logo-sub">Nurturing Young Minds</div>
-          </div>
-        </div>
-        <p>A safe and supportive space where children are encouraged to read, grow and thrive together. Dedicated to inclusive, compassionate education.</p>
-        <div class="footer-social">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/elevated.minds____"><i class="fa-brands fa-instagram"></i></a>
-          <a href="mailto:info@elevatedminds.in"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Our Services</h5>
-        <ul>
-          <li><a href="adhdsupport.html">Child Counselling</a></li>
-          <li><a href="remedialteaching.html">Student Wellness</a></li>
-          <li><a href="braingym.html">Parenting Guidance</a></li>
-          <li><a href="angermanagement.html">Behavioural Support</a></li>
-          <li><a href="stresscounselling.html">School Counselling</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Get in Touch</h5>
-        <div class="footer-contact-item">
-          <i class="fa-solid fa-phone"></i>
-          <span>+91 98654 43210</span>
-        </div>
-        <div class="footer-contact-item">
-          <i class="fa-solid fa-envelope"></i>
-          <span>info@elevatedminds.in</span>
-        </div>
-        <div class="footer-contact-item">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Pimpri-Chinchwad,<br>Pune, Maharashtra</span>
-        </div>
-        <div class="footer-contact-item">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span>Be Kind, with Care</span>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Elevated Minds. All Rights Reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms & Conditions</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 
 <script>
   // Scroll reveal
