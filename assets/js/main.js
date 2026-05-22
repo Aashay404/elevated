@@ -364,6 +364,7 @@
           "use strict";
       
           var progressPath = document.querySelector('.progress-wrap path');
+          if(!progressPath) return; // no back-to-top element on this page
           var pathLength = progressPath.getTotalLength();
           progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
           progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
@@ -876,7 +877,7 @@
             // Animate loader off screen
             const preloader = $(".preloader");
             preloader.addClass('loaded');                    
-            preloader.delay(600).fadeOut();
+            preloader.delay(150).fadeOut(100);
           
           }); 
         },

@@ -23559,7 +23559,7 @@ a {
   cursor: default;
   position: fixed;
   z-index: 9999999;
-  background: #005E7F;
+  background: #ffffff;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -23580,6 +23580,7 @@ a {
   }
 }
 .preloader .animation-preloader .txt-loading {
+  display: none;
   font-size: 80px;
   line-height: 118px;
   text-align: center;
@@ -23592,24 +23593,27 @@ a {
 
 @media (max-width: 767px) {
   .preloader .animation-preloader .txt-loading {
+    display: none;
     font-size: 50px;
     line-height: 77px;
   }
 }
 @media (max-width: 575px) {
   .preloader .animation-preloader .txt-loading {
+    display: none;
     font-size: 36px;
     line-height: 58px;
   }
 }
 .preloader .animation-preloader .txt-loading .letters-loading {
-  color: #005E7F;
+  color: #ffffff;
   font-family: var(--font-secondary);
   font-weight: 800;
   position: relative;
+  text-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
 }
 .preloader .animation-preloader .txt-loading .letters-loading.first {
-  color: var(--color-primary-5);
+  color: #ffffff;
 }
 
 .preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
@@ -23669,6 +23673,7 @@ a {
 }
 
 .preloader .loader {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -23677,6 +23682,10 @@ a {
   font-size: 0;
   z-index: 1;
   pointer-events: none;
+}
+
+.preloader p {
+  display: none;
 }
 
 .preloader .loader .row {
@@ -23696,16 +23705,24 @@ a {
   transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.preloader .animation-preloader .txt-loading .letters-loading::before {
+  -webkit-animation: none;
+  animation: none;
+  opacity: 0;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
 .preloader.loaded .animation-preloader {
   opacity: 0;
-  -webkit-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
+  -webkit-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
 }
 
 .preloader.loaded .loader-section .bg {
   width: 0;
-  -webkit-transition: 0.7s 0.3s allcubic-bezier(0.1, 0.1, 0.1, 1);
-  transition: 0.7s 0.3s allcubic-bezier(0.1, 0.1, 0.1, 1);
+  -webkit-transition: 0.2s 0.05s all cubic-bezier(0.1, 0.1, 0.1, 1);
+  transition: 0.2s 0.05s all cubic-bezier(0.1, 0.1, 0.1, 1);
 }
 
 @-webkit-keyframes spinner {

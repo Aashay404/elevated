@@ -1,32 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyKids LMS & University HTML Template </title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyKids LMS & University HTML Template</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/fav.png"
+    />
     <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css" />
     <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
     <!-- magnific popup css -->
-    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
     <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
     <!-- jquery ui css -->
-    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.css" />
     <!-- metismenu scss -->
-    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css" />
     <!-- custom style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-        .rts-breadcrumb-area { padding-top: 140px !important; padding-bottom: 50px !important; min-height: auto !important; }
+      .rts-breadcrumb-area {
+        padding-top: 140px !important;
+        padding-bottom: 50px !important;
+        min-height: auto !important;
+      }
+      .gallery-wrapper {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+      }
+      .gallery-wrapper > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      .gallery-wrapper:hover > img {
+        transform: scale(1.1);
+      }
+      .gallery-wrapper .gallery-image {
+        position: absolute;
+        inset: 0;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- header style one -->
     <!-- header style one -->
     <div id="header"></div>
@@ -34,114 +58,435 @@
     <!-- header style end -->
     <!-- header style end -->
 
-
     <!-- bread crumb area -->
     <div class="rts-breadcrumb-area rts-section-gap bg_image">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-main-wrapper">
-                        <div class="pagination-wrapper">
-                            <a href="index.html">Home</a>
-                            <i class="fa-solid fa-greater-than"></i>
-                            <a class="active" href="gallery.html">Gallery</a>
-                        </div>
-                        <!-- breadcrumb pagination area -->
-                        <h2 class="title">Gallery</h2>
-                        <!-- breadcrumb pagination area end -->
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumb-main-wrapper">
+              <div class="pagination-wrapper">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-greater-than"></i>
+                <a class="active" href="gallery.html">Gallery</a>
+              </div>
+              <!-- breadcrumb pagination area -->
+              <h2 class="title">Gallery</h2>
+              <!-- breadcrumb pagination area end -->
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- bread crumb area end -->
 
-
-    <!-- blog details area start -->
-       <section class="rts-gallery-area rts-section-gap">
-        <div class="container">
-            <div class="section-title-area text-center">
-                <p class="pre-title justify-content-center"><img src="assets/images/banner/title-img.svg" alt="">Gallery</p>
-                <h2 class="section-title">Elevated Minds Showcase</h2>
-                <p class="desc">Witness the joy of learning and growth as children explore, create, and thrive in our nurturing environment</p>
-            </div>
-            <div class="section-inner">
-                <div class="row g-5">
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/12.jpg" alt="Children in interactive classroom activity">
-                            <a href="assets/images/course/12.jpg" class="gallery-image" aria-label="Open full-size classroom gallery image" title="Open full-size classroom gallery image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/13.jpg" alt="Students collaborating on an educational activity">
-                            <a href="assets/images/course/13.jpg" class="gallery-image" aria-label="Open full-size student collaboration gallery image" title="Open full-size student collaboration gallery image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/14.jpg" alt="Young learners engaged in arts and crafts">
-                            <a href="assets/images/course/14.jpg" class="gallery-image" aria-label="Open full-size arts and crafts gallery image" title="Open full-size arts and crafts gallery image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/15.jpg" alt="Child practicing learning exercises">
-                            <a href="assets/images/course/15.jpg" class="gallery-image" aria-label="Open full-size learning exercises gallery image" title="Open full-size learning exercises gallery image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/16.jpg" alt="Kids exploring sensory learning materials">
-                            <a href="assets/images/course/16.jpg" class="gallery-image" aria-label="Open full-size sensory learning gallery image" title="Open full-size sensory learning gallery image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="gallery-wrapper">
-                            <img src="assets/images/course/17.jpg" alt="Children smiling during a school activity">
-                            <a href="assets/images/course/17.jpg" class="gallery-image" aria-label="Open full-size school activity gallery image" title="Open full-size school activity gallery image">
-                                <div class="item-overlay">
-                                    <span>
-                                        <i class="fa-light fa-plus"></i>  
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- gallery area start -->
+    <section class="rts-gallery-area rts-section-gap">
+      <div class="container">
+        <div class="section-title-area text-center">
+          <p class="pre-title justify-content-center">
+            <img src="assets/images/banner/title-img.svg" alt="" />Gallery
+          </p>
+          <h2 class="section-title">Infrastructure Showcase</h2>
+          <p class="desc">
+            A closer look at the learning spaces, facilities, and campus
+            infrastructure that support everyday growth.
+          </p>
         </div>
+        <div class="section-inner">
+          <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C1.jpeg"
+                  alt="Infrastructure image C1"
+                />
+                <a href="assets/images/gallery/C1.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C2.jpeg"
+                  alt="Infrastructure image C2"
+                />
+                <a href="assets/images/gallery/C2.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C3.jpeg"
+                  alt="Infrastructure image C3"
+                />
+                <a href="assets/images/gallery/C3.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C4.jpeg"
+                  alt="Infrastructure image C4"
+                />
+                <a href="assets/images/gallery/C4.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C5.jpeg"
+                  alt="Infrastructure image C5"
+                />
+                <a href="assets/images/gallery/C5.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C7.jpeg"
+                  alt="Infrastructure image C7"
+                />
+                <a href="assets/images/gallery/C7.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C8.jpeg"
+                  alt="Infrastructure image C8"
+                />
+                <a href="assets/images/gallery/C8.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C10.jpeg"
+                  alt="Infrastructure image C10"
+                />
+                <a href="assets/images/gallery/C10.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C11.jpeg"
+                  alt="Infrastructure image C11"
+                />
+                <a href="assets/images/gallery/C11.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C13.jpeg"
+                  alt="Infrastructure image C13"
+                />
+                <a href="assets/images/gallery/C13.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rts-gallery-area rts-section-gap pt--0">
+      <div class="container">
+        <div class="section-title-area text-center">
+          <p class="pre-title justify-content-center">
+            <img src="assets/images/banner/title-img.svg" alt="" />Gallery
+          </p>
+          <h2 class="section-title">School Event Moments</h2>
+          <p class="desc">
+            Celebrating school events, activities, and shared moments that
+            capture the energy and spirit of our students.
+          </p>
+        </div>
+        <div class="section-inner">
+          <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H1.jpeg"
+                  alt="School event image H1"
+                />
+                <a href="assets/images/gallery/H1.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H2.jpeg"
+                  alt="School event image H2"
+                />
+                <a href="assets/images/gallery/H2.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H3.jpeg"
+                  alt="School event image H3"
+                />
+                <a href="assets/images/gallery/H3.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H4.jpeg"
+                  alt="School event image H4"
+                />
+                <a href="assets/images/gallery/H4.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H6.jpeg"
+                  alt="School event image H6"
+                />
+                <a href="assets/images/gallery/H6.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H7.jpeg"
+                  alt="School event image H7"
+                />
+                <a href="assets/images/gallery/H7.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H9.jpeg"
+                  alt="School event image H9"
+                />
+                <a href="assets/images/gallery/H9.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H10.jpeg"
+                  alt="School event image H10"
+                />
+                <a href="assets/images/gallery/H10.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H11.jpeg"
+                  alt="School event image H11"
+                />
+                <a href="assets/images/gallery/H11.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H12.jpeg"
+                  alt="School event image H12"
+                />
+                <a href="assets/images/gallery/H12.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H13.jpeg"
+                  alt="School event image H13"
+                />
+                <a href="assets/images/gallery/H13.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H14.jpeg"
+                  alt="School event image H14"
+                />
+                <a href="assets/images/gallery/H14.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H15.jpeg"
+                  alt="School event image H15"
+                />
+                <a href="assets/images/gallery/H15.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H16.jpeg"
+                  alt="School event image H16"
+                />
+                <a href="assets/images/gallery/H16.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H17.jpeg"
+                  alt="School event image H17"
+                />
+                <a href="assets/images/gallery/H17.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H18.jpeg"
+                  alt="School event image H18"
+                />
+                <a href="assets/images/gallery/H18.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H19.jpeg"
+                  alt="School event image H19"
+                />
+                <a href="assets/images/gallery/H19.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H20.jpeg"
+                  alt="School event image H20"
+                />
+                <a href="assets/images/gallery/H20.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H21.jpeg"
+                  alt="School event image H21"
+                />
+                <a href="assets/images/gallery/H21.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/H22.jpeg"
+                  alt="School event image H22"
+                />
+                <a href="assets/images/gallery/H22.jpeg" class="gallery-image"
+                  ><div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span></div
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- footer call to action area start -->
 
@@ -152,195 +497,254 @@
 
     <!-- header style two -->
     <div id="side-bar" class="side-bar header-two">
-        <button class="close-icon-menu"><i class="far fa-times"></i></button>
-        <!-- inner menu area desktop start -->
-        <div class="inner-main-wrapper-desk">
-            <div class="inner-content">
-                <h4 class="title">We Build Building and Great Constructive Homes.</h4>
-                <p class="disc">
-                    We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly master new technologies.
-                </p>
-                <div class="footer">
-                    <h4 class="title">Got a project in mind?</h4>
-                    <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
-                </div>
-            </div>
+      <button class="close-icon-menu"><i class="far fa-times"></i></button>
+      <!-- inner menu area desktop start -->
+      <div class="inner-main-wrapper-desk">
+        <div class="inner-content">
+          <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+          <p class="disc">
+            We successfully cope with tasks of varying complexity, provide
+            long-term guarantees and regularly master new technologies.
+          </p>
+          <div class="footer">
+            <h4 class="title">Got a project in mind?</h4>
+            <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
+          </div>
         </div>
-        <!-- mobile menu area start -->
-        <div class="mobile-menu-main">
-            <nav class="nav-main mainmenu-nav mt--30">
-                <ul class="mainmenu metismenu" id="mobile-menu-active">
-                    <li class="has-droupdown">
-                        <a href="#" class="main">Home</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="index.html">Home 01</a></li>
-                            <li><a class="mobile-menu-link" href="index-two.html">Home 02</a></li>
-                            <li><a class="mobile-menu-link" href="index-three.html">Home 03</a></li>
-                            <li><a class="mobile-menu-link" href="index-four.html">home 04</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-droupdown">
-                        <a href="#" class="main">Pages</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
-                            <li><a class="mobile-menu-link" href="team.html">Team</a></li>
-                            <li><a class="mobile-menu-link" href="team-details.html">Team Details</a></li>
-                            <li><a class="mobile-menu-link" href="event.html">Event</a></li>
-                            <li><a class="mobile-menu-link" href="event-details.html">Event Details</a></li>
-                            <li><a class="mobile-menu-link" href="program-details.html">Program Details</a></li>
-                            <li><a class="mobile-menu-link" href="pricing.html">Pricing</a></li>
-                            <li><a class="mobile-menu-link" href="pricing-two.html">Pricing Two</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-droupdown">
-                        <a href="#" class="main">Class</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="course.html">Courses</a></li>
-                            <li><a class="mobile-menu-link" href="course-details.html">Course Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-droupdown">
-                        <a href="#" class="main">Blog</a>
-                        <ul class="submenu mm-collapse">
-                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
-                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
-                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
-                            <li><a class="mobile-menu-link" href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                            <li><a class="mobile-menu-link" href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="contact.html" class="main">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+      </div>
+      <!-- mobile menu area start -->
+      <div class="mobile-menu-main">
+        <nav class="nav-main mainmenu-nav mt--30">
+          <ul class="mainmenu metismenu" id="mobile-menu-active">
+            <li class="has-droupdown">
+              <a href="#" class="main">Home</a>
+              <ul class="submenu mm-collapse">
+                <li>
+                  <a class="mobile-menu-link" href="index.html">Home 01</a>
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="index-two.html">Home 02</a>
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="index-three.html"
+                    >Home 03</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="index-four.html">home 04</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-droupdown">
+              <a href="#" class="main">Pages</a>
+              <ul class="submenu mm-collapse">
+                <li>
+                  <a class="mobile-menu-link" href="about.html">About Us</a>
+                </li>
+                <li><a class="mobile-menu-link" href="team.html">Team</a></li>
+                <li>
+                  <a class="mobile-menu-link" href="team-details.html"
+                    >Team Details</a
+                  >
+                </li>
+                <li><a class="mobile-menu-link" href="event.html">Event</a></li>
+                <li>
+                  <a class="mobile-menu-link" href="event-details.html"
+                    >Event Details</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="program-details.html"
+                    >Program Details</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="pricing.html">Pricing</a>
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="pricing-two.html"
+                    >Pricing Two</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="has-droupdown">
+              <a href="#" class="main">Class</a>
+              <ul class="submenu mm-collapse">
+                <li>
+                  <a class="mobile-menu-link" href="course.html">Courses</a>
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="course-details.html"
+                    >Course Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="has-droupdown">
+              <a href="#" class="main">Blog</a>
+              <ul class="submenu mm-collapse">
+                <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                <li>
+                  <a class="mobile-menu-link" href="blog-grid.html"
+                    >Blog Grid</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="blog-list.html"
+                    >Blog List</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="blog-right-sidebar.html"
+                    >Blog Right Sidebar</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="blog-left-sidebar.html"
+                    >Blog Left Sidebar</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu-link" href="blog-details.html"
+                    >Blog Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="contact.html" class="main">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
-            <div class="buttons-area">
-                <a href="#" class="rts-btn btn-border">Log In</a>
-                <a href="#" class="rts-btn btn-primary">Sign Up</a>
-            </div>
-
-            <div class="rts-social-style-one pl--20 mt--50">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="buttons-area">
+          <a href="#" class="rts-btn btn-border">Log In</a>
+          <a href="#" class="rts-btn btn-primary">Sign Up</a>
         </div>
-        <!-- mobile menu area end -->
+
+        <div class="rts-social-style-one pl--20 mt--50">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- mobile menu area end -->
     </div>
     <!-- header style two End -->
 
     <div id="preloader" class="preloader">
-        <div class="animation-preloader">
-            <div class="txt-loading">
-                <span data-text-preloader="E" class="letters-loading first">
-                        E
-                    </span>
-                <span data-text-preloader="L" class="letters-loading first">
-                        L
-                    </span>
-                <span data-text-preloader="E" class="letters-loading first">
-                    E
-                    </span>
-                <span data-text-preloader="V" class="letters-loading first">
-                    V
-                    </span>
-                <span data-text-preloader="A" class="letters-loading first">
-                        A
-                    </span>
-                <span data-text-preloader="T" class="letters-loading">
-                        T
-                    </span>
-                <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                <span data-text-preloader="D" class="letters-loading">
-                    D
-                    </span>
-                
-            </div>
-            <p class="text-center">Loading...</p>
+      <div class="animation-preloader">
+        <div class="txt-loading">
+          <span data-text-preloader="E" class="letters-loading first"> E </span>
+          <span data-text-preloader="L" class="letters-loading first"> L </span>
+          <span data-text-preloader="E" class="letters-loading first"> E </span>
+          <span data-text-preloader="V" class="letters-loading first"> V </span>
+          <span data-text-preloader="A" class="letters-loading first"> A </span>
+          <span data-text-preloader="T" class="letters-loading"> T </span>
+          <span data-text-preloader="E" class="letters-loading"> E </span>
+          <span data-text-preloader="D" class="letters-loading"> D </span>
         </div>
-        <div class="loader">
-            <div class="row">
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-            </div>
+        <p class="text-center">Loading...</p>
+      </div>
+      <div class="loader">
+        <div class="row">
+          <div class="col-3 loader-section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-right">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-right">
+            <div class="bg"></div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- rts backto top start -->
     <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-        </svg>
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path
+          d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+          style="
+            transition: stroke-dashoffset 10ms linear 0s;
+            stroke-dasharray: 307.919, 307.919;
+            stroke-dashoffset: 307.919;
+          "
+        ></path>
+      </svg>
     </div>
     <!-- rts backto top end -->
 
     <!-- offcanvase search -->
     <div class="search-input-area">
-        <div class="container">
-            <div class="search-input-inner">
-                <div class="input-div">
-                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
-                    <button><i class="far fa-search"></i></button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="search-input-inner">
+          <div class="input-div">
+            <input
+              class="search-input autocomplete"
+              type="text"
+              placeholder="Search by keyword or #"
+            />
+            <button><i class="far fa-search"></i></button>
+          </div>
         </div>
-        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+      </div>
+      <div id="close" class="search-close-icon">
+        <i class="far fa-times"></i>
+      </div>
     </div>
     <!-- offcanvase search -->
-    <div id="anywhere-home" class="">
-    </div>
+    <div id="anywhere-home" class=""></div>
     <script>
-    // Import header
-    fetch("headerone.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-        const scripts = document.getElementById("header").querySelectorAll('script');
-        scripts.forEach(script => {
-          const newScript = document.createElement('script');
-          newScript.textContent = script.textContent;
-          document.body.appendChild(newScript);
+      // Import header
+      fetch("headerone.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+          const scripts = document
+            .getElementById("header")
+            .querySelectorAll("script");
+          scripts.forEach((script) => {
+            const newScript = document.createElement("script");
+            newScript.textContent = script.textContent;
+            document.body.appendChild(newScript);
+          });
         });
-      });
 
-    // Import footer
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data);
-</script>
+      // Import footer
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("footer").innerHTML = data));
+    </script>
     <!-- all scripts -->
     <!-- jquery min js -->
     <script src="assets/js/vendor/jquery.min.js"></script>
@@ -378,7 +782,5 @@
     <script src="assets/js/plugins/calender.js"></script>
     <!-- main Js -->
     <script src="assets/js/main.js"></script>
-
-</body>
-
+  </body>
 </html>
