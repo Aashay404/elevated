@@ -29,6 +29,20 @@
       body {
         font-family: "Outfit", sans-serif;
       }
+      .counter-wrapper .title {
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.15em;
+      }
+      .counter-wrapper .title .counter {
+        font-size: 42px;
+        line-height: 1;
+      }
+      .counter-wrapper .title .counter-plus {
+        font-size: 24px;
+        line-height: 1;
+      }
       /* Reduces the vertical height of the breadcrumb area below header */
       .rts-breadcrumb-area {
         padding-top: 110px !important; /* Adjusted for sticky header */
@@ -672,13 +686,6 @@
                 <div class="testimonials-wrapper">
                   <div class="wrapper-inner">
                     <div class="content">
-                      <div class="author-image mb--30">
-                        <img
-                          src="assets/images/about/about-author.png"
-                          width="72"
-                          alt=""
-                        />
-                      </div>
                       <h4 class="author">Anjali Patil</h4>
                       <p class="desig">Parent</p>
                       <p class="desc">
@@ -782,25 +789,25 @@
           <div class="counter-inner">
             <div class="counter-wrapper">
               <h3 class="title">
-                <span class="counter animated fadeInDownBig">500</span>+
+                <span class="counter animated fadeInDownBig">500</span><span class="counter-plus">+</span>
               </h3>
               <span class="review">Happy Families</span>
             </div>
             <div class="counter-wrapper">
               <h3 class="title">
-                <span class="counter animated fadeInDownBig">10</span>+
+                <span class="counter animated fadeInDownBig">10</span><span class="counter-plus">+</span>
               </h3>
               <span class="review">Expert Counsellors</span>
             </div>
             <div class="counter-wrapper">
               <h3 class="title">
-                <span class="counter animated fadeInDownBig">50</span>+
+                <span class="counter animated fadeInDownBig">50</span><span class="counter-plus">+</span>
               </h3>
               <span class="review">Schools Associated</span>
             </div>
             <div class="counter-wrapper">
               <h3 class="title">
-                <span class="counter animated fadeInDownBig">3000</span>+
+                <span class="counter animated fadeInDownBig">3000</span><span class="counter-plus">+</span>
               </h3>
               <span class="review">Sessions Conducted</span>
             </div>
