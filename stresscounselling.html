@@ -20,7 +20,7 @@
             <div class="breadcrumb-main-wrapper">
                 <div class="pagination-wrapper">
                     <a href="index.html">Home</a><i class="fa-solid fa-greater-than"></i>
-                    <a href="index.html#services">Services</a><i class="fa-solid fa-greater-than"></i>
+                    <a href="about.html">Services</a><i class="fa-solid fa-greater-than"></i>
                     <a class="active" href="#">Stress & Anxiety Counseling</a>
                 </div>
                 <h2 class="title">Stress & Anxiety Counseling</h2>
@@ -81,7 +81,7 @@
                 <div class="about-wrapper-area">
                     <ul class="about-wrapper">
                         <li class="item"><i class="fa-solid fa-check"></i> Individual counseling sessions</li>
-                        <li class="item"><i class="fa-solid fa-check"></i> Cognitive behavioural techniques</li>
+                        <li class="item"><i class="fa-solid fa-check"></i> Cognitive behavioral techniques</li>
                         <li class="item"><i class="fa-solid fa-check"></i> Relaxation and mindfulness</li>
                         <li class="item"><i class="fa-solid fa-check"></i> Emotional regulation skills</li>
                     </ul>
@@ -115,11 +115,13 @@
         </div></div></div>
     </section>
     <div id="footer"></div>
-    <script>fetch("headerone.html").then(res => res.text()).then(data => {document.getElementById("header").innerHTML = data;});
-        fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
-    </script>
+    <script src="header-loader.js"></script>
+<script>
+fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
+</script>
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/plugins/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

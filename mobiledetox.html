@@ -80,7 +80,7 @@
                 <div class="about-wrapper-area">
                     <ul class="about-wrapper">
                         <li class="item"><i class="fa-solid fa-check"></i> Screen time assessment</li>
-                        <li class="item"><i class="fa-solid fa-check"></i> Behaviour modification strategies</li>
+                        <li class="item"><i class="fa-solid fa-check"></i> Behavior modification strategies</li>
                         <li class="item"><i class="fa-solid fa-check"></i> Alternative activity planning</li>
                         <li class="item"><i class="fa-solid fa-check"></i> Self-monitoring skills</li>
                     </ul>
@@ -114,12 +114,14 @@
         </div></div></div>
     </section>
     <div id="footer"></div>
-    <script>fetch("headerone.html").then(res => res.text()).then(data => {document.getElementById("header").innerHTML = data;});
-        fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
-    </script>
+    <script src="header-loader.js"></script>
+<script>
+fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
+</script>
     
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/plugins/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

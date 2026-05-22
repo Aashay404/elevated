@@ -41,7 +41,7 @@
                         <div class="pagination-wrapper">
                             <a href="index.html">Home</a>
                             <i class="fa-solid fa-greater-than"></i>
-                            <a href="index.html#services">Services</a>
+                            <a href="about.html">Services</a>
                             <i class="fa-solid fa-greater-than"></i>
                             <a class="active" href="#">ADHD Support</a>
                         </div>
@@ -59,8 +59,8 @@
                     <div class="col-lg-6">
                         <div class="about-image">
                             <div style="position: relative; padding-right: 40px;">
-                                <div class="bliss-img-asymmetric" style="height: 550px;">
-                                    <img src="assets/images/service/adhd1.png" style="width: 100%; height: 100%; object-fit: cover;" alt="ADHD Support">
+                                <div class="bliss-img-asymmetric" style="height: 550px; overflow: hidden; border-radius: 120px 0 120px 0; width: 100%; max-width: 100%;">
+                                    <img src="assets/images/service/adhd1.png" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="ADHD Support">
                                 </div>
                                 <div style="position: absolute; bottom: 20px; right: -10px; background: #ffffff; border: 1px solid rgba(0,0,0,0.1); padding: 25px 30px; border-radius: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); z-index: 2;">
                                     <div style="width: 60px; height: 60px; background: #0B2F5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #F9A826;">
@@ -136,7 +136,7 @@
                                     </li>
                                     <li class="item">
                                         <i class="fa-solid fa-check"></i>
-                                        Behavioural management strategies
+                                        Behavioral management strategies
                                     </li>
                                     <li class="item">
                                         <i class="fa-solid fa-check"></i>
@@ -170,8 +170,8 @@
                     <div class="col-lg-6 order-change">
                         <div class="about-image2">
                             <div style="position: relative; padding-left: 40px;">
-                                <div class="bliss-img-asymmetric-reverse" style="height: 550px;">
-                                    <img src="assets/images/service/adhd2.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                                <div class="bliss-img-asymmetric-reverse" style="height: 550px; overflow: hidden; border-radius: 0 120px 0 120px; width: 100%; max-width: 100%;">
+                                    <img src="assets/images/service/adhd2.png" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="">
                                 </div>
                                 <div style="position: absolute; bottom: 20px; left: -10px; background: #ffffff; border: 1px solid rgba(0,0,0,0.1); padding: 25px 30px; border-radius: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); z-index: 2;">
                                     <div style="width: 60px; height: 60px; background: #0B2F5C; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #F9A826;">
@@ -199,30 +199,10 @@
 
     <div id="footer"></div>
 
-    <script>
-    fetch("headerone.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-        const scripts = document.getElementById("header").querySelectorAll('script');
-        scripts.forEach(script => {
-          const newScript = document.createElement('script');
-          newScript.textContent = script.textContent;
-          document.body.appendChild(newScript);
-        });
-      });
-      fetch("footer.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("footer").innerHTML = data;
-          const scripts = document.getElementById("footer").querySelectorAll('script');
-          scripts.forEach(script => {
-            const newScript = document.createElement('script');
-            newScript.textContent = script.textContent;
-            document.body.appendChild(newScript);
-          });
-        });
-    </script>
+    <script src="header-loader.js"></script>
+<script>
+fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
+</script>
     
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/vendor/jquery-ui.js"></script>

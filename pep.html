@@ -195,20 +195,10 @@
     <div id="footer"></div>
     
  
-    <script>
-    fetch("headerone.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-        const scripts = document.getElementById("header").querySelectorAll('script');
-        scripts.forEach(script => {
-          const newScript = document.createElement('script');
-          newScript.textContent = script.textContent;
-          document.body.appendChild(newScript);
-        });
-      });
-    fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
-    </script>
+    <script src="header-loader.js"></script>
+<script>
+fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
+</script>
     
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/vendor/jquery-ui.js"></script>
@@ -219,3 +209,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

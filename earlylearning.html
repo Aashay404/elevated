@@ -191,33 +191,17 @@
         </div>
     </section>
 
-    <!-- rts backto top removed -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
     <div id="footer"></div>
 
-    <script>
-    fetch("headerone.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-        const scripts = document.getElementById("header").querySelectorAll('script');
-        scripts.forEach(script => {
-          const newScript = document.createElement('script');
-          newScript.textContent = script.textContent;
-          document.body.appendChild(newScript);
-        });
-      });
-      fetch("footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("footer").innerHTML = data;
-        const scripts = document.getElementById("footer").querySelectorAll('script');
-        scripts.forEach(script => {
-          const newScript = document.createElement('script');
-          newScript.textContent = script.textContent;
-          document.body.appendChild(newScript);
-        });
-      });
-    </script>
+    <script src="header-loader.js"></script>
+<script>
+fetch("footer.html").then(res => res.text()).then(data => {document.getElementById("footer").innerHTML = data;});
+</script>
     
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="assets/js/vendor/jquery-ui.js"></script>
