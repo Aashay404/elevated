@@ -1,6 +1,7 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
-
   /* ═══════════════════════════════════════
      GLOBAL THEME VARIABLES & UTILITIES
      Applied to all pages fetching this header
@@ -29,8 +30,6 @@
     transition: all 0.5s ease;
     width: 100%;
     object-fit: cover;
-    overflow: hidden !important;
-    position: relative;
   }
 
   .bliss-img-asymmetric-reverse {
@@ -40,21 +39,6 @@
     transition: all 0.5s ease;
     width: 100%;
     object-fit: cover;
-    overflow: hidden !important;
-    position: relative;
-    box-sizing: border-box !important;
-    background-color: transparent !important;
-  }
-
-  .bliss-img-asymmetric img,
-  .bliss-img-asymmetric-reverse img {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 
   .bliss-img-asymmetric:hover,
@@ -262,11 +246,10 @@
     padding: 11px 18px;
     color: #333333;
     text-decoration: none;
-    font-family: "Outfit", sans-serif !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.01em;
-    line-height: 1.6;
+    font-family: "Outfit", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
     transition:
       background 0.2s ease,
       color 0.2s ease,
@@ -274,11 +257,9 @@
     white-space: normal;
   }
 
-  .desktop-dropdown a:hover,
-  .desktop-dropdown a.active {
+  .desktop-dropdown a:hover {
     background: rgba(111, 175, 166, 0.08);
     color: #6fafa6;
-    font-weight: 700 !important;
     padding-left: 24px;
   }
 
@@ -573,7 +554,14 @@
           <li><a href="admissionProcess.html">Admissions</a></li>
 
           <li><a href="team.html">Faculty & Therapists</a></li>
-          <li><a href="gallery.html">Resources</a></li>
+          <li class="has-dropdown">
+            <a href="gallery.html">Media</a>
+            <div class="desktop-dropdown" aria-label="Media menu">
+              <a href="blog.html">Blog</a>
+              <a href="testimonial.html">Testimonial</a>
+              <a href="gallery.html">Gallery</a>
+            </div>
+          </li>
         </ul>
       </nav>
 
@@ -632,7 +620,17 @@
         <li><a class="nav-link" href="admissionProcess.html">Admissions</a></li>
 
         <li><a class="nav-link" href="team.html">Faculty & Therapists</a></li>
-        <li><a class="nav-link" href="gallery.html">Resources</a></li>
+        <li class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle" type="button">
+            <span>Media</span>
+            <span class="arrow"></span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
       </ul>
       <div class="mobile-cta">
         <a href="contact.html">Book a Session</a>
@@ -701,6 +699,11 @@
         "iqtesting.html",
         "ldtesting.html",
         "angermanagement.html",
+      ]);
+      const mediaPaths = new Set([
+        "blog.html",
+        "testimonial.html",
+        "gallery.html",
       ]);
 
       const desktopItems = document.querySelectorAll(
@@ -790,7 +793,10 @@
           const submenuActive = item.querySelector(
             `.mobile-submenu a[href="${currentPath}"]`,
           );
-          if (submenuActive && servicePaths.has(currentPath)) {
+          if (
+            submenuActive &&
+            (servicePaths.has(currentPath) || mediaPaths.has(currentPath))
+          ) {
             item.classList.add("active");
             item.classList.add("open");
             submenuActive.classList.add("active");
