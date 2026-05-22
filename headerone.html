@@ -1,4 +1,6 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
   /* ═══════════════════════════════════════
      GLOBAL THEME VARIABLES & UTILITIES
      Applied to all pages fetching this header
@@ -27,6 +29,8 @@
     transition: all 0.5s ease;
     width: 100%;
     object-fit: cover;
+    overflow: hidden !important;
+    position: relative;
   }
 
   .bliss-img-asymmetric-reverse {
@@ -36,6 +40,8 @@
     transition: all 0.5s ease;
     width: 100%;
     object-fit: cover;
+    overflow: hidden !important;
+    position: relative;
   }
 
   .bliss-img-asymmetric:hover,
@@ -243,10 +249,11 @@
     padding: 11px 18px;
     color: #333333;
     text-decoration: none;
-    font-family: "Outfit", sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.4;
+    font-family: "Outfit", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
     transition:
       background 0.2s ease,
       color 0.2s ease,
@@ -254,9 +261,11 @@
     white-space: normal;
   }
 
-  .desktop-dropdown a:hover {
+  .desktop-dropdown a:hover,
+  .desktop-dropdown a.active {
     background: rgba(111, 175, 166, 0.08);
     color: #6fafa6;
+    font-weight: 700 !important;
     padding-left: 24px;
   }
 
