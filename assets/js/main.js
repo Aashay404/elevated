@@ -51,7 +51,6 @@
             rtsJs.cartBarshow();
             rtsJs.cartNumberIncDec();
             rtsJs.niceSelect();
-            rtsJs.backToTopInit();
             rtsJs.mesonaryTab();
             rtsJs.vedioActivation();
             rtsJs.stickyHeader();
