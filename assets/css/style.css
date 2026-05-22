@@ -9238,10 +9238,41 @@ ol ul {
 
 img {
   -ms-interpolation-mode: bicubic;
-  border: 5px solid transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
   vertical-align: middle;
   max-width: 100%;
   height: auto;
+}
+
+.bliss-img-asymmetric,
+.bliss-img-asymmetric-reverse {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+.bliss-img-asymmetric {
+  border-radius: 120px 0 120px 0 !important;
+  border: 4px solid #F2CC8F;
+}
+
+.bliss-img-asymmetric-reverse {
+  border-radius: 0 120px 0 120px !important;
+  border: 4px solid #6FAFA6;
+}
+
+/* Ensure images in asymmetric containers don't have gaps */
+.bliss-img-asymmetric img,
+.bliss-img-asymmetric-reverse img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 svg:not(:root) {
