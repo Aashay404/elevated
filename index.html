@@ -667,6 +667,10 @@
         line-height: 1;
       }
 
+      .about-exp-badge .badge-num span {
+        color: currentColor;
+      }
+
       .about-exp-badge .badge-lbl {
         font-size: 0.65rem;
         font-weight: 600;
@@ -747,6 +751,10 @@
         line-height: 1.1;
       }
 
+      .about-students-pill .pill-info .pill-count span {
+        color: currentColor;
+      }
+
       .about-students-pill .pill-info .pill-sub {
         font-size: 0.65rem;
         color: #667;
@@ -815,17 +823,6 @@
         position: relative;
       }
 
-      .about-new-title .title-highlight::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 4px;
-        width: 100%;
-        height: 6px;
-        background: rgba(249, 168, 38, 0.3);
-        border-radius: 3px;
-      }
-
       .about-new-desc {
         font-size: 1.15rem;
         line-height: 1.8;
@@ -889,7 +886,7 @@
       }
 
       .about-stat-item .stat-num span {
-        color: #f4978e;
+        color: currentColor;
       }
 
       .about-stat-item .stat-lbl {
@@ -2214,7 +2211,7 @@
               class="about-exp-badge"
               style="background: var(--color-orange)"
             >
-              <div class="badge-num" style="color: #fff">8+</div>
+              <div class="badge-num" style="color: #fff">8<span>+</span></div>
               <div class="badge-lbl" style="color: #fff">
                 Years of<br />Excellence
               </div>
@@ -2231,7 +2228,7 @@
               </div>
               <div class="pill-info">
                 <div class="pill-count" style="color: var(--color-blue)">
-                  500+ Students
+                  500<span>+</span> Students
                 </div>
                 <div class="pill-sub">Helped &amp; Thriving</div>
               </div>
@@ -2278,13 +2275,13 @@
                 <div class="stat-lbl">Children Helped</div>
               </div>
               <div class="about-stat-item">
-                <div class="stat-num" style="color: #c85252">
+                <div class="stat-num" style="color: var(--color-blue)">
                   15<span>+</span>
                 </div>
                 <div class="stat-lbl">Expert Therapists</div>
               </div>
               <div class="about-stat-item">
-                <div class="stat-num" style="color: var(--color-green)">
+                <div class="stat-num" style="color: var(--color-blue)">
                   98<span>%</span>
                 </div>
                 <div class="stat-lbl">Parent Satisfaction</div>
