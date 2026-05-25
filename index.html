@@ -284,6 +284,50 @@
         transition: transform 0.8s ease;
       }
 
+      /* Scroll Buttons Styling */
+      .services-scroll-btn {
+        position: relative;
+        z-index: 10;
+        background: var(--color-primary);
+        color: #ffffff;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(111, 175, 166, 0.3);
+      }
+
+      .services-scroll-btn:hover {
+        background: var(--color-secondary);
+        box-shadow: 0 6px 20px rgba(111, 175, 166, 0.5);
+        transform: scale(1.1);
+      }
+
+      .services-scroll-btn:active {
+        transform: scale(0.95);
+      }
+
+      .services-scroll-btn-left,
+      .services-scroll-btn-right {
+        min-width: 45px;
+        min-height: 45px;
+      }
+
+      @media (max-width: 768px) {
+        .services-scroll-btn {
+          width: 38px;
+          height: 38px;
+          font-size: 14px;
+        }
+      }
+
       /* ══════════════ INSTAGRAM SECTION ══════════════ */
       .instagram-grid {
         display: grid;
@@ -2336,8 +2380,12 @@
             confidence, learning, and emotional wellness.
           </p>
         </div>
-        <div class="services-scroll-container">
-          <div class="services-scroll-wrapper">
+        <div style="position: relative; display: flex; align-items: center; gap: 15px;">
+          <button id="scroll-left-btn" class="services-scroll-btn services-scroll-btn-left" aria-label="Scroll left">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="services-scroll-container">
+            <div class="services-scroll-wrapper">
             <a
               href="adhdsupport.html"
               class="service-card"
@@ -2494,6 +2542,10 @@
             </a>
           </div>
         </div>
+          <button id="scroll-right-btn" class="services-scroll-btn services-scroll-btn-right" aria-label="Scroll right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -2501,6 +2553,8 @@
       document.addEventListener("DOMContentLoaded", function () {
         const container = document.querySelector(".services-scroll-container");
         const wrapper = document.querySelector(".services-scroll-wrapper");
+        const leftBtn = document.getElementById("scroll-left-btn");
+        const rightBtn = document.getElementById("scroll-right-btn");
         const cards = wrapper
           ? Array.from(wrapper.querySelectorAll(".service-card"))
           : [];
@@ -2511,22 +2565,46 @@
         const visibleCount = Math.floor(container.offsetWidth / cardWidth);
         const maxIndex = Math.max(0, cards.length - visibleCount);
 
-        function slide() {
-          index = index >= maxIndex ? 0 : index + 1;
+        function slide(direction = 1) {
+          if (direction > 0) {
+            index = index >= maxIndex ? 0 : index + 1;
+          } else {
+            index = index <= 0 ? maxIndex : index - 1;
+          }
           container.scrollTo({ left: index * cardWidth, behavior: "smooth" });
         }
 
-        let timer = setInterval(slide, 3200);
+        function resetTimer() {
+          clearInterval(timer);
+          timer = setInterval(() => slide(), 3200);
+        }
+
+        let timer = setInterval(() => slide(), 3200);
+
+        // Button click handlers
+        if (leftBtn) {
+          leftBtn.addEventListener("click", function () {
+            slide(-1);
+            resetTimer();
+          });
+        }
+
+        if (rightBtn) {
+          rightBtn.addEventListener("click", function () {
+            slide(1);
+            resetTimer();
+          });
+        }
 
         container.addEventListener("mouseenter", function () {
           clearInterval(timer);
         });
         container.addEventListener("mouseleave", function () {
-          timer = setInterval(slide, 3200);
+          timer = setInterval(() => slide(), 3200);
         });
         window.addEventListener("resize", function () {
           clearInterval(timer);
-          timer = setInterval(slide, 3200);
+          timer = setInterval(() => slide(), 3200);
         });
       });
     </script>
