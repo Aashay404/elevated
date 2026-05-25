@@ -23,6 +23,15 @@
         body { font-family: 'Outfit', sans-serif; }
         .rts-breadcrumb-area { padding-top: 110px !important; padding-bottom: 50px !important; min-height: auto !important; }
         .rts-about-area.rts-section-gap { padding-top: 50px !important; }
+        /* Page-scoped override: force both about cards to same dark color */
+        .about-wrapper .wrapper-list.same-color .list-inner {
+            background: #0B2F5C !important;
+            color: #ffffff !important;
+            border-color: #0B2F5C !important;
+        }
+        .about-wrapper .wrapper-list.same-color::after {
+            background: #0B2F5C !important;
+        }
     </style>
 </head>
 
@@ -58,6 +67,7 @@
                                 <div class="bliss-img-asymmetric" style="height: 550px;">
                                     <img src="assets/images/service/pepbrain.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Brain Gym">
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -70,20 +80,20 @@
                                 <p class="desc">Whether you're looking to beat "brain fog," excel in a high-pressure career, or simply stay sharp as you age, we provide the tools to rewire your mental pathways.</p>
                             </div>
                             <ul class="about-wrapper">
-                                <li class="wrapper-list">
-                                    <div class="list-inner" style="background: #6FAFA6 !important;">
-                                        <div class="icon" style="background: #0B2F5C; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; min-width: 45px;"><i class="fa-solid fa-check" style="color: #fff;"></i></div>
+                                <li class="wrapper-list same-color">
+                                    <div class="list-inner" style="background: #0B2F5C; color: #ffffff; border-color: #0B2F5C;">
+                                        <div class="icon" style="background: var(--color-orange); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; min-width: 45px;"><i class="fa-solid fa-check" style="color: #fff;"></i></div>
                                         <div class="content">
-                                            <h4 class="title" style="color: var(--color-blue);">Neuroplasticity-Based Training</h4>
+                                            <h4 class="title" style="color: #ffffff;">Neuroplasticity-Based Training</h4>
                                             <p class="desc">Our curriculum is built on the brain's ability to reorganize itself by forming new neural connections through targeted exercises.</p>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="wrapper-list">
-                                    <div class="list-inner" style="background: #6FAFA6 !important;">
-                                        <div class="icon" style="background: #0B2F5C; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; min-width: 45px;"><i class="fa-solid fa-check" style="color: #fff;"></i></div>
+                                <li class="wrapper-list same-color">
+                                    <div class="list-inner" style="background: #0B2F5C; color: #ffffff; border-color: #0B2F5C;">
+                                        <div class="icon" style="background: var(--color-orange); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; min-width: 45px;"><i class="fa-solid fa-check" style="color: #fff;"></i></div>
                                         <div class="content">
-                                            <h4 class="title" style="color: var(--color-blue);">High-Intensity Cognitive Conditioning</h4>
+                                            <h4 class="title" style="color: #ffffff;">High-Intensity Cognitive Conditioning</h4>
                                             <p class="desc">A structured program designed to push your mental performance to its peak, no matter your age or current cognitive level.</p>
                                         </div>
                                     </div>
@@ -93,11 +103,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="shape-image">
-            <div class="shape one" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/08.svg" alt="shape_image"></div>
-            <div class="shape two" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/09.svg" alt="shape_image"></div>
-            <div class="shape three" data-speed="0.04"><img src="assets/images/banner/shape/10.svg" alt="shape_image"></div>
         </div>
     </section>
 
@@ -161,16 +166,13 @@
                                 <div class="bliss-img-asymmetric-reverse" style="height: 550px;">
                                     <img src="assets/images/service/pepbrain2.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="shape-image">
-            <div class="shape one" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/25.svg" alt="shape_image"></div>
-            <div class="shape two" data-speed="0.04" data-revert="true"><img src="assets/images/banner/shape/26.svg" alt="shape_image"></div>
-            <div class="shape three" data-speed="0.04"><img src="assets/images/banner/shape/27.svg" alt="shape_image"></div>
         </div>
     </section>
 
@@ -190,5 +192,3 @@ fetch("footer.html").then(res => res.text()).then(data => {document.getElementBy
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-

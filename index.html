@@ -333,102 +333,52 @@
         }
       }
 
-      /* ══════════════ INSTAGRAM SECTION ══════════════ */
       .instagram-grid {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
         margin-top: 30px;
       }
       
-      @media (max-width: 1200px) {
+      @media (max-width: 1024px) {
         .instagram-grid {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
         }
       }
       
-      @media (max-width: 600px) {
+      @media (max-width: 640px) {
         .instagram-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
+          grid-template-columns: 1fr;
+          max-width: 400px;
+          margin-left: auto;
+          margin-right: auto;
         }
       }
 
-      .instagram-item {
-        position: relative;
-        display: block;
-        border-radius: 20px;
-        overflow: hidden;
-        aspect-ratio: 1 / 1;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      .instagram-reel-card {
         background: #ffffff;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(111, 175, 166, 0.12);
+        position: relative;
+        height: 420px; /* Reduced visible area height to mask top/bottom metadata */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .instagram-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      .instagram-reel-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 50px rgba(111, 175, 166, 0.15);
       }
 
-      .instagram-overlay {
+      .instagram-reel-card iframe {
         position: absolute;
-        inset: 0;
-        background: rgba(111, 175, 166, 0.85); /* Glassmorphic teal color matching --color-primary */
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-      }
-
-      .instagram-item:hover img {
-        transform: scale(1.08);
-      }
-
-      .instagram-item:hover .instagram-overlay {
-        opacity: 1;
-      }
-
-      .instagram-icon-box {
-        width: 48px;
-        height: 48px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        color: #ffffff;
-        font-size: 1.5rem;
-        margin-bottom: 12px;
-        transform: scale(0.8);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .instagram-item:hover .instagram-icon-box {
-        transform: scale(1);
-      }
-
-      .instagram-stats {
-        display: flex;
-        gap: 15px;
-        color: #ffffff;
-        font-size: 0.9rem;
-        font-weight: 600;
-        transform: translateY(10px);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .instagram-item:hover .instagram-stats {
-        transform: translateY(0);
-      }
-
-      .instagram-stats span {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
+        top: -85px; /* Shaved off header completely */
+        left: -15%; /* Shaved off left margins */
+        width: 130%; /* Expanded width to mask right margins */
+        height: 620px; /* Tall height to completely mask bottom caption and actions */
+        border: none;
+        background: #ffffff;
       }
 
       .instagram-btn {
@@ -1538,7 +1488,7 @@
                       "
                     >
                       Discover Your <br />
-                      <span style="color: #f4978e">True Potential</span>
+                      <span style="color: #6fafa6">True Potential</span>
                     </h1>
                     <p
                       style="
@@ -1570,7 +1520,7 @@
                         <i
                           class="fa-solid fa-star"
                           style="
-                            color: var(--color-primary);
+                            color: #6fafa6;
                             margin-right: 12px;
                             font-size: 1.2rem;
                           "
@@ -1588,7 +1538,7 @@
                         <i
                           class="fa-solid fa-star"
                           style="
-                            color: var(--color-primary);
+                            color: #6fafa6;
                             margin-right: 12px;
                             font-size: 1.2rem;
                           "
@@ -1605,7 +1555,7 @@
                         <i
                           class="fa-solid fa-star"
                           style="
-                            color: #f4978e;
+                            color: #6fafa6;
                             margin-right: 12px;
                             font-size: 1.2rem;
                           "
@@ -1694,7 +1644,7 @@
                       "
                     >
                       Focusing <br />
-                      <span style="color: #f4978e">Your Energy</span>
+                      <span style="color: #6fafa6">Your Energy</span>
                     </h1>
                     <p
                       style="
@@ -1760,7 +1710,7 @@
                         <i
                           class="fa-solid fa-star"
                           style="
-                            color: #f4978e;
+                            color: var(--color-primary);
                             margin-right: 12px;
                             font-size: 1.2rem;
                           "
@@ -1918,7 +1868,7 @@
                         <i
                           class="fa-solid fa-star"
                           style="
-                            color: #f4978e;
+                            color: var(--color-primary);
                             margin-right: 12px;
                             font-size: 1.2rem;
                           "
@@ -2452,7 +2402,7 @@
       });
     </script>
 
-    <!-- ══════════════ INSTAGRAM FEED ══════════════ -->
+    <!-- ══════════════ INSTAGRAM REELS ══════════════ -->
     <section
       class="rts-instagram-area"
       style="
@@ -2468,13 +2418,13 @@
             class="pre-title justify-content-center"
             style="color: var(--color-secondary) !important"
           >
-            <img src="assets/images/banner/title-img.svg" alt="" />Follow Us
+            <img src="assets/images/banner/title-img.svg" alt="" />Watch Reels
           </p>
-          <h2 class="section-title">On Instagram</h2>
+          <h2 class="section-title">Our Latest Reels</h2>
           <p class="desc">
-            Stay updated with our latest activities, tips, and moments of learning & growing.
+            Watch our latest reels, educational activities, and moments of learning & growing.
             <a
-              href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+              href="https://www.instagram.com/elevated.minds____/reels/"
               target="_blank"
               style="color: var(--color-primary); font-weight: 700; text-decoration: none"
               >@elevated.minds____</a
@@ -2482,120 +2432,109 @@
           </p>
         </div>
         <div class="instagram-grid">
-          <!-- Item 1 -->
-          <a
-            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
-            target="_blank"
-            class="instagram-item"
-          >
-            <img src="assets/images/gallery/C1.jpeg" alt="Instagram Post" />
-            <div class="instagram-overlay">
-              <div class="instagram-icon-box">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
-              <div class="instagram-stats">
-                <span><i class="fa-solid fa-heart"></i> 142</span>
-                <span><i class="fa-solid fa-comment"></i> 18</span>
-              </div>
-            </div>
-          </a>
-          <!-- Item 2 -->
-          <a
-            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
-            target="_blank"
-            class="instagram-item"
-          >
-            <img src="assets/images/gallery/C2.jpeg" alt="Instagram Post" />
-            <div class="instagram-overlay">
-              <div class="instagram-icon-box">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
-              <div class="instagram-stats">
-                <span><i class="fa-solid fa-heart"></i> 98</span>
-                <span><i class="fa-solid fa-comment"></i> 12</span>
-              </div>
-            </div>
-          </a>
-          <!-- Item 3 -->
-          <a
-            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
-            target="_blank"
-            class="instagram-item"
-          >
-            <img src="assets/images/gallery/C3.jpeg" alt="Instagram Post" />
-            <div class="instagram-overlay">
-              <div class="instagram-icon-box">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
-              <div class="instagram-stats">
-                <span><i class="fa-solid fa-heart"></i> 165</span>
-                <span><i class="fa-solid fa-comment"></i> 24</span>
-              </div>
-            </div>
-          </a>
-          <!-- Item 4 -->
-          <a
-            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
-            target="_blank"
-            class="instagram-item"
-          >
-            <img src="assets/images/gallery/C4.jpeg" alt="Instagram Post" />
-            <div class="instagram-overlay">
-              <div class="instagram-icon-box">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
-              <div class="instagram-stats">
-                <span><i class="fa-solid fa-heart"></i> 112</span>
-                <span><i class="fa-solid fa-comment"></i> 9</span>
-              </div>
-            </div>
-          </a>
-          <!-- Item 5 -->
-          <a
-            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
-            target="_blank"
-            class="instagram-item"
-          >
-            <img src="assets/images/gallery/C5.jpeg" alt="Instagram Post" />
-            <div class="instagram-overlay">
-              <div class="instagram-icon-box">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
-              <div class="instagram-stats">
-                <span><i class="fa-solid fa-heart"></i> 180</span>
-                <span><i class="fa-solid fa-comment"></i> 31</span>
-              </div>
-            </div>
-          </a>
-          <!-- Item 6 -->
-          <a
-            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
-            target="_blank"
-            class="instagram-item"
-          >
-            <img src="assets/images/gallery/C7.jpeg" alt="Instagram Post" />
-            <div class="instagram-overlay">
-              <div class="instagram-icon-box">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
-              <div class="instagram-stats">
-                <span><i class="fa-solid fa-heart"></i> 134</span>
-                <span><i class="fa-solid fa-comment"></i> 15</span>
-              </div>
-            </div>
-          </a>
+          <!-- Reel 1 -->
+          <div class="instagram-reel-card">
+            <iframe
+              src="https://www.instagram.com/reel/DYkR_1itsUc/embed/"
+              allowtransparency="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
+          <!-- Reel 2 -->
+          <div class="instagram-reel-card">
+            <iframe
+              src="https://www.instagram.com/reel/DYOdiYJxuOg/embed/"
+              allowtransparency="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
+          <!-- Reel 3 -->
+          <div class="instagram-reel-card">
+            <iframe
+              src="https://www.instagram.com/reel/DX8kVcZNK7r/embed/"
+              allowtransparency="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
+          <!-- Reel 4 -->
+          <div class="instagram-reel-card">
+            <iframe
+              src="https://www.instagram.com/reel/DXkQCYrjfqk/embed/"
+              allowtransparency="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
         </div>
         <div class="text-center" style="margin-top: 40px">
           <a
-            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+            href="https://www.instagram.com/elevated.minds____/reels/"
             target="_blank"
             class="instagram-btn"
           >
-            <i class="fa-brands fa-instagram"></i> View Profile
+            <i class="fa-brands fa-instagram"></i> Watch More Reels
           </a>
         </div>
       </div>
     </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Track iframe focus to pause other reels
+        window.addEventListener("blur", function () {
+          setTimeout(function () {
+            const activeEl = document.activeElement;
+            if (activeEl && activeEl.tagName === "IFRAME" && activeEl.closest(".instagram-reel-card")) {
+              const currentCard = activeEl.closest(".instagram-reel-card");
+              const allCards = document.querySelectorAll(".instagram-reel-card");
+              
+              allCards.forEach(function (card) {
+                const iframe = card.querySelector("iframe");
+                if (card !== currentCard && iframe) {
+                  const src = iframe.getAttribute("src");
+                  iframe.setAttribute("src", "");
+                  iframe.setAttribute("src", src);
+                }
+              });
+              
+              window.focus();
+            }
+          }, 150);
+        });
+
+        // Polling checks as backup for direct switching between iframes
+        setInterval(function () {
+          const activeEl = document.activeElement;
+          if (activeEl && activeEl.tagName === "IFRAME" && activeEl.closest(".instagram-reel-card")) {
+            const currentCard = activeEl.closest(".instagram-reel-card");
+            document.querySelectorAll(".instagram-reel-card").forEach(function (card) {
+              const iframe = card.querySelector("iframe");
+              if (card !== currentCard && iframe) {
+                if (iframe.dataset.wasReset !== "true") {
+                  const src = iframe.getAttribute("src");
+                  iframe.setAttribute("src", "");
+                  iframe.setAttribute("src", src);
+                  iframe.dataset.wasReset = "true";
+                }
+              } else if (card === currentCard && iframe) {
+                iframe.dataset.wasReset = "false";
+              }
+            });
+          } else {
+            document.querySelectorAll(".instagram-reel-card iframe").forEach(function (iframe) {
+              iframe.dataset.wasReset = "false";
+            });
+          }
+        }, 500);
+      });
+    </script>
 
     <!-- ══════════════ CORE FEATURES ══════════════ -->
     <section
