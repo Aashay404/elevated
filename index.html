@@ -284,6 +284,124 @@
         transition: transform 0.8s ease;
       }
 
+      /* ══════════════ INSTAGRAM SECTION ══════════════ */
+      .instagram-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
+        margin-top: 30px;
+      }
+      
+      @media (max-width: 1200px) {
+        .instagram-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      
+      @media (max-width: 600px) {
+        .instagram-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+      }
+
+      .instagram-item {
+        position: relative;
+        display: block;
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        background: #ffffff;
+      }
+
+      .instagram-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .instagram-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(111, 175, 166, 0.85); /* Glassmorphic teal color matching --color-primary */
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .instagram-item:hover img {
+        transform: scale(1.08);
+      }
+
+      .instagram-item:hover .instagram-overlay {
+        opacity: 1;
+      }
+
+      .instagram-icon-box {
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #ffffff;
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+        transform: scale(0.8);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .instagram-item:hover .instagram-icon-box {
+        transform: scale(1);
+      }
+
+      .instagram-stats {
+        display: flex;
+        gap: 15px;
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transform: translateY(10px);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .instagram-item:hover .instagram-stats {
+        transform: translateY(0);
+      }
+
+      .instagram-stats span {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .instagram-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+        color: #ffffff !important;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 14px 32px;
+        border-radius: 50px;
+        text-decoration: none !important;
+        box-shadow: 0 10px 25px rgba(238, 42, 123, 0.25);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .instagram-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(238, 42, 123, 0.4);
+      }
+
       .feature-list {
         display: grid;
         grid-template-columns: repeat(2, minmax(240px, 1fr));
@@ -2412,6 +2530,151 @@
         });
       });
     </script>
+
+    <!-- ══════════════ INSTAGRAM FEED ══════════════ -->
+    <section
+      class="rts-instagram-area"
+      style="
+        padding: 80px 0;
+        background: #ffffff;
+        position: relative;
+        margin-top: -2px;
+      "
+    >
+      <div class="container">
+        <div class="section-title-area text-center" style="margin-bottom: 40px">
+          <p
+            class="pre-title justify-content-center"
+            style="color: var(--color-secondary) !important"
+          >
+            <img src="assets/images/banner/title-img.svg" alt="" />Follow Us
+          </p>
+          <h2 class="section-title">On Instagram</h2>
+          <p class="desc">
+            Stay updated with our latest activities, tips, and moments of learning & growing.
+            <a
+              href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+              target="_blank"
+              style="color: var(--color-primary); font-weight: 700; text-decoration: none"
+              >@elevated.minds____</a
+            >
+          </p>
+        </div>
+        <div class="instagram-grid">
+          <!-- Item 1 -->
+          <a
+            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+            target="_blank"
+            class="instagram-item"
+          >
+            <img src="assets/images/gallery/C1.jpeg" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-icon-box">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="instagram-stats">
+                <span><i class="fa-solid fa-heart"></i> 142</span>
+                <span><i class="fa-solid fa-comment"></i> 18</span>
+              </div>
+            </div>
+          </a>
+          <!-- Item 2 -->
+          <a
+            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+            target="_blank"
+            class="instagram-item"
+          >
+            <img src="assets/images/gallery/C2.jpeg" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-icon-box">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="instagram-stats">
+                <span><i class="fa-solid fa-heart"></i> 98</span>
+                <span><i class="fa-solid fa-comment"></i> 12</span>
+              </div>
+            </div>
+          </a>
+          <!-- Item 3 -->
+          <a
+            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+            target="_blank"
+            class="instagram-item"
+          >
+            <img src="assets/images/gallery/C3.jpeg" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-icon-box">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="instagram-stats">
+                <span><i class="fa-solid fa-heart"></i> 165</span>
+                <span><i class="fa-solid fa-comment"></i> 24</span>
+              </div>
+            </div>
+          </a>
+          <!-- Item 4 -->
+          <a
+            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+            target="_blank"
+            class="instagram-item"
+          >
+            <img src="assets/images/gallery/C4.jpeg" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-icon-box">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="instagram-stats">
+                <span><i class="fa-solid fa-heart"></i> 112</span>
+                <span><i class="fa-solid fa-comment"></i> 9</span>
+              </div>
+            </div>
+          </a>
+          <!-- Item 5 -->
+          <a
+            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+            target="_blank"
+            class="instagram-item"
+          >
+            <img src="assets/images/gallery/C5.jpeg" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-icon-box">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="instagram-stats">
+                <span><i class="fa-solid fa-heart"></i> 180</span>
+                <span><i class="fa-solid fa-comment"></i> 31</span>
+              </div>
+            </div>
+          </a>
+          <!-- Item 6 -->
+          <a
+            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+            target="_blank"
+            class="instagram-item"
+          >
+            <img src="assets/images/gallery/C7.jpeg" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-icon-box">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="instagram-stats">
+                <span><i class="fa-solid fa-heart"></i> 134</span>
+                <span><i class="fa-solid fa-comment"></i> 15</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="text-center" style="margin-top: 40px">
+          <a
+            href="https://www.instagram.com/elevated.minds____?igsh=MTcwbHM0MGl1ZXRkdA%3D%3D"
+            target="_blank"
+            class="instagram-btn"
+          >
+            <i class="fa-brands fa-instagram"></i> View Profile
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- ══════════════ CORE FEATURES ══════════════ -->
     <section
