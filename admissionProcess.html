@@ -196,6 +196,34 @@
         color: #6a307d;
         font-size: 30px;
       }
+
+      /* Make admission cards in the steps area equal height */
+      .steps-inner .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .steps-inner .row > [class*="col-"] {
+        display: flex;
+      }
+      .steps-inner .row > [class*="col-"] > .admission-card {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+      }
+
+      /* Equalize the two info cards (FAQ and What Makes Us Different) */
+      .equal-height-cards {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .equal-height-cards > [class*="col-"] {
+        display: flex;
+      }
+      .equal-height-cards > [class*="col-"] > .admission-card {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+      }
     </style>
   </head>
 
@@ -256,7 +284,7 @@
         </div>
 
         <!-- Step-by-Step Process -->
-        <div class="section-inner" style="margin-top: 50px">
+        <div class="section-inner steps-inner" style="margin-top: 50px">
           <div class="row">
             <!-- Step 1 -->
             <div class="col-lg-6">
@@ -520,7 +548,7 @@
         </div>
 
         <!-- Additional Information -->
-        <div class="row" style="margin-top: 50px">
+        <div class="row equal-height-cards" style="margin-top: 50px">
           <div class="col-lg-6">
             <div class="admission-card" style="background: #f9f4fb">
               <h3 style="color: #6a307d">
