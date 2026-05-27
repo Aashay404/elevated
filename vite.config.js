@@ -12,10 +12,50 @@ files.forEach(file => {
   }
 });
 
+function copyDirSync(src, dest) {
+  fs.mkdirSync(dest, { recursive: true });
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+
+  for (let entry of entries) {
+    const srcPath = resolve(src, entry.name);
+    const destPath = resolve(dest, entry.name);
+
+    if (entry.isDirectory()) {
+      copyDirSync(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
 export default defineConfig({
   build: {
     rollupOptions: {
       input: input
     }
-  }
+  },
+  plugins: [
+    {
+      name: 'copy-static-assets',
+      closeBundle() {
+        const srcDir = resolve(__dirname, 'assets');
+        const destDir = resolve(__dirname, 'dist/assets');
+        if (fs.existsSync(srcDir)) {
+          const entries = fs.readdirSync(srcDir, { withFileTypes: true });
+          for (let entry of entries) {
+            const srcPath = resolve(srcDir, entry.name);
+            const destPath = resolve(destDir, entry.name);
+            if (entry.isDirectory()) {
+              copyDirSync(srcPath, destPath);
+            } else {
+              fs.mkdirSync(destDir, { recursive: true });
+              fs.copyFileSync(srcPath, destPath);
+            }
+          }
+          console.log('Successfully copied all static assets to dist/assets/');
+        }
+      }
+    }
+  ]
 });
+
