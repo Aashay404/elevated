@@ -50,6 +50,87 @@
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       }
+      /* Ensure team member names under images are black */
+      .rts-team-area .team-wrapper .content .title,
+      .rts-team-area .team-wrapper .content .title a {
+        color: #000 !important;
+      }
+
+      /* Modal for team member details */
+      .team-modal {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1050;
+        padding: 20px;
+      }
+      .team-modal.show {
+        display: flex;
+      }
+      .team-modal-card {
+        background: #fff; /* white card background as requested */
+        border-radius: 16px;
+        max-width: 1000px;
+        width: 100%;
+        display: flex;
+        gap: 24px;
+        padding: 24px;
+        color: #222; /* dark text for readability */
+      }
+      .team-modal-card .photo {
+        width: 320px;
+        min-width: 200px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .team-modal-card .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .team-modal-card .info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .team-modal-card h3 {
+        margin: 0;
+        color: #222;
+        font-size: 34px;
+      }
+      .team-modal-card .role {
+        background: #1f2223;
+        padding: 28px;
+        border-radius: 12px;
+        color: #fff;
+        font-size: 30px;
+      }
+      .team-modal-card .qual {
+        background: #f3f3f3;
+        padding: 18px;
+        border-radius: 12px;
+        color: #222;
+        font-weight: 700;
+        text-align: center;
+      }
+      .team-modal .close-btn {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        background: transparent;
+        border: 0;
+        color: #222;
+        font-size: 28px;
+        cursor: pointer;
+      }
     </style>
   </head>
 
@@ -108,7 +189,13 @@
                     >
                       <img
                         src="assets/images/instructor/01.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          object-fit: contain;
+                          object-position: center;
+                          background-color: #fff;
+                        "
                         alt=""
                       />
                     </div>
@@ -128,9 +215,12 @@
                 <div class="content" style="padding: 20px; text-align: center">
                   <h4 class="title">
                     <a
-                      href="team-details.html"
-                      style="color: var(--color-blue); font-weight: 800"
-                      >Eleanor Alice</a
+                      href="#"
+                      class="open-team-modal"
+                      data-role="Psychologist, Educationist, and Therapist"
+                      data-qualification="B.Ed., Diploma in Remedial Ed. (Cambridge University), M.A. Psychology, B.Ed.Spl.Ed, Ph.D"
+                      style="font-weight: 800"
+                      >Rashmi Bhand</a
                     >
                   </h4>
                   <!-- <span class="designation" style="color: var(--color-orange); font-weight: 600;">Head Teacher</span> -->
@@ -156,7 +246,13 @@
                     >
                       <img
                         src="assets/images/instructor/02.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          object-fit: contain;
+                          object-position: center;
+                          background-color: #fff;
+                        "
                         alt=""
                       />
                     </div>
@@ -176,9 +272,12 @@
                 <div class="content" style="padding: 20px; text-align: center">
                   <h4 class="title">
                     <a
-                      href="team-details.html"
-                      style="color: var(--color-blue); font-weight: 800"
-                      >John Doe</a
+                      href="#"
+                      class="open-team-modal"
+                      data-role="Psychologist, Therapist, and Graphologist"
+                      data-qualification="BA & MA Clinical Psychology"
+                      style="font-weight: 800"
+                      >Deshna Shah</a
                     >
                   </h4>
                   <!-- <span class="designation" style="color: var(--color-blue); font-weight: 600;">Therapist</span> -->
@@ -203,8 +302,14 @@
                       "
                     >
                       <img
-                        src="assets/images/instructor/02.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover"
+                        src="assets/images/instructor/03.jpg"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          object-fit: contain;
+                          object-position: center;
+                          background-color: #fff;
+                        "
                         alt=""
                       />
                     </div>
@@ -224,9 +329,12 @@
                 <div class="content" style="padding: 20px; text-align: center">
                   <h4 class="title">
                     <a
-                      href="team-details.html"
-                      style="color: var(--color-blue); font-weight: 800"
-                      >Charlie Ford</a
+                      href="#"
+                      class="open-team-modal"
+                      data-role="Psychologist, Therapist and Special Educator"
+                      data-qualification="M.A. Clinical Psychology, B.Ed.Spl.Ed, Ph.D Scholar"
+                      style="font-weight: 800"
+                      >Bhavesh Pande</a
                     >
                   </h4>
                 </div>
@@ -248,45 +356,38 @@
                     >
                       <img
                         src="assets/images/instructor/04.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          object-fit: contain;
+                          object-position: center;
+                          background-color: #fff;
+                        "
                         alt=""
                       />
                     </div>
                     <ul class="social-area">
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-01.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                       </li>
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-02.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
                       </li>
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-03.svg"
-                            alt=""
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-04.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="content">
                   <h4 class="title">
-                    <a href="team-details.html">Theodore Noah</a>
+                    <a
+                      href="#"
+                      class="open-team-modal"
+                      data-role="Psychologist and Therapist"
+                      data-qualification="B.A., M.A in Clinical Psychology — Certified Counsellor"
+                      >Shrutika Bhagwat</a
+                    >
                   </h4>
                 </div>
               </div>
@@ -307,44 +408,39 @@
                     >
                       <img
                         src="assets/images/instructor/05.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          object-fit: contain;
+                          object-position: center;
+                          background-color: #fff;
+                        "
                         alt=""
                       />
                     </div>
                     <ul class="social-area">
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-01.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                       </li>
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-02.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
                       </li>
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-03.svg"
-                            alt=""
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-04.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="content">
-                  <h4 class="title"><a href="#">Isabella Jane</a></h4>
+                  <h4 class="title">
+                    <a
+                      href="#"
+                      class="open-team-modal"
+                      data-role="Psychologist and Therapist"
+                      data-qualification="BBA"
+                      >Yukta Chopda</a
+                    >
+                  </h4>
                 </div>
               </div>
             </div>
@@ -364,45 +460,38 @@
                     >
                       <img
                         src="assets/images/instructor/06.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          object-fit: contain;
+                          object-position: center;
+                          background-color: #fff;
+                        "
                         alt=""
                       />
                     </div>
                     <ul class="social-area">
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-01.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                       </li>
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-02.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
                       </li>
                       <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-03.svg"
-                            alt=""
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/instructor/social-04.svg"
-                            alt=""
-                        /></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="content">
                   <h4 class="title">
-                    <a href="team-details.html">Henry Richard</a>
+                    <a
+                      href="#"
+                      class="open-team-modal"
+                      data-role="Psychologist and Therapist"
+                      data-qualification="LL.B & Masters in Clinical Psychology"
+                      >Namrata Sonawane</a
+                    >
                   </h4>
                 </div>
               </div>
@@ -413,6 +502,19 @@
       </div>
     </section>
     <!-- course area end -->
+
+    <!-- Team detail modal -->
+    <div id="teamModal" class="team-modal" aria-hidden="true">
+      <button class="close-btn" aria-label="Close">&times;</button>
+      <div class="team-modal-card" role="dialog" aria-modal="true">
+        <div class="photo"><img src="" alt="Member photo" /></div>
+        <div class="info">
+          <h3 class="m-name">Name</h3>
+          <div class="role">Role</div>
+          <div class="qual">Qualification</div>
+        </div>
+      </div>
+    </div>
 
     <!-- footer call to action area start -->
 
@@ -736,5 +838,57 @@
     <script src="assets/js/plugins/calender.js"></script>
     <!-- main Js -->
     <script src="assets/js/main.js"></script>
+    <script>
+      (function () {
+        function qs(el, ctx) {
+          return (ctx || document).querySelector(el);
+        }
+        function qsa(el, ctx) {
+          return Array.from((ctx || document).querySelectorAll(el));
+        }
+
+        var modal = qs("#teamModal");
+        var modalImg = qs(".team-modal-card .photo img", modal);
+        var modalName = qs(".team-modal-card .m-name", modal);
+        var modalRole = qs(".team-modal-card .role", modal);
+        var modalQual = qs(".team-modal-card .qual", modal);
+        var closeBtn = qs(".team-modal .close-btn", modal);
+
+        function openModal(data) {
+          modalImg.src = data.img || "";
+          modalImg.alt = data.name || "Photo";
+          modalName.textContent = data.name || "";
+          modalRole.textContent = data.role || "";
+          modalQual.textContent = data.qualification || "";
+          modal.classList.add("show");
+          modal.setAttribute("aria-hidden", "false");
+        }
+        function closeModal() {
+          modal.classList.remove("show");
+          modal.setAttribute("aria-hidden", "true");
+        }
+
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closeModal();
+        });
+
+        qsa(".rts-team-area .team-wrapper").forEach(function (card) {
+          var link = qs(".content .title a", card);
+          if (!link) return;
+          link.addEventListener("click", function (ev) {
+            ev.preventDefault();
+            var img = qs(".wrapper-inner .image img", card);
+            var data = {
+              img: img ? img.getAttribute("src") : "",
+              name: link.textContent.trim(),
+              role: link.getAttribute("data-role") || "",
+              qualification: link.getAttribute("data-qualification") || "",
+            };
+            openModal(data);
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
