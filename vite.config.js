@@ -52,6 +52,13 @@ export default defineConfig({
               fs.copyFileSync(srcPath, destPath);
             }
           }
+          // Copy header-loader.js to dist/
+          const loaderSrc = resolve(__dirname, 'header-loader.js');
+          const loaderDest = resolve(__dirname, 'dist/header-loader.js');
+          if (fs.existsSync(loaderSrc)) {
+            fs.copyFileSync(loaderSrc, loaderDest);
+            console.log('Successfully copied header-loader.js to dist/');
+          }
           console.log('Successfully copied all static assets to dist/assets/');
         }
       }
