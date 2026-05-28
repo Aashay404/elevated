@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="CCPF - Cervical Cancer Prevention Foundation ">
+  <link href="assets/images/favicon/favicon.png" rel="icon">
+  <title>CCPF - Cervical Cancer Prevention Foundation </title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="stylesheet" href="assets/css/libraries.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/header-custom.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ERLG8H4G8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9ERLG8H4G8');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1589783308815809');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1589783308815809&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+  <style>
+    .clinic-tooltip {
+      background: rgba(220, 53, 69, 0.9) !important;
+      color: white !important;
+      border: none !important;
+      border-radius: 4px !important;
+      font-size: 12px !important;
+      font-weight: bold !important;
+      padding: 4px 8px !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .clinic-tooltip::before {
+      border-top-color: rgba(220, 53, 69, 0.9) !important;
+    }
+
+    @media (max-width: 991.98px) {
+      .mob-ky-2 {
+        margin-top: -64px;
+      }
+
+      .mob-map-2 {
+        height: 191px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="preloader">
+      <div class="loading"><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div id="header-placeholder"></div>
+
+
+    <section class="clinic-search pt-130 pb-60">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Left Half - Interactive Map -->
+          <div class="col-lg-6">
+            <div class="map-container bg-white p-3 shadow rounded h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3 mob-ky-2">
+                <h4>Clinic Locations</h4>
+                <button id="goToMyLocation" class="btn btn-sm btn-success" style="display:none;">
+                  <i class="fas fa-location-arrow"></i> My Location
+                </button>
+              </div>
+              <div id="map" class="mob-map-2" style="height: 500px; border-radius: 8px;"></div>
+            </div>
+          </div>
+
+          <!-- Right Half - Search Functionality -->
+          <div class="col-lg-6">
+            <div class="search-card bg-white p-4 shadow rounded h-100">
+              <h3 class="text-center mb-4">Find Nearest Clinic</h3>
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input type="text" id="locationInput" class="form-control"
+                        placeholder="Enter your location or use GPS">
+                      <div class="input-group-append">
+                        <button type="button" onclick="getCurrentLocation()" class="btn btn-outline-primary"
+                          title="Use my location">
+                          <i class="fas fa-crosshairs"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button onclick="searchClinics()" class="btn btn-primary btn-block mb-3">Search Clinics</button>
+                </div>
+              </div>
+              <div id="searchResults" class="mt-3" style="max-height: 400px; overflow-y: auto;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="services-layout2 pt-60" id="clinicsList">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
+            <div class="heading text-center mb-60">
+              <h2 class="heading__subtitle">Our Trusted Clinics & Partners</h2>
+              <h3 class="heading__title">Delivering Quality Cervical Cancer Prevention & Care</h3>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="service-item">
+
+                <div class="service__content">
+                  <h4 class="service__title">Dr. Ranjit Joshi – Manik Nagar</h4>
+                  <p class="service__desc">
+                    <strong>Mobile:</strong> (+91) 9822432972<br>
+                    <strong>Email:</strong> ranjitjoshi31@gmail.com<br>
+                    <strong>Address:</strong> Plot No 21A, Opp. Tulja Bhawani Temple, Manik Nagar, Nashik.
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <a href="https://maps.google.com/?q=Dr+Ranjit+Joshi+Manik+Nagar+Nashik"
+                      class="btn btn__secondary btn__outlined btn__rounded" target="_blank">
+                      <span>View on Map</span>
+                      <i class="icon-arrow-right"></i>
+                    </a>
+                    <a href="appointment.html?clinic=002" class="btn btn-primary btn__rounded">
+                      <span>Book Appointment</span>
+                      <i class="icon-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="service-item">
+
+                <div class="service__content">
+                  <h4 class="service__title">Dr. Trupti Dhakare </h4>
+                  <p class="service__desc">
+                    <strong>Mobile:</strong> (+91) 9898989811<br>
+                    <strong>Email:</strong> drtruptidhakare@gmail.com<br>
+                    <strong>Address:</strong> Lilawati Care Hospital college road near Big Bazar Nashik
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <a href="https://www.google.com/maps/place/Leelavati+Care/@20.0055599,73.7622412,743m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bddeb9ba2726851:0xeb557a73c3b04048!8m2!3d20.0055549!4d73.7648161!16s%2Fg%2F1tfxwh13?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+                      class="btn btn__secondary btn__outlined btn__rounded" target="_blank">
+                      <span>View on Map</span>
+                      <i class="icon-arrow-right"></i>
+                    </a>
+                    <a href="appointment.html?clinic=038" class="btn btn-primary btn__rounded">
+                      <span>Book Appointment</span>
+                      <i class="icon-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="service-item">
+
+                <div class="service__content">
+                  <h4 class="service__title">Dr. Sachin Gawale – Gangapur Road</h4>
+                  <p class="service__desc">
+                    <strong>Mobile:</strong> (+91) 9324385347<br>
+                    <strong>Email:</strong> sgawale@yahoo.com<br>
+                    <strong>Address:</strong> Gawale Maternity Hospital, 16A Manik Nagar, Opp. Shivsatya Ground,
+                    Gangapur Road.
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <a href="https://maps.google.com/?q=Gawale+Maternity+Hospital+Nashik"
+                      class="btn btn__secondary btn__outlined btn__rounded" target="_blank">
+                      <span>View on Map</span>
+                      <i class="icon-arrow-right"></i>
+                    </a>
+                    <a href="appointment.html?clinic=003" class="btn btn-primary btn__rounded">
+                      <span>Book Appointment</span>
+                      <i class="icon-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="service-item">
+
+                <div class="service__content">
+                  <h4 class="service__title">Dr. Raghuwanshi Hospital – Nashik</h4>
+                  <p class="service__desc">
+                    <strong>Mobile:</strong> (+91) 9967705465<br>
+                    <strong>Email:</strong> ritum.raghuwanshi@gmail.com<br>
+                    <strong>Address:</strong> State Bank Stop, Near Ganesh Chowk, Nashik.
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <a href="https://maps.google.com/?q=Dr+Raghuwanshi+Hospital+Nashik"
+                      class="btn btn__secondary btn__outlined btn__rounded" target="_blank">
+                      <span>View on Map</span>
+                      <i class="icon-arrow-right"></i>
+                    </a>
+                    <a href="appointment.html?clinic=005" class="btn btn-primary btn__rounded">
+                      <span>Book Appointment</span>
+                      <i class="icon-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </section>
+
+
+
+
+    <div id="footer-placeholder"></div>
+    <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+  </div>
+
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header-loader.js"></script>
+  <script src="assets/js/footer-loader.js"></script>
+  <script src="assets/js/video-popup.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="assets/js/ccpfcenter_logic.js"></script>
+</body>
+
+</html>

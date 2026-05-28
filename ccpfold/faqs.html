@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="CCPF - Cervical Cancer Prevention Foundation ">
+  <link href="assets/images/favicon/favicon.png" rel="icon">
+  <title>CCPF - Cervical Cancer Prevention Foundation </title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="stylesheet" href="assets/css/libraries.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/header-custom.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ERLG8H4G8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9ERLG8H4G8');
+</script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1589783308815809');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1589783308815809&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+ 
+
+  <!-- INTERNAL CSS FIX 100% WORKING -->
+  <style>
+
+    /* FAQ + Sidebar Layout Row */
+    .faq-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* Desktop view: FAQ left, Sidebar right */
+    .faq-col {
+        width: 66.66%; /* 8 columns */
+    }
+
+    .sidebar-col {
+        width: 33.33%; /* 4 columns */
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+        width: 100%;
+        max-width: 350px;
+        position: sticky;
+        top: 20px;
+    }
+
+    /* Mobile & Tablet view */
+    @media (max-width: 991px) {
+
+        /* Sidebar comes ABOVE FAQ */
+        .faq-row {
+            flex-direction: column-reverse;
+        }
+
+        .faq-col,
+        .sidebar-col {
+            width: 100%;
+        }
+
+        .sidebar-col {
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar {
+            position: relative;
+            top: 0;
+            max-width: 100%;
+        }
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div id="header-placeholder"></div>
+
+    <!-- PAGE TITLE -->
+    <section class="page-title page-title-layout5">
+      <div class="bg-img"><img src="assets/images/backgrounds/6.jpg" alt="background"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between flex-wrap align-items-center">
+            <h1 class="pagetitle__heading my-3">FAQs</h1>
+            <nav>
+              <ol class="breadcrumb my-3">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="about-us.html">About</a></li>
+                <li class="breadcrumb-item active" aria-current="page">FAQs</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq pt-120 pb-70">
+      <div class="container">
+
+        <!-- FIXED FAQ + SIDEBAR ROW -->
+        <div class="row faq-row">
+
+          <!-- LEFT SIDE FAQ -->
+          <div class="faq-col" id="accordion">
+
+            <div class="accordion-item opened">
+              <div class="accordion__header" data-toggle="collapse" data-target="#collapse1">
+                <a class="accordion__title" href="#">What is CCPF?</a>
+              </div>
+              <div id="collapse1" class="collapse show" data-parent="#accordion">
+                <div class="accordion__body">
+                  <p>CCPF stands for <strong>Cervical Cancer Prevention Foundation</strong>. It is a health awareness
+                    initiative dedicated to preventing cervical cancer through early screening, vaccination, and public
+                    education.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion__header" data-toggle="collapse" data-target="#collapse2">
+                <a class="accordion__title" href="#">What is the HPV vaccine and why is it important?</a>
+              </div>
+              <div id="collapse2" class="collapse" data-parent="#accordion">
+                <div class="accordion__body">
+                  <p>The HPV vaccine protects against the human papillomavirus, which causes most cervical cancer cases.
+HPV infection is very common and often shows no symptoms.
+The vaccine helps stop the infection before it can cause cell changes.
+It greatly lowers the risk of cervical cancer and other HPV-related diseases.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion__header" data-toggle="collapse" data-target="#collapse3">
+                <a class="accordion__title" href="#">Who should get the HPV vaccine?</a>
+              </div>
+              <div id="collapse3" class="collapse" data-parent="#accordion">
+                <div class="accordion__body">
+                  <p>The vaccine is recommended for girls and boys aged 9–14 years.
+It can also be taken by adults up to 45 years after consulting a doctor.
+Vaccination works best when given before exposure to HPV.
+Even adults benefit from added protection.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion__header" data-toggle="collapse" data-target="#collapse4">
+                <a class="accordion__title" href="#">Is the HPV vaccine safe?</a>
+              </div>
+              <div id="collapse4" class="collapse" data-parent="#accordion">
+                <div class="accordion__body">
+                  <p>Yes, the HPV vaccine is safe and approved worldwide.
+It has been used for many years in many countries.
+Most side effects are mild, such as pain or swelling at the injection site.
+Serious side effects are very rare.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion__header" data-toggle="collapse" data-target="#collapse5">
+                <a class="accordion__title" href="#">What is a Pap smear test?</a>
+              </div>
+              <div id="collapse5" class="collapse" data-parent="#accordion">
+                <div class="accordion__body">
+                  <p>A Pap smear is a simple screening test for cervical health.
+It checks for abnormal or pre-cancerous cell changes.
+The test is quick and usually takes only a few minutes.
+Early detection helps prevent cervical cancer.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion__header" data-toggle="collapse" data-target="#collapse6">
+                <a class="accordion__title" href="#">Why is the Pap smear test necessary?</a>
+              </div>
+              <div id="collapse6" class="collapse" data-parent="#accordion">
+                <div class="accordion__body">
+                  <p>Cervical cancer often develops without early symptoms.
+Pap smear tests detect problems before cancer forms.
+Early treatment can stop cancer from developing.
+Regular screening saves lives.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion__header" data-toggle="collapse" data-target="#collapse6">
+                <a class="accordion__title" href="#">Is the Pap smear test painful?</a>
+              </div>
+              <div id="collapse6" class="collapse" data-parent="#accordion">
+                <div class="accordion__body">
+                  <p>The test is usually not painful.
+Some women may feel mild pressure or discomfort.
+The procedure is quick and safe.
+Any discomfort lasts only a short time.</p>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="accordion-item">
+              <div class="accordion__header" data-toggle="collapse" data-target="#collapse6">
+                <a class="accordion__title" href="#">What are the early signs of cervical cancer?</a>
+              </div>
+              <div id="collapse6" class="collapse" data-parent="#accordion">
+                <div class="accordion__body">
+                  <p>Early stages often have no noticeable symptoms.
+Many women feel completely healthy.
+Symptoms appear only when the disease progresses.
+This is why regular screening is very important.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE SIDEBAR -->
+          <div class="sidebar-col">
+
+            <aside class="sidebar">
+
+              <!-- Emergency Card -->
+              <div class="widget widget-help bg-overlay bg-overlay-secondary-gradient" style="margin-bottom: 30px;">
+                <div class="bg-img"><img src="assets/images/banners/5.jpg" alt="background"></div>
+                <div class="widget-content">
+                  <div class="widget__icon"><i class="icon-call3"></i></div>
+                  <h4 class="widget__title">Emergency Cases</h4>
+                  <p>Please feel welcome to contact our friendly reception staff.</p>
+                  <a href="tel:+919922400310" class="phone__number">
+                    <i class="icon-phone"></i> <span>+91 9922400310</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Opening Hours Card -->
+              <div class="widget widget-schedule" style="background: #fff; padding: 25px; border-radius: 6px;">
+                <div class="widget-content">
+                  <div class="widget__icon"><i class="icon-charity2"></i></div>
+                  <h4 class="widget__title">Opening Hours</h4>
+
+                  <ul class="time__list list-unstyled mb-0">
+                    <li style="display:flex; justify-content:space-between; margin-bottom: 8px;">
+                      <span>Mon - Sat</span><span>8.00 - 7:00 pm</span>
+                    </li>
+                  
+                    <li style="display:flex; justify-content:space-between;">
+                      <span>Sunday</span><span>10.00 - 2:00 pm</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </aside>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+    <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+  </div>
+
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header-loader.js"></script>
+  <script src="assets/js/footer-loader.js"></script>
+
+</body>
+</html>

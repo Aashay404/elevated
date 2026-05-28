@@ -1,0 +1,252 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="CCPF - Cervical Cancer Prevention Foundation ">
+  <link href="assets/images/favicon/favicon.png" rel="icon">
+  <title>CCPF - Cervical Cancer Prevention Foundation</title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <link rel="stylesheet" href="assets/css/libraries.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/header-custom.css">
+
+  <style>
+    #recommendedTest {
+      display: none;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    #payNowBtn {
+      display: none;
+      background-color: #ffc107;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    #payNowBtn:hover {
+      background-color: #ffcd39;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-validation-error {
+      border: 2px solid #dc3545 !important;
+      background-color: #f8d7da !important;
+    }
+
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      border: 1px solid #c3e6cb;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="preloader">
+      <div class="loading"><span></span><span></span><span></span><span></span></div>
+    </div>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- ==============================
+         Appointment Form Section
+    ============================== -->
+    <section class="contact-layout3 bg-overlay bg-overlay-primary-gradient pb-60">
+      <div class="bg-img"><img src="assets/images/banners/3.jpg" alt="Cervical Cancer Prevention"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="contact-panel mb-50">
+              <form class="contact-panel__form" id="appointmentForm">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4 class="contact-panel__title">Book a Cervical Screening or Vaccination</h4>
+                    <p class="contact-panel__desc mb-30">
+                      Early detection saves lives. Schedule your <strong>HPV Vaccination</strong> or
+                      <strong>Pap Smear Test</strong> at a nearby clinic today.
+                    </p>
+                  </div>
+
+                  <!-- Clinic Selection -->
+                  <div class="col-12">
+                    <div class="form-group">
+                      <i class="icon-widget form-group-icon"></i>
+                      <select class="form-control" name="clinic" id="clinicSelect" required>
+                        <option value="">Choose Clinic</option>
+                       </select>
+                    </div>
+                  </div>
+
+                  <!-- Name -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <i class="icon-news form-group-icon"></i>
+                      <input type="text" class="form-control" placeholder="Your Name *" id="name" name="name" pattern="^[a-zA-Z\s]+$" required>
+                    </div>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <i class="icon-email form-group-icon"></i>
+                      <input type="email" class="form-control" placeholder="Your Email *" id="email" name="email"
+                          title="Please enter a valid email address." required/>
+                    </div>
+                  </div>
+
+                  <!-- Phone -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <i class="icon-phone form-group-icon"></i>
+                      <input type="text" class="form-control" placeholder="Phone Number (10 digits) *" id="phone"
+                        name="phone" maxlength="10" pattern="\d{10}$" required>
+                    </div>
+                  </div>
+
+                  <!-- Aadhaar -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <i class="icon-id-card form-group-icon"></i>
+                      <input type="text" class="form-control" placeholder="Aadhaar Number (12 digits - Optional)"
+                        id="aadhar" name="aadhar" maxlength="12" pattern="\d{12}">
+                      <small style="color: #666; font-size: 12px; margin-top: 5px; display: block;">
+                        📋 Please bring Aadhaar card while visiting the clinic
+                      </small>
+                    </div>
+                  </div>
+
+                  <!-- DOB -->
+                  <div class="col-md-6">
+                    <div class="form-group form-group-date">
+                      <i class="icon-calendar form-group-icon"></i>
+                     <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth"
+                        onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
+                    </div>
+                  </div>
+
+
+                  <!-- Auto Age -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <i class="icon-user form-group-icon"></i>
+                        <input type="text" class="form-control" placeholder="Age (Auto)" id="age" name="age" readonly></div>
+                  </div>
+
+                  <!-- Marital Status -->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <i class="icon-heart form-group-icon"></i>
+                    <select class="form-control" name="maritalStatus" id="maritalStatus" required>
+                      <option value="" selected>Choose Marital Status</option>
+                      <option value="unmarried">Unmarried</option>
+                      <option value="married">Married</option>
+                    </select>
+                  </div>
+                </div>
+
+                  <!-- Appointment Date -->
+                  <div class="col-md-6">
+                    <div class="form-group form-group-date">
+                      <i class="icon-calendar form-group-icon"></i>
+                      <input type="text"  onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" class="form-control" placeholder="Date of Appointment" id="appointmentDate" name="appointmentDate" required>
+                    </div>
+                  </div>
+
+                 
+                   <!-- Appointment Time -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <i class="icon-clock form-group-icon"></i>
+                      <select class="form-control" id="appointmentTime" name="appointmentTime" required>
+                        <option value="">Choose Time Slot</option>
+                        <option value="11:00-12:00">11 AM - 12 PM</option>
+                        <option value="12:00-13:00">12 PM - 1 PM</option>
+                        <option value="13:00-14:00">1 PM - 2 PM</option>
+                        <option value="14:00-15:00">2 PM - 3 PM</option>
+                        <option value="15:00-16:00">3 PM - 4 PM</option>
+                        <option value="16:00-17:00">4 PM - 5 PM</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Recommended Test -->
+                  <div class="col-12">
+                    <div id="recommendedTest">
+                      <strong>Recommended:</strong>
+                      <div id="testDetails" style="margin: 5px 0;"></div>
+                    </div>
+                  </div>
+
+                  <!-- Pay Now Button -->
+                  <div class="col-12 text-center">
+                    <button type="button" id="payNowBtn">Pay Now</button>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="col-12 mt-3">
+                    <button type="button" class="btn btn__secondary btn__rounded btn__block" id="submitBtn" disabled>
+                       <span id="submitText">Book Your Free Consultation</span> 
+                      <span id="loadingText" style="display: none;">Booking Appointment...</span>
+                      <i class="icon-arrow-right" id="submitIcon"></i>
+                      <div id="loadingSpinner" style="display: none; margin-left: 10px;">
+                        <div style="border: 2px solid #f3f3f3; border-top: 2px solid #fff; border-radius: 50%; width: 16px; height: 16px; animation: spin 1s linear infinite; display: inline-block;"></div>
+                      </div>
+                    </button>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+  </div>
+
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header-loader.js"></script>
+  <script src="assets/js/footer-loader.js"></script>
+
+   <script type="module" src="assets/js/appointment_logic.js"></script>
+   <script type="module" src="assets/js/api_client.js"></script>
+   <script src="assets/js/appointment_validation.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,486 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="CCPF - Cervical Cancer Prevention Foundation">
+  <link href="assets/images/favicon/favicon.png" rel="icon">
+  <title>CCPF - Cervical Cancer Prevention Foundation</title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+  <link rel="stylesheet" href="assets/css/libraries.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ERLG8H4G8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9ERLG8H4G8');
+</script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1589783308815809');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1589783308815809&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  <style>
+
+    /* ========== LEFT SOCIAL SIDEBAR ========== */
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-sidebar .social {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-sidebar .social:hover {
+  width: 60px;
+}
+
+.social.fb   { background: #00adcd; }
+.social.in   { background: #00606d; }
+.social.tw   { background: #dc3545; }
+.social.mail { background: #6c757d; }
+.social.wa   { background: #28a745; }
+
+.social-sidebar .social:first-child {
+  border-radius: 0 6px 0 0;
+}
+.social-sidebar .social:last-child {
+  border-radius: 0 0 6px 0;
+}
+
+
+/* ========== RIGHT STICKY ACTION BAR ========== */
+.right-sticky-bar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sticky-btn {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 16px 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  border-radius: 6px 0 0 6px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.sticky-btn:hover {
+  padding-right: 18px;
+}
+
+.sticky-btn.enquiry {
+  background: #00adcd; /* CCPF primary blue */
+}
+
+.sticky-btn.brochure {
+  background: #00606d; /* CCPF secondary blue */
+}
+
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .social-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .social-sidebar .social {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .social-sidebar .social:hover {
+    width: 50px;
+  }
+  
+  .right-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .sticky-btn {
+    writing-mode: initial;
+    transform: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    min-width: 120px;
+    text-align: center;
+  }
+  
+  .sticky-btn:hover {
+    padding: 12px 20px;
+  }
+}
+
+
+
+
+
+    /* ---------- Default Styling ---------- */
+    .col-lg-4 {
+      margin-left: 73px;
+    }
+
+    .list-unstyled {
+      font-weight: bold;
+    }
+
+    .footer .footer-widget-nav li a:hover {
+      color: #00adcd;
+    }
+
+    .phone__number {
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .phone__number span {
+      color: #00adcd;
+    }
+
+    .social-icons li a {
+      background-color: #00606d;
+      padding-top: 4px;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 8px;
+      transition: background 0.3s;
+    }
+
+    .social-icons li a:hover {
+      background-color: #00adcd;
+    }
+
+    .footer-primary {
+      padding: 30px 0 20px 0;
+    }
+
+    .footer-secondary {
+      padding: 15px 0;
+      background-color: #f9f9f9;
+    }
+
+    .footer-widget-about p {
+      margin-bottom: 15px;
+    }
+
+    /* ---------- Responsive Styling ---------- */
+    @media (max-width: 992px) {
+      .col-lg-4 {
+        margin-left: 0 !important;
+      }
+
+      .footer .row {
+        text-align: center;
+      }
+
+      .footer-widget-about img {
+        width: 80%;
+        height: auto;
+      }
+
+      .footer-widget-nav {
+        margin-top: 25px;
+      }
+
+      .footer-widget-contact {
+        padding-left: 0 !important;
+        margin-top: 25px;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      .footer-secondary .row {
+        text-align: center;
+      }
+
+      .footer-secondary nav ul {
+        justify-content: center !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-widget-about img {
+        width: 75%;
+      }
+
+      .footer-primary {
+        padding: 20px 0;
+      }
+
+      .footer-secondary {
+        padding: 10px 0;
+      }
+
+      .footer-widget-contact ul li {
+        font-size: 0.95rem;
+      }
+
+      .btn_primary {
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .footer-secondary nav ul li {
+        margin: 5px;
+      }
+
+      .footer-secondary nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer {
+        text-align: center;
+      }
+
+      .footer-widget-about img {
+        width: 70%;
+        height: auto;
+      }
+
+      .footer-widget-contact {
+        padding-left: 0 !important;
+      }
+
+      .contact-list li {
+        font-size: 14px;
+      }
+
+      .btn_primary span {
+        font-size: 14px;
+      }
+
+      .footer-secondary span,
+      .footer-secondary a {
+        font-size: 13px;
+      }
+      .col-lg-20{
+        margin-left: -149px;
+        margin-top: -39px;
+      }
+    }
+  </style>
+</head>
+
+<footer class="footer">
+  <div class="footer-primary">
+    <div class="container">
+      <div class="row">
+        <!-- About -->
+        <div class="col-sm-12 col-md-12 col-lg-3">
+          <div class="footer-widget-about">
+            <img src="assets/images/logo/footlogo.png" alt="logo" style="width: 500px;height: 104px;">
+            <p class="color-gray">
+              Our goal is to deliver quality of care in a courteous, respectful, and compassionate manner.
+              We hope you will allow us to care for you and strive to be the first and best choice for your family healthcare.
+            </p>
+            <a href="appointment.html" class="btn btn_primary btnprimary-style2 btn_link">
+              <span style="color: white;">Make Appointment <i class="icon-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class=" col-sm-6 col-md-6 col-lg-2 " style="margin-left:153px">
+          <div class="col-lg-20 footer-widget-nav">
+            <h6 class="footer-widget__title">Links</h6>
+            <nav>
+              <ul class="list-unstyled">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                
+                <li><a href="contact-us.html">Contact</a></li>
+                <li><a href="departments.html">Find Clinics</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="gallery.html">Our Gallery</a></li>
+                <li><a href="faqs.html">HELP & FAQ</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Quick Contacts -->
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="footer-widget-contact" style="padding-left:40px">
+            <h6 class="footer-widget__title color-heading">Quick Contacts</h6>
+            <ul class="contact-list list-unstyled">
+              <li>If you have any questions or need help, feel free to contact our team.</li>
+              <li>
+             <br>
+                <a href="tel:+919922400310" class="phone__number"><i class="icon-phone"></i> <span>+91 9922400310</span></a>
+              </li>
+               <li class="color-body">Shop no. 103, Archit Arcade, College Road, Nashik.</li>
+            </ul>
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start" style="margin: -24px; margin-top: 20px;">
+              <a href="contact-us.html" class="btn btn_primary btn_link mr-30">
+                <i class="icon-arrow-right"></i> <span>Get Directions</span>
+              </a>
+              <ul class="social-icons list-unstyled mb-0 d-flex">
+                <li><a href="https://www.facebook.com/share/17YDPhqtii/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/ccpfnashik?igsh=MWM2NWZvcHk3MXJzYw%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-secondary">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-12 col-md-6 col-lg-6 text-center text-md-start">
+          <span class="fz-14">&copy; 2025 CCPF, All Rights Reserved. With Love by</span>
+          <a class="fz-14 color-primary" href="https://www.insitearc.com/">insitearc.com</a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 text-center text-md-end mt-3 mt-md-0">
+          <nav>
+            <ul class="list-unstyled footer__copyright-links d-flex flex-wrap justify-content-center justify-content-md-end mb-0">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+<!-- LEFT SOCIAL SIDEBAR -->
+<div class="social-sidebar">
+
+  <a href="https://www.facebook.com/share/1AgqfsViE4/" target="_blank" class="social fb">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/company/cervical-cancer-preventation-foundation/" target="_blank" class="social in">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <a href="https://www.instagram.com/ccpfnashik?igsh=MWM2NWZvcHk3MXJzYw==" target="_blank" class="social tw">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="ccpfnsk@gmail.com" class="social mail">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="https://wa.me/919922400310" target="_blank" class="social wa">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</div>
+
+
+<!-- RIGHT STICKY ACTION BAR -->
+<div class="right-sticky-bar">
+
+  <a href="#" class="sticky-btn enquiry" onclick="openEnquiryModal()">
+    Enquiry Now
+  </a>
+
+  <!-- <a href="doc/Garti Brochured41d.pdf" download class="sticky-btn brochure">
+    Download Brochure
+  </a> -->
+
+</div>
+
+<!-- Enquiry Modal -->
+<div id="enquiryModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:10000;">
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:30px; border-radius:10px; max-width:400px; width:90%;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+      <h3 style="color:#00adcd; margin:0;">Contact Information</h3>
+      <button onclick="closeEnquiryModal()" style="background:none; border:none; font-size:24px; cursor:pointer;">&times;</button>
+    </div>
+    <div style="text-align:left;">
+      <p style="margin-bottom:15px;"><strong>Phone:</strong> <a href="tel:+919922400310" style="color:#00adcd;">+91 9922400310</a></p>
+      <p style="margin-bottom:15px;"><strong>Email:</strong> <a href="mailto:ccpfnsk@gmail.com" style="color:#00adcd;">ccpfnsk@gmail.com</a></p>
+      <p style="margin-bottom:15px;"><strong>Address:</strong> Shop no. 103, Archit Arcade, College Road, Nashik.</p>
+      <p style="margin-bottom:20px;"><strong>Working Hours:</strong><br>Mon - Sat: 8:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 2:00 PM</p>
+      <div style="text-align:center;">
+        <a href="appointment.html" style="background:#00adcd; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; display:inline-block;">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+</div>
