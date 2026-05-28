@@ -123,7 +123,7 @@
 html {
   margin: 0;
   padding: 0;
-  font-size: 10px;
+  font-size: 14.72px;
   overflow: hidden;
   overflow-y: auto;
   scroll-behavior: auto !important;
@@ -16282,23 +16282,124 @@ nav ul li a {
   animation-delay: 1.8s;
 }
 
-.rts-breadcrumb-area {
-  background: url(../images/banner/breadcrumb-bg.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 1;
-  position: relative;
+@keyframes floatBlob1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) rotate(120deg) scale(1.1);
+  }
+  66% {
+    transform: translate(-15px, 25px) rotate(240deg) scale(0.9);
+  }
 }
+
+@keyframes floatBlob2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 30px) rotate(-180deg) scale(1.15);
+  }
+}
+
+@keyframes floatBlob3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(25px, -25px) rotate(180deg);
+  }
+}
+
+.rts-breadcrumb-area {
+  background: linear-gradient(135deg, #0b2f5c 0%, #153e6f 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  border-bottom: 3px solid rgba(111, 175, 166, 0.3) !important;
+}
+
 .rts-breadcrumb-area::after {
-  content: "";
-  position: absolute;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  top: 0;
-  left: 0;
+  display: none !important;
+}
+
+.rts-breadcrumb-area::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px) !important;
+  background-size: 24px 24px !important;
+  z-index: -2 !important;
+  pointer-events: none !important;
+  display: block !important;
+  animation: none !important;
+  width: auto !important;
+  height: auto !important;
+  background-repeat: repeat !important;
+  opacity: 1 !important;
+}
+
+.rts-breadcrumb-area .container {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.rts-breadcrumb-area .breadcrumb-main-wrapper {
+  position: relative !important;
+}
+
+/* Shape 1: Soft Teal Organic Blob (Top-Right) */
+.rts-breadcrumb-area .breadcrumb-main-wrapper::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 260px !important;
+  height: 260px !important;
+  background: radial-gradient(circle, rgba(111, 175, 166, 0.25) 0%, rgba(111, 175, 166, 0) 70%) !important;
+  border-radius: 50% !important;
+  top: -120px !important;
+  right: -30px !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  display: block !important;
+  animation: floatBlob1 15s ease-in-out infinite !important;
+}
+
+/* Shape 2: Coral Pink Soft Square (Bottom-Left) */
+.rts-breadcrumb-area .breadcrumb-main-wrapper::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 70px !important;
+  height: 70px !important;
+  background: rgba(244, 151, 142, 0.15) !important;
+  border: 1px solid rgba(244, 151, 142, 0.25) !important;
+  border-radius: 20px !important;
+  bottom: -30px !important;
+  left: -40px !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  display: block !important;
+  animation: floatBlob2 18s ease-in-out infinite !important;
+}
+
+/* Shape 3: Sky Blue Ring (Top-Left) */
+.rts-breadcrumb-area .pagination-wrapper::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 50px !important;
+  height: 50px !important;
+  border: 4px double rgba(169, 214, 229, 0.25) !important;
+  border-radius: 50% !important;
+  top: -20px !important;
+  left: 40% !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  display: block !important;
+  animation: floatBlob3 12s ease-in-out infinite !important;
+}
+
+.rts-breadcrumb-area .desc {
+  color: #ffffff !important;
 }
 .rts-breadcrumb-area .breadcrumb-main-wrapper a {
   color: var(--color-white);

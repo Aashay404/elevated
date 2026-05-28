@@ -37,49 +37,7 @@
             --transition: all 0.3s ease;
         }
 
-        /* ===== Breadcrumb Area ===== */
-        /* .rts-breadcrumb-area {
-            position: relative;
-            padding: 80px 0 !important;
-            background: linear-gradient(135deg, var(--primary-purple) 0%, #8a4ba0 100%);
-            overflow: hidden;
-            z-index: 1;
-        } */
 
-        .rts-breadcrumb-area::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('assets/images/banner/pattern.png') repeat;
-            opacity: 0.1;
-            animation: slideBackground 20s linear infinite;
-            z-index: -1;
-        }
-
-        .rts-breadcrumb-area::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 30s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes slideBackground {
-            from { background-position: 0 0; }
-            to { background-position: 100% 100%; }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
 
         .breadcrumb-main-wrapper {
             text-align: center;

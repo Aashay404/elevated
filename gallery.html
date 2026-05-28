@@ -15,7 +15,7 @@
     />
     <style>
       body {
-        font-family: 'Outfit', sans-serif;
+        font-family: "Outfit", sans-serif;
       }
     </style>
     <!-- fontawesome 6.4.2 -->
@@ -59,6 +59,11 @@
         position: absolute;
         inset: 0;
       }
+      /* hide hover overlay + icon per request */
+      .gallery-wrapper .gallery-image,
+      .gallery-wrapper .item-overlay {
+        display: none !important;
+      }
     </style>
   </head>
 
@@ -90,157 +95,6 @@
       </div>
     </div>
     <!-- bread crumb area end -->
-
-    <!-- gallery area start -->
-    <section class="rts-gallery-area rts-section-gap">
-      <div class="container">
-        <div class="section-title-area text-center">
-          <p class="pre-title justify-content-center">
-            <img src="assets/images/banner/title-img.svg" alt="" />Gallery
-          </p>
-          <h2 class="section-title">Infrastructure Showcase</h2>
-          <p class="desc">
-            A closer look at the learning spaces, facilities, and campus
-            infrastructure that support everyday growth.
-          </p>
-        </div>
-        <div class="section-inner">
-          <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C1.jpeg"
-                  alt="Infrastructure image C1"
-                />
-                <a href="assets/images/gallery/C1.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C2.jpeg"
-                  alt="Infrastructure image C2"
-                />
-                <a href="assets/images/gallery/C2.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C3.jpeg"
-                  alt="Infrastructure image C3"
-                />
-                <a href="assets/images/gallery/C3.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C4.jpeg"
-                  alt="Infrastructure image C4"
-                />
-                <a href="assets/images/gallery/C4.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C5.jpeg"
-                  alt="Infrastructure image C5"
-                />
-                <a href="assets/images/gallery/C5.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C7.jpeg"
-                  alt="Infrastructure image C7"
-                />
-                <a href="assets/images/gallery/C7.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C8.jpeg"
-                  alt="Infrastructure image C8"
-                />
-                <a href="assets/images/gallery/C8.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C10.jpeg"
-                  alt="Infrastructure image C10"
-                />
-                <a href="assets/images/gallery/C10.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C11.jpeg"
-                  alt="Infrastructure image C11"
-                />
-                <a href="assets/images/gallery/C11.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="gallery-wrapper">
-                <img
-                  src="assets/images/gallery/C13.jpeg"
-                  alt="Infrastructure image C13"
-                />
-                <a href="assets/images/gallery/C13.jpeg" class="gallery-image">
-                  <div class="item-overlay">
-                    <span><i class="fa-light fa-plus"></i></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="rts-gallery-area rts-section-gap pt--0">
       <div class="container">
@@ -494,6 +348,145 @@
                   ><div class="item-overlay">
                     <span><i class="fa-light fa-plus"></i></span></div
                 ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infrastructure Showcase -->
+    <section class="rts-gallery-area rts-section-gap">
+      <div class="container">
+        <div class="section-title-area text-center">
+          <p class="pre-title justify-content-center">
+            <img src="assets/images/banner/title-img.svg" alt="" />Gallery
+          </p>
+          <h2 class="section-title">Infrastructure Showcase</h2>
+          <p class="desc">
+            A closer look at the learning spaces, facilities, and campus
+            infrastructure that support everyday growth.
+          </p>
+        </div>
+        <div class="section-inner">
+          <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C1.jpeg"
+                  alt="Infrastructure image C1"
+                />
+                <a href="assets/images/gallery/C1.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C2.jpeg"
+                  alt="Infrastructure image C2"
+                />
+                <a href="assets/images/gallery/C2.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C3.jpeg"
+                  alt="Infrastructure image C3"
+                />
+                <a href="assets/images/gallery/C3.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C5.jpeg"
+                  alt="Infrastructure image C5"
+                />
+                <a href="assets/images/gallery/C5.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C7.jpeg"
+                  alt="Infrastructure image C7"
+                />
+                <a href="assets/images/gallery/C7.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C8.jpeg"
+                  alt="Infrastructure image C8"
+                />
+                <a href="assets/images/gallery/C8.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C10.jpeg"
+                  alt="Infrastructure image C10"
+                />
+                <a href="assets/images/gallery/C10.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C11.jpeg"
+                  alt="Infrastructure image C11"
+                />
+                <a href="assets/images/gallery/C11.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="gallery-wrapper">
+                <img
+                  src="assets/images/gallery/C13.jpeg"
+                  alt="Infrastructure image C13"
+                />
+                <a href="assets/images/gallery/C13.jpeg" class="gallery-image">
+                  <div class="item-overlay">
+                    <span><i class="fa-light fa-plus"></i></span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

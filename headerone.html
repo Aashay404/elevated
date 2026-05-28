@@ -108,18 +108,47 @@
 
   /* Fix for colored service boxes text visibility & theme alignment */
   .wrapper-list .list-inner .content .title,
+  .wrapper-list .list-inner .content .title a,
   .wrapper-list .list-inner .content .desc {
     color: #ffffff !important;
   }
 
   .wrapper-list .list-inner {
-    background: #0b2f5c !important; /* Replaced default green with Premium Navy Blue */
+    background: #0b2f5c !important; /* Unified Premium Navy Blue background */
+    border-color: #0b2f5c !important;
+    transition: all 0.3s ease !important;
   }
 
   .wrapper-list:last-child .list-inner {
-    background: var(
-      --color-blue
-    ) !important; /* Kept secondary box as Light Blue */
+    background: #0b2f5c !important; /* Unified Navy Blue for the second box */
+    border-color: #0b2f5c !important;
+  }
+
+  /* Professional unified checkmark icon styling */
+  .wrapper-list .list-inner .icon {
+    background: #f4978e !important; /* Signature coral-pink highlight */
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 45px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .wrapper-list .list-inner .icon i {
+    color: #ffffff !important;
+    font-size: 16px !important;
+  }
+
+  /* Micro-animation hover effect on the entire card */
+  .wrapper-list .list-inner:hover {
+    transform: translateY(-3px) !important;
+  }
+
+  .wrapper-list .list-inner:hover .icon {
+    transform: scale(1.1) !important;
   }
 
   /* CTA Button Styling */
@@ -547,6 +576,8 @@
     padding-top: 0 !important;
     top: 0 !important;
   }
+
+
 </style>
 <header
   class="header-one header--sticky"
